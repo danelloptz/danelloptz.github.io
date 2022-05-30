@@ -1555,10 +1555,10 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   border: 2px solid #0a192f;
-  border-radius: 160px;
+  border-radius: 150px;
   -webkit-animation: AvatarCircle 1s ease-out infinite;
           animation: AvatarCircle 1s ease-out infinite;
 }
@@ -1769,7 +1769,7 @@ a:hover {
 .aboutLine {
   width: 70%;
   height: 2px;
-  background: #ccd6f685;
+  background: #dae2fa85;
   margin: auto;
   margin-top: 10px;
   border-radius: 20px;
@@ -1779,7 +1779,7 @@ a:hover {
   width: 100%;
   margin-top: 25px;
   font-size: 20px;
-  color: #ccd6f669;
+  color: #dae2fa85;
   text-align: center;
   line-height: 1.2;
 }
@@ -2410,6 +2410,9 @@ a:hover {
 }
 
 @media (max-width: 500px) {
+  #wrapper--colba {
+    display: none;
+  }
   .main_header_btn {
     margin: auto;
     margin-top: 25px;
@@ -2421,8 +2424,8 @@ a:hover {
     width: 90%;
   }
   .aboutAvatar {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     margin-top: 50px;
     margin: auto;
   }
@@ -2444,30 +2447,17 @@ a:hover {
     padding-right: 10px;
     margin-top: 10px;
   }
-  .chet {
-    width: 70px;
-    height: 70px;
-    -webkit-animation: none;
-            animation: none;
-    margin-top: 30px;
+  .header-sm-txt {
+    font-size: 20px;
   }
-  .nechet {
-    width: 70px;
-    height: 70px;
-    -webkit-animation: none;
-            animation: none;
-    margin-top: 30px;
-  }
-  .chetChild {
-    -webkit-animation: none;
-            animation: none;
-  }
-  .nechetChild {
-    -webkit-animation: none;
-            animation: none;
+  .header-bg-txt, .header-bg-txt-mute {
+    font-size: 23px;
   }
   .about_inner_menu {
     width: 100%;
+  }
+  .liTitle {
+    font-size: 23px;
   }
   .aboutInnerMenuText {
     margin-top: 10px;
@@ -2476,6 +2466,14 @@ a:hover {
   }
   .aboutInnerMenuButton {
     margin-top: 10px;
+  }
+  .aboutText {
+    font-size: 23px;
+  }
+  .graph {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .pie {
     width: 5em;
