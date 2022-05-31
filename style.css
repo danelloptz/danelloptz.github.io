@@ -418,6 +418,13 @@ a:hover {
   color: inherit;
 }
 
+button:hover {
+  background: #64ffdb29;
+  -webkit-transition: .8 ease-out;
+  transition: .8 ease-out;
+  cursor: pointer;
+}
+
 /* colba styles start */
 #wrapper--colba {
   position: fixed;
@@ -1300,7 +1307,7 @@ a:hover {
 
 /* main_header class start */
 .main_header {
-  width: 80%;
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 200px;
   margin: 0 auto;
@@ -1421,7 +1428,7 @@ a:hover {
 
 .header-bg-txt {
   font-size: 60px;
-  margin-top: 40px;
+  margin-top: 20px;
   color: #ccd6f6;
   font-weight: 800;
   letter-spacing: 3px;
@@ -1442,15 +1449,15 @@ a:hover {
 
 .header-bg-txt-mute {
   width: 85%;
-  font-size: 60px;
+  font-size: 45px;
   margin-top: 20px;
   color: #ccd6f6;
   font-weight: 800;
   letter-spacing: 3px;
   border-right: 3px solid green;
   padding-right: 5px;
-  -webkit-animation: textTypingMute 2s steps(30), cursorClick 0.75s step-end infinite;
-          animation: textTypingMute 2s steps(30), cursorClick 0.75s step-end infinite;
+  -webkit-animation: textTypingMute 2s steps(38), cursorClick 0.75s step-end infinite;
+          animation: textTypingMute 2s steps(38), cursorClick 0.75s step-end infinite;
   -webkit-animation-delay: 5.5s;
           animation-delay: 5.5s;
   -webkit-animation-fill-mode: forwards;
@@ -1937,6 +1944,23 @@ a:hover {
   cursor: pointer;
 }
 
+.skills-btn {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  background: none;
+  border: 1px solid #dae2fa85;
+  color: #dae2fa85;
+  font-family: 'RM';
+  letter-spacing: 5px;
+  border-radius: 20px;
+}
+
+.skills-btn:hover {
+  border: 1px solid #64ffda;
+  color: #64ffda;
+}
+
 @-webkit-keyframes RunLine {
   from {
     left: 0;
@@ -2393,9 +2417,27 @@ a:hover {
     width: 70%;
     text-align: center;
   }
+  .colba--modal--inner {
+    width: 90%;
+    height: 30%;
+  }
+  .colba--modal--text {
+    font-size: 40px;
+  }
+  .star--wrapper {
+    width: 100%;
+  }
+  .colba--modal--star, .colba--modal--star:hover {
+    width: 100px;
+    height: 100px;
+    margin-right: 0;
+  }
+  #colba--modal--close {
+    font-size: 20px;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 640px) {
   .pie {
     margin: .5em;
     width: 6em;
@@ -2407,9 +2449,14 @@ a:hover {
     height: 4.5em;
     width: 4.5em;
   }
+  .colba--modal--star, .colba--modal--star:hover {
+    width: 75px;
+    height: 75px;
+    margin-right: 0;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 535px) {
   #wrapper--colba {
     display: none;
   }
@@ -2446,6 +2493,9 @@ a:hover {
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 10px;
+  }
+  .skillsText {
+    font-size: 23px;
   }
   .header-sm-txt {
     font-size: 20px;
@@ -2485,6 +2535,27 @@ a:hover {
     height: 4em;
     left: .5em;
     top: .5em;
+  }
+  .colba--modal--inner {
+    width: 90%;
+    height: 30%;
+  }
+  .colba--modal--text {
+    font-size: 40px;
+  }
+  .star--wrapper {
+    width: 100%;
+  }
+  #colba--modal--close {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 490px) {
+  .colba--modal--star, .colba--modal--star:hover {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

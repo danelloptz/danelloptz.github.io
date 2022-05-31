@@ -169,6 +169,7 @@ function Oxygen() {
                 countOfScroll = 1;
               }
           }
+          
         if ((scrollY == pageHeight - screenHeight) && (antiScroll == 0)) {
             $('#modal--wrapper').css({
                 'opacity': '1',
@@ -208,6 +209,13 @@ function StarClick() {
                 item.style.background = 'url("img/starClicked.png") no-repeat';
                 item.style.backgroundSize = 'cover';
             });
+            let screenHeight = window.innerHeight;
+            if (screenHeight <=700) {
+                $('#colba--modal--inner').css('height', '40vh');
+            } else {
+                $('#colba--modal--inner').css('height', '30vh');
+            }
+            
             $('#colba--modal--close').show();
             $('#colba--modal--close').on('click', function() {
                 $('#modal--wrapper').css({
@@ -218,17 +226,12 @@ function StarClick() {
                 window.scrollTo(0, 0);
                 $('html').css('overflow', $('html').data('previous-overflow'));
                 setTimeout(() => {
-                    antiScroll = 0;
                     modalArr.each(function() {
                         $(this).css('pointer-events', 'none');
                     });
                     closeShow = 1;
                 }, 2000);
-            })
-            /*$(this).css({
-                'background' : 'url("img/starClicked.png") no-repeat',
-                'background-size' : 'cover'
-            });*/
+            });
         });
     });
 
