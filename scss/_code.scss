@@ -404,6 +404,11 @@ a {
 a:hover {
     color: inherit;
 }
+button:hover {
+    background: #64ffdb29;
+    transition: .8 ease-out;
+    cursor: pointer;
+}
 
 /* colba styles start */
 
@@ -947,7 +952,7 @@ a:hover {
 /* main_header class start */
 
 .main_header {
-    width: 80%;
+    width: 90%;
     margin-top: 50px;
     margin-bottom: 200px;
     margin: 0 auto;
@@ -1012,7 +1017,7 @@ a:hover {
 }
 .header-bg-txt {
     font-size: 60px;
-    margin-top: 40px;
+    margin-top: 20px;
     color: #ccd6f6;
     font-weight: 800;
     letter-spacing: 3px;
@@ -1027,14 +1032,14 @@ a:hover {
 }
 .header-bg-txt-mute {
     width: 85%;
-    font-size: 60px;
+    font-size: 45px;
     margin-top: 20px;
     color: #ccd6f6;
     font-weight: 800;
     letter-spacing: 3px;
     border-right: 3px solid green;
     padding-right: 5px;
-    animation: textTypingMute 2s steps(30), cursorClick .75s step-end infinite;
+    animation: textTypingMute 2s steps(38), cursorClick .75s step-end infinite;
     animation-delay: 5.5s;
     animation-fill-mode: forwards;
     opacity: 0;
@@ -1101,10 +1106,10 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
     border: 2px solid #0a192f;
-    border-radius: 160px;
+    border-radius: 150px;
     animation: AvatarCircle 1s ease-out infinite;
 }
 @keyframes aboutMenuHide {
@@ -1239,7 +1244,7 @@ a:hover {
 .aboutLine {
     width: 70%;
     height: 2px;
-    background: #ccd6f685;
+    background: $txt-mute;
     margin: auto;
     margin-top: 10px;
     border-radius: 20px;
@@ -1248,7 +1253,7 @@ a:hover {
     width: 100%;
     margin-top: 25px;
     font-size: $sm-txt;
-    color: #ccd6f669;
+    color: $txt-mute;
     text-align: center;
     line-height: 1.2;
 }
@@ -1369,6 +1374,21 @@ a:hover {
 .skillsText:hover {
     color: #64ffda;
     cursor: pointer;
+}
+.skills-btn {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    background: none;
+    border: 1px solid $txt-mute;
+    color: $txt-mute;
+    font-family: 'RM';
+    letter-spacing: 5px;
+    border-radius: 20px;
+}
+.skills-btn:hover {
+    border: 1px solid $text;
+    color: $text;
 }
 @keyframes RunLine {
     from {
@@ -1691,8 +1711,22 @@ a:hover {
         width: 70%; 
         text-align: center;
     }
+    .colba--modal--inner {
+        width: 90%;
+        height: 30%;
+    }
+    .colba--modal--text { font-size: 40px; }
+    .star--wrapper {
+         width: 100%;  
+    }
+    .colba--modal--star, .colba--modal--star:hover {
+        width: 100px;
+        height: 100px;
+        margin-right: 0;
+    }
+    #colba--modal--close { font-size: $sm-txt; }
 }
-@media (max-width: 700px) {
+@media (max-width: 640px) {
     .pie {
         margin: .5em;
         width: 6em;
@@ -1704,8 +1738,14 @@ a:hover {
         height: 4.5em;
         width: 4.5em;
     }
+    .colba--modal--star, .colba--modal--star:hover {
+        width: 75px;
+        height: 75px;
+        margin-right: 0;
+    }
 }
-@media (max-width: 500px) {
+@media (max-width: 535px) {
+    #wrapper--colba { display: none; }
     .main_header_btn {
         margin: auto;
         margin-top: 25px;
@@ -1716,8 +1756,8 @@ a:hover {
         width: 90%;
     }
     .aboutAvatar {
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
         margin-top: 50px;
         margin: auto;
     }
@@ -1738,27 +1778,13 @@ a:hover {
         padding-right: 10px;
         margin-top: 10px;
     }
-    .chet {
-        width: 70px;
-        height: 70px;
-        animation: none;
-        margin-top: 30px;
-    }
-    .nechet {
-        width: 70px;
-        height: 70px;
-        animation: none;
-        margin-top: 30px;
-    }
-    .chetChild {
-        animation: none;
-    }
-    .nechetChild {
-        animation: none;
-    }
+    .skillsText { font-size: $md-txt; }
+    .header-sm-txt { font-size: $sm-txt; }
+    .header-bg-txt, .header-bg-txt-mute { font-size: $md-txt; }
     .about_inner_menu {
         width: 100%;
     }
+    .liTitle { font-size: $md-txt; }
     .aboutInnerMenuText {
         margin-top: 10px;
         font-size: 18px;
@@ -1766,6 +1792,12 @@ a:hover {
     }
     .aboutInnerMenuButton {
         margin-top: 10px;
+    }
+    .aboutText { font-size: $md-txt; }
+    .graph { 
+        width: 100%; 
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .pie {
         width: 5em;
@@ -1777,5 +1809,19 @@ a:hover {
         height: 4em;
         left: .5em;
         top: .5em;
+    }
+    .colba--modal--inner {
+        width: 90%;
+        height: 30%;
+    }
+    .colba--modal--text { font-size: 40px; }
+    .star--wrapper { width: 100%; }
+    #colba--modal--close { font-size: $sm-txt; }
+}
+@media (max-width: 490px) {
+    .colba--modal--star, .colba--modal--star:hover {
+        width: 50px;
+        height: 50px;
+        margin-right: 0;
     }
 }
