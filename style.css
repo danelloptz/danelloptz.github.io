@@ -425,6 +425,10 @@ button:hover {
   cursor: pointer;
 }
 
+article {
+  margin-top: 20px;
+}
+
 /* colba styles start */
 #wrapper--colba {
   position: fixed;
@@ -1307,7 +1311,7 @@ button:hover {
 
 /* main_header class start */
 .main_header {
-  width: 90%;
+  width: 80%;
   margin-top: 50px;
   margin-bottom: 200px;
   margin: 0 auto;
@@ -1389,7 +1393,7 @@ button:hover {
     opacity: .6;
   }
   100% {
-    width: 85%;
+    width: 81%;
     opacity: .6;
   }
 }
@@ -1402,7 +1406,7 @@ button:hover {
     opacity: .6;
   }
   100% {
-    width: 85%;
+    width: 81%;
     opacity: .6;
   }
 }
@@ -1485,10 +1489,10 @@ button:hover {
   width: 300px;
   height: 60px;
   border: 1px solid #64ffda;
+  margin: 0 auto;
+  color: #64ffda;
   background: #0a192f;
   margin-top: 50px;
-  text-align: center;
-  padding-top: 20px;
   border-radius: 20px;
   font-family: 'RM';
   letter-spacing: 5px;
@@ -2101,17 +2105,18 @@ button:hover {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .projects--item {
   width: 30%;
-  height: 300px;
   background: #2a3c57;
   -webkit-box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.5);
   padding-top: 30px;
   padding-left: 20px;
-  padding-bottom: 15px;
+  padding-right: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2122,11 +2127,9 @@ button:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-transition: .4s;
   transition: .4s;
+  margin-bottom: 30px;
 }
 
 .projects--item:hover {
@@ -2189,13 +2192,10 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 15px;
 }
 
 .footer--tags {
@@ -2211,14 +2211,15 @@ button:hover {
 }
 
 .tag {
-  width: 45%;
-  height: 25px;
+  width: 50%;
+  background: none;
   border-radius: 7px;
   text-align: center;
   font-family: 'RM-Italic';
   font-size: 16px;
   margin-bottom: 12px;
-  padding-top: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .orders {
@@ -2277,8 +2278,19 @@ button:hover {
 /* footer class end */
 /* main class end */
 @media (max-width: 1320px) {
+  .main_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .main_header_btn {
-    margin: auto;
     margin-top: 25px;
     -webkit-animation-delay: 6s;
             animation-delay: 6s;
@@ -2347,6 +2359,9 @@ button:hover {
   .mainAbout {
     margin: 0 auto;
     width: 90%;
+  }
+  .tag {
+    font-size: 14px;
   }
 }
 
@@ -2417,6 +2432,9 @@ button:hover {
     width: 70%;
     text-align: center;
   }
+  .projects--item {
+    width: 45%;
+  }
   .colba--modal--inner {
     width: 90%;
     height: 30%;
@@ -2454,14 +2472,45 @@ button:hover {
     height: 75px;
     margin-right: 0;
   }
+  .projects--item {
+    width: 80%;
+  }
+  .projects--year {
+    font-size: 25px;
+  }
+  .projects--title {
+    width: 95%;
+    font-size: 38px;
+  }
+  .item--text {
+    font-size: 23px;
+    line-height: 1.2;
+  }
+  .tag {
+    font-size: 23px;
+  }
 }
 
 @media (max-width: 535px) {
   #wrapper--colba {
     display: none;
   }
+  .main_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+    width: 95%;
+  }
   .main_header_btn {
-    margin: auto;
+    margin: 0 auto;
     margin-top: 25px;
     -webkit-animation-delay: 6s;
             animation-delay: 6s;
@@ -2556,6 +2605,15 @@ button:hover {
     width: 50px;
     height: 50px;
     margin-right: 0;
+  }
+  .projects--title {
+    font-size: 30px;
+  }
+  .item--text {
+    font-size: 20px;
+  }
+  .tag {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=style.css.map */
