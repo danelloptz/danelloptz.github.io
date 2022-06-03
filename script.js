@@ -41,10 +41,29 @@ function BorderWater() {
         $('#water').css('border-radius', '0 0 15px 15px');
     }
 }
+/* функция, благодаря которой элементы появляются, когда пользователь
+   прокручивает страницу до места, где находится этот элемент.
+   Если прокрученное количество пикселей больше, чем расстояние до блока, то
+   ему присваевается класс, с анимацией (visible).
+*/
+function VisibleArticles() {
+    let articles = $('[id*="article"]'); // получаем все html элементы, в id которых есть слово article
+    for (let i = 0; i < articles.length; i++) {
+        /* indexOf в условии, чтобы повторно не присваивать класс visible
+           clientHeight - высота блока (странно, но это так). 
+           -1 после indexOf значит, что элемент не найден
+        */
+        if ((scrollY >= articles[i].offsetTop - articles[i].clientHeight - 300) && (articles[i].className.indexOf('visible') == -1)) {
+            let articleClass = articles[i].className; // сохраняем текущий класс элемента
+            articles[i].classList = articleClass + ' visible'; // добавляем к текущему классу новый
+        }
+    }
+}
 
 window.onscroll = function() { // запускаем функции при скролле
     //ChangeBackground();
     BorderWater();
+    VisibleArticles();
 }
 
 // анимация открытия и закрытия меню и смена иконки "меню" на иконку "закрыть"
@@ -237,3 +256,17 @@ function StarClick() {
 
 }
 StarClick();
+
+function ProjectsMenu() {
+    $('.zag').on('click', function() {
+        let zagId = $(this)[0].id;
+        $('.projects--item').each(function() {
+            if ($(this)[0].className.indexOf(zagId) == -1) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    });
+}
+ProjectsMenu();

@@ -92,8 +92,8 @@
                     </div>
                 </section>
             </article>
-            <div class="mainTitle" id="aboutLink">&lt;about&gt;</div>
-            <article>
+            <article id="about--article">
+                <div class="mainTitle" id="aboutLink">&lt;about&gt;</div>
                 <section class="mainAbout" id="mainAbout">
                     <a onclick="AboutMenuOpen()"><div class="aboutAvatar" id="aboutAvatar">
                         <img src="img/avatar.png" width="260px" height="260px" data-bs-toggle="tooltip" data-bs-placement="top" title="Нажми на меня" alt="Василенко Данил frontend">
@@ -103,52 +103,53 @@
                     <div class="aboutText">
                         Меня зовут Василенко Данил. Я из Петрозаводска. Специализируюсь на
                         вёрстке сайтов и создании UI эффектов и анимаций. Основной стэк: HTML5/CSS3/JS/Vue/JQuery.
-                        
                     </div>
                 </section>
+                <div class="mainTitle">&lt;/about&gt;</div>
             </article>
-            <div class="mainTitle">&lt;/about&gt;</div>
             <div class="mainTitle" id="skillsLink">&lt;skills&gt;</div>
-            <arcticle class="my-skills">
-                <section class="graph">
-                    <div class="pie-wrap">
-                        <div class="pie p1"></div>
-                        <span class="pie-text pt1">HTML</span>
-                    </div>
-                    <div class="pie-wrap">
-                        <div class="pie p2"></div>
-                        <span class="pie-text pt2">CSS</span>
-                    </div>
-                    <div class="pie-wrap">
-                        <div class="pie p3"></div>
-                        <span class="pie-text pt3">JS</span>
-                    </div>
-    
-                    <div class="pie-wrap">
-                        <div class="pie p4"></div>
-                        <span class="pie-text pt4">JQuery</span>
-                    </div>
-                    <div class="pie-wrap">
-                        <div class="pie p5"></div>
-                        <span class="pie-text pt5">Vue</span>
-                    </div>
-                    <div class="pie-wrap">
-                        <div class="pie p6"></div>
-                        <span class="pie-text pt6">SCSS</span>
-                    </div>
-                </section>
-                <section class="skillsTextWrap">
-                    <div class="runLine"></div>
-                    <ul>
-                        <li class="skillsText">&#10004; Адаптивная вёрстка для любых устройств</li>
-                        <li class="skillsText">&#9734; Flex и Grid разметка</li>
-                        <li class="skillsText">&#9786; JQuery и Vue вместе с ванильным JS</li>
-                        <li class="skillsText">&#10047; SASS/SCSS</li>
-                        <li class="skillsText">&#9729; Вёрстка по стандартам HTML5</li>
-                        <li class="skillsText">&#9745; Чистый и читабельный код</li>
-                        <li class="skillsText"><button class="skills-btn">РЕЗЮМЕ</button></li>
-                    </ul>
-                </section>
+            <arcticle id="skills--article">
+                <div class="my-skills">
+                    <section class="graph">
+                        <div class="pie-wrap">
+                            <div class="pie p1"></div>
+                            <span class="pie-text pt1">HTML</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p2"></div>
+                            <span class="pie-text pt2">CSS</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p3"></div>
+                            <span class="pie-text pt3">JS</span>
+                        </div>
+        
+                        <div class="pie-wrap">
+                            <div class="pie p4"></div>
+                            <span class="pie-text pt4">JQuery</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p5"></div>
+                            <span class="pie-text pt5">Vue</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p6"></div>
+                            <span class="pie-text pt6">SCSS</span>
+                        </div>
+                    </section>
+                    <section class="skillsTextWrap">
+                        <div class="runLine"></div>
+                        <ul>
+                            <li class="skillsText">&#10004; Адаптивная вёрстка для любых устройств</li>
+                            <li class="skillsText">&#9734; Flex и Grid разметка</li>
+                            <li class="skillsText">&#9786; JQuery и Vue вместе с ванильным JS</li>
+                            <li class="skillsText">&#10047; SASS/SCSS</li>
+                            <li class="skillsText">&#9729; Вёрстка по стандартам HTML5</li>
+                            <li class="skillsText">&#9745; Чистый и читабельный код</li>
+                            <li class="skillsText"><button class="skills-btn">РЕЗЮМЕ</button></li>
+                        </ul>
+                    </section>
+                </div>
             </arcticle>
             <div class="mainTitle">&lt;/skills&gt;</div>
             <article id="modal--wrapper">
@@ -167,9 +168,15 @@
                         </section>
             </article>
             <div class="mainTitle" id="projectsLink">&lt;projects&gt;</div>
-            <article class="projects">
+            <article class="projects" id="projects--article">
+                <nav class="projects--header">
+                    <span class="projects--zag zag" id="all-item">Все</span>
+                    <span class="projects--zag zag" id="web-item">Сайты</span>
+                    <span class="projects--zag zag" id="verstka-item">Вёрстка</span>
+                    <span class="projects--zag zag" id="widjets-item">Виджеты</span>
+                </nav>
                 <div class="projects--wrapper">
-                    <section class="projects--item weekends">
+                    <section class="projects--item weekends web-item all-item">
                         <header class="item--header">
                             <title class="projects--year">2022</title>
                             <title class="projects--title">Отдых в Карелии</title>
@@ -179,11 +186,11 @@
                         </header>
                         <footer class="item--footer">
                             <nav class="footer--tags">
-                                <button class="tag orders">#заказы</button>
+                                <button class="tag web">#сайты</button>
                             </nav>
                         </footer>
                     </section>
-                    <section class="projects--item japan">
+                    <section class="projects--item japan verstka-item all-item">
                         <header class="item--header">
                             <title class="projects--year">2022</title>
                             <title class="projects--title">Путешествие в Японию</title>
@@ -197,7 +204,7 @@
                             </nav>
                         </footer>
                     </section>
-                    <section class="projects--item colba">
+                    <section class="projects--item colba widjets-item all-item">
                         <header class="item--header">
                             <title class="projects--year">2022</title>
                             <title class="projects--title" style="width: 90%;">Индикатор чтения текста</title>

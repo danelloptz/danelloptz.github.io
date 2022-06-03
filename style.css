@@ -429,6 +429,20 @@ article {
   margin-top: 20px;
 }
 
+*[id*="article"] {
+  opacity: 0;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+}
+
+.visible {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
 /* colba styles start */
 #wrapper--colba {
   position: fixed;
@@ -789,11 +803,11 @@ article {
 
 #colba--modal--close {
   width: 40%;
-  height: 15%;
+  height: 17%;
   border: 2px solid #64ffda;
   background: none;
   border-radius: 15px;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
 }
 
@@ -1526,6 +1540,8 @@ article {
   margin-left: 10%;
   margin-top: 30px;
   margin-bottom: 40px;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
 }
 
 @-webkit-keyframes AvatarCircle {
@@ -1923,7 +1939,7 @@ article {
   position: relative;
   width: 40%;
   text-align: start;
-  padding-top: 50px;
+  padding-top: 15px;
   padding-bottom: 50px;
   padding-left: 15px;
   float: right;
@@ -2098,13 +2114,43 @@ article {
   margin-bottom: 400px;
 }
 
+.projects--header {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #dae2fa85;
+  padding-bottom: 5px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.projects--zag {
+  font-size: 28px;
+  color: #dae2fa85;
+  margin-right: 5%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.projects--zag:hover {
+  color: #64ffda;
+  cursor: pointer;
+}
+
 .projects--wrapper {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -2222,7 +2268,7 @@ article {
   padding-right: 3px;
 }
 
-.orders {
+.web {
   color: #fbc1d4;
   border: 1px solid #fbc1d4;
 }
@@ -2278,6 +2324,25 @@ article {
 /* footer class end */
 /* main class end */
 @media (max-width: 1320px) {
+  @-webkit-keyframes ShowHeader {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes ShowHeader {
+    to {
+      opacity: 1;
+    }
+  }
+  #about--article {
+    opacity: 0;
+    -webkit-animation: ShowHeader .5s ease-in;
+            animation: ShowHeader .5s ease-in;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-delay: 4.5s;
+            animation-delay: 4.5s;
+  }
   .main_header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2289,11 +2354,18 @@ article {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    opacity: 0;
+    -webkit-animation: ShowHeader .5s ease-in;
+            animation: ShowHeader .5s ease-in;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
   }
   .main_header_btn {
     margin-top: 25px;
-    -webkit-animation-delay: 6s;
-            animation-delay: 6s;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
   }
   .header-sm-txt {
     font-family: 'RM';
@@ -2401,6 +2473,7 @@ article {
   .graph {
     width: 70%;
     padding-left: 0px;
+    margin-bottom: 25px;
   }
   .pie {
     margin: .5em;
@@ -2472,6 +2545,21 @@ article {
     height: 75px;
     margin-right: 0;
   }
+  .projects--header {
+    margin-bottom: 30px;
+  }
+  .projects--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .projects--item {
     width: 80%;
   }
@@ -2512,8 +2600,8 @@ article {
   .main_header_btn {
     margin: 0 auto;
     margin-top: 25px;
-    -webkit-animation-delay: 6s;
-            animation-delay: 6s;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
   }
   .mainAbout {
     margin-left: 20px;
@@ -2597,6 +2685,24 @@ article {
   }
   #colba--modal--close {
     font-size: 20px;
+  }
+  .projects--header {
+    margin-bottom: 30px;
+  }
+  .projects--zag {
+    font-size: 23px;
+  }
+  .projects--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
