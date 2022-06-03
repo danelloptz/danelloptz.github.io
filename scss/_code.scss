@@ -1896,7 +1896,10 @@ article {
     .colba--modal--text { font-size: 40px; }
     .star--wrapper { width: 100%; }
     #colba--modal--close { font-size: $sm-txt; }
-    .projects--header { margin-bottom: 30px; }
+    .projects--header { 
+        width: 92%;
+        margin-bottom: 30px; 
+    }
     .projects--zag { font-size: $md-txt; }
     .projects--wrapper {
         display: flex;
