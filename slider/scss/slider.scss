@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #2E2E2E;
+}
+/*img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
+.main {
+    width: 100%;
+    height: 100vh;
+    padding-top: 20px;
+}
+.field {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sandbox {
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("img/0.jpg");
+    background-size: cover;
+    transition: .5s;
+}
+.side {
+    width: 10%;
+    height: 100%;
+    background: rgba(179, 178, 178, 0.329);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circles-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 20px;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid gray;
+    transition: .5s;
+}
+.active {
+    background: gray !important;
+}
+#photo-wrapper {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.photo {
+    width: 100%;
+    height: 70px;
+    background: rgb(70, 70, 70);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: .5s;
+}
+.number {
+    font-size: 40px;
+    color: white;
+}
+.sm-img {
+    width: 70px;
+    height: 40px;
+    background-size: cover;
+}
+.name-img, .size-img {
+    font-size: 30px;
+    color: white;
+}
+.close { cursor: pointer; }
+
+@media (max-width: 900px) {
+    .field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sandbox { width: 80%; }
+    #photo-wrapper {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 95%;
+    }
+    .photo {
+        width: 250px;
+        margin-top: 5px;
+    }
+}
+@media (max-width: 600px) {
+    .sandbox { 
+        height: 40vh; 
+    }
+}
+@media (max-width: 500px) {
+    .sandbox { 
+        height: 30vh; 
+    }
+}
