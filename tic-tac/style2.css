@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+html, body {
+    height: 500px;
+    background-color: black; /* либо gray */
+}
+.zagolovok {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+.btnn:hover {
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+.container {
+    color: red;
+    font-family: 'Rubik Mono One', sans-serif;
+    margin: 3%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid red;    
+}
