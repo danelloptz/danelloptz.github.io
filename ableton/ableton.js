@@ -2,12 +2,14 @@ let count = 1;
 $('#svg-minus').hide();
 $('#svg-minus-sm').hide();
 $('#rutube-video').hide();
+$('#nav-sign-sm').hide().css('justify-content', 'flex-start');
 
 if ($(document).width() <= 457) {
     $('#nav-sign').hide();
+    $('#nav-sign-sm').show();
 }
 $(window).resize(function() {
-    if ($(document).width() <= 438) {
+    if ($(document).width() <= 457) {
         $('#nav-sign').hide();
     } else {
         $('#nav-sign').show();
