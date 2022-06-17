@@ -24,6 +24,7 @@ body {
 a {
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
 }
 
 .content {
@@ -454,10 +455,127 @@ a {
     }
 }
 
+
+// footer
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vw;
+    .footer-content {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-label {
+        font-size: 4rem;
+        color: black;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 3vw;
+    }
+    .footer-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 20px;
+        .footer-wrapper-item {
+            display: flex;
+            flex-direction: column;
+            .footer-wrapper-item-label {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: black;
+            }
+            .footer-wrapper-item-link {
+                font-size: 1.2rem;
+                letter-spacing: .5px;
+                margin-top: 5px;
+                color: black;
+                cursor: pointer;
+                .footer-item-wrapper-svg {
+                    vertical-align: baseline;
+                }
+            }
+            .logo {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 10px;
+                .logo-img {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 1vw;
+                    cursor: pointer;
+                }
+            }
+            .email-sign {
+                display: flex;
+                justify-content: space-between;
+                .email-input {
+                    width: 70%;
+                    height: 40px;
+                    border: none;
+                    background: rgb(240, 239, 239);
+                    font-family: 'Futura';
+                    font-size: 20px;
+                    color: black;
+                    padding-left: 10px;
+                    letter-spacing: .5px;
+                }
+                .email-btn {
+                    width: 30%;
+                    height: 40px;
+                    background: $blue;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 20px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}
+.footer-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    .footer-footer-left {
+        display: flex;
+        justify-content: flex-start;
+        .footer-footer-left-link {
+            font-size: 1rem;
+            margin-right: 1vw;
+            color: black;
+        }
+    }
+    .footer-footer-right {
+        display: flex;
+        justify-content: flex-end;
+        .footer-footer-right-text {
+            font-size: 1rem;
+            margin-right: 1vw;
+            color: black;
+        }
+    }
+}
+
+
+@media (max-width: 1030px) {
+    .nav-hide-row {
+        flex-direction: column;
+    }
+}
 @media (max-width: 900px) {
     .last {
         display: grid;
         grid-template-columns: 1fr;
+        margin-bottom: 4vw;
     }
     .last-image {
         width: 100%;
@@ -472,6 +590,28 @@ a {
     .last-info-link {
         font-size: 1.25rem !important;
         margin-top: 2vh !important;
+    }
+    .footer-label {
+        margin-top: 3vw;
+    }
+    .footer-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+    .footer-wrapper-item {
+        margin-top: 3vw;
+    }
+    .footer-footer, .footer-footer-left{
+        flex-direction: column !important;
+    }
+    .footer-footer-right {
+        justify-content: flex-start !important;
+        margin-top: 2vw;
+    }
+    .footer-footer-right-text {
+        margin-right: 2vw !important;
+    }
+    .email-sign {
+        margin-top: 2vw;
     }
 }
 @media (max-width: 843px) {
