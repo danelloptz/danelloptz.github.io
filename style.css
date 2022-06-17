@@ -412,6 +412,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 a:hover {
@@ -1538,7 +1539,7 @@ article {
   font-size: 22px;
   font-family: 'RM-Italic';
   margin-left: 10%;
-  margin-top: 30px;
+  margin-top: 5vw;
   margin-bottom: 40px;
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
@@ -2111,7 +2112,6 @@ article {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 400px;
 }
 
 .projects--header {
@@ -2313,6 +2313,92 @@ article {
 .colba:hover {
   background: url("img/colba.png") no-repeat;
   background-size: cover;
+}
+
+.contacts {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10vw;
+}
+
+.contacts .contacts-wrapper {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contacts .contacts-label {
+  font-size: 50px;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.contacts .contacts-text {
+  font-size: 25px;
+  color: #dae2fa85;
+  letter-spacing: .5px;
+  margin-top: 2vw;
+  text-align: center;
+}
+
+.contacts .contacts-text .contacts-text-link {
+  color: #bf99f5;
+  text-decoration: underline;
+}
+
+.contacts .contacts-btn {
+  margin-top: 3vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+}
+
+.contacts .contacts-btn-github {
+  width: 13vw;
+  height: 5vw;
+  border-radius: 5px;
+  background: none;
+  border: 2px solid #bf99f5;
+  color: #bf99f5;
+  font-size: 1.5rem;
+}
+
+.contacts .contacts-btn-email {
+  width: 13vw;
+  height: 5vw;
+  border-radius: 5px;
+  background: none;
+  border: 2px solid #FFF8C3;
+  color: #FFF8C3;
+  font-size: 1.5rem;
+}
+
+.contacts .contacts-btn-telegram {
+  width: 13vw;
+  height: 5vw;
+  border-radius: 5px;
+  background: none;
+  border: 2px solid #FF8A65;
+  color: #FF8A65;
+  font-size: 1.5rem;
 }
 
 /* projects class end */
@@ -2528,7 +2614,20 @@ article {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px) {
+  .contacts-wrapper {
+    width: 70% !important;
+  }
+  .contacts-btn-github, .contacts-btn-email, .contacts-btn-telegram {
+    width: 16vw !important;
+    height: 7vw !important;
+  }
+}
+
+/*@media (max-width: 780px) {
+    .contacts-wrapper { width: 95% !important; }
+}*/
+@media (max-width: 680px) {
   .pie {
     margin: .5em;
     width: 6em;
@@ -2576,6 +2675,9 @@ article {
   }
   .tag {
     font-size: 23px;
+  }
+  .contacts-btn-github, .contacts-btn-email, .contacts-btn-telegram {
+    font-size: 1.2rem !important;
   }
 }
 
@@ -2705,6 +2807,28 @@ article {
         -ms-flex-align: center;
             align-items: center;
   }
+  .contacts-wrapper {
+    width: 90% !important;
+  }
+  .contacts-btn {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  .contacts-btn-github, .contacts-btn-email, .contacts-btn-telegram {
+    margin-bottom: 2vw !important;
+    width: 50vw !important;
+    height: 10vw !important;
+    font-size: 1.85rem !important;
+    border-radius: 10px !important;
+  }
 }
 
 @media (max-width: 490px) {
@@ -2721,6 +2845,12 @@ article {
   }
   .tag {
     width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .contacts-btn-github, .contacts-btn-email, .contacts-btn-telegram {
+    font-size: 1.5rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

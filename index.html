@@ -59,8 +59,8 @@
                     <ul>
                         <a onclick="location.href='#aboutLink'"><li class="header_inner_menu_text about link" id="about">ОБО МНЕ</li></a>
                         <a onclick="location.href='#skillsLink'"><li class="header_inner_menu_text skills link" id="skills">НАВЫКИ</li></a>
-                        <li class="header_inner_menu_text project link" id="projects">ПРОЕКТЫ</li>
-                        <li class="header_inner_menu_text contact link" id="contact">КОНТАКТЫ</li>
+                        <a onclick="location.href='#projectsLink'"><li class="header_inner_menu_text project link" id="projects">ПРОЕКТЫ</li></a>
+                        <a onclick="location.href='#contactsLink'"><li class="header_inner_menu_text contact link" id="contact">О САЙТЕ</li></a>
                     </ul>
                 </div>
             </nav>
@@ -102,7 +102,7 @@
                     <div class="aboutLine"></div>
                     <div class="aboutText">
                         Меня зовут Василенко Данил. Я из Петрозаводска. Специализируюсь на
-                        вёрстке сайтов и создании UI эффектов и анимаций. Основной стэк: HTML5/CSS3/JS/JQuery.
+                        вёрстке сайтов и создании UI эффектов и анимаций. Основной стэк: HTML5/CSS3/SCSS/JS/JQuery.
                     </div>
                 </section>
                 <div class="mainTitle">&lt;/about&gt;</div>
@@ -176,18 +176,18 @@
                     <span class="projects--zag zag" id="widjets-item">Виджеты</span>
                 </nav>
                 <div class="projects--wrapper">
-                    <section class="projects--item weekends web-item all-item">
-                        <a href="avito/index.html">
+                    <section class="projects--item verstka-item all-item">
+                        <a href="ableton/index.html">
                             <header class="item--header">
                                 <title class="projects--year">2022</title>
-                                <title class="projects--title">Отдых в Карелии</title>
+                                <title class="projects--title">Ableton</title>
                                 <p class="item--text">
-                                    Рекламный сайт для аренды домов в Янишполе, Карелия. Базовый стэк HTML5/CSS3/JS. 
+                                    Вёрстка одной из страниц сайта ableton.com. SCSS/JQuery.
                                 </p>
                             </header>
                             <footer class="item--footer">
                                 <nav class="footer--tags">
-                                    <button class="tag web">#сайты</button>
+                                    <button class="tag verstka">#верстка</button>
                                 </nav>
                             </footer>
                         </a>
@@ -241,6 +241,22 @@
                         </a>
                     </section>
                 </div>
+            </article>
+            <div class="mainTitle">&lt;/projects&gt;</div>
+            <div class="mainTitle" id="contactsLink">&lt;contacts&gt;</div>
+            <article class="contacts">
+                <section class="contacts-wrapper">
+                    <span class="contacts-label">О сайте</span>
+                    <span class="contacts-text">
+                        Исходный код с комментариями доступен в свободном доступе на <a class="contacts-text-link" href="https://github.com/danelloptz">github</a>. 
+                        Для сотрудничества перейдите по ссылкам ниже.
+                    </span>
+                    <div class="contacts-btn">
+                        <a href="https://github.com/danelloptz"><button class="contacts-btn-github">GitHub</button></a>
+                        <a href="mailto:denvasik05@gmail.com"><button class="contacts-btn-email">Email</button></a>
+                        <a href="tg://resolve?domain=lui_baton"><button class="contacts-btn-telegram">Telegram</button></a>
+                    </div>
+                </section>
             </article>
         </main>
         <footer>
