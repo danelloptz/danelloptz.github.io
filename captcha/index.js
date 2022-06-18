@@ -21,7 +21,7 @@ function is_touch_device() {
             /* Изменяем положение фигуры, когда передвигаем его мышкой.
             В условии проверяем, что элемент "зацеплен" (зажат мышкой) и
             мышка находится внутри поля. */
-            if ((ballDown == true)) {
+            if ((ballDown == true) && (el.changedTouches[0].pageY >= Cord.y_top) && (el.changedTouches[0].pageY <= Cord.y_bottom)) {
                 $('#ball').css('top', `${el.changedTouches[0].pageY - ($(document).height() - $('#colba').height()) / 2 - 50}px`);
                 //console.log(el.pageY - ($('#ball').height() * 1.5));
             }
