@@ -1,0 +1,15 @@
+@keyframes Preview {
+    to {
+        transform: translateY(-20vw); 
+        height: 0vw;
+    }
+}
+@keyframes VideoShow {
+    to { transform: translateY(0vh); }
+}
+@keyframes ItemShow {
+    to {
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+}
