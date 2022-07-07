@@ -1,6 +1,13 @@
 @media (min-width: 1600px) {
     .header-cursor-circle-text { font-size: 1.5rem !important; }
     .header-cursor-text { font-size: 1.5rem !important; }
+    .works-item-btn { font-size: $md-text !important; }
+    .company-item-text h2 {
+        font-size: $fullhd-big;
+    }
+    .company-item-text p {
+        font-size: $md-text;
+    }
 }
 @media (max-width: 1280px) {
     .header-nav-sm-menu { display: block !important; }
@@ -13,6 +20,54 @@
     }
     .header-cursor-circle-text { width: 5vw !important; }
     .header-cursor-text { width: 12vw !important; }
+    .works { 
+        flex-direction: column !important;
+        align-items: center !important;
+        .works-item { 
+            width: $pc-width; 
+            align-items: center;
+            .works-item-text { text-align: center; }
+            .works-item-btn {
+                width: 24vw;
+                height: 4vw;
+                font-size: $md-text;
+                margin-top: 4vw;
+            }
+        }
+        .works-item:last-child { display: none; }
+    }
+    .company-item-text { width: 70% !important; }
+}
+@media (max-width: 800px) {
+    .header-cursor-circle-text { font-size: $sm-text !important; }
+    .works-item-btn { width: 30vw !important; height: 5vw !important; }
+    .company { 
+        flex-direction: column;
+        align-items: center; 
+        .company-item {
+            width: $pc-width;
+            align-items: center;
+            margin-top: 4vw;
+            .company-item-wrapper {
+                width: $pc-width;
+                height: 50vh;
+            }
+            .company-item-text {
+                margin-left: 0vw;
+                margin-top: 1vw;
+                align-items: center;
+                width: $pc-width;
+                h2 {
+                    font-size: $mobile-big-text;
+                    margin-top: 2vw;
+                }
+                p {
+                    font-size: $large-text;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 660px) {
     .header-cursor-circle {
@@ -21,6 +76,7 @@
     }
     .header-cursor-circle-text { width: 7vw !important; }
     .header-cursor-text { width: 15vw !important; }
+    .works-item-btn { width: 35vw !important; height: 7vw !important; }
 }
 @media (max-width: 530px) {
     .header-cursor { left: 40% !important; }
@@ -29,5 +85,26 @@
         height: 20vw !important;
     }
     .header-cursor-text { width: 30vw !important; }
-    .header-cursor-circle-text { width: 20vw !important; font-size: 1rem !important; }
+    .header-cursor-circle-text { width: 20vw !important; }
+    .works {
+        .works-item {
+            .works-item-text {
+                font-size: $mobile-large-text;
+            }
+            .works-item-btn {
+                font-size: $sm-text;
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .company-item-wrapper {
+        height: 35vh !important;
+    }
+}
+@media (max-width: 370px) {
+    .works-item-btn {
+        width: 43vw !important;
+        height: 10vw !important;
+    }
 }

@@ -13,3 +13,11 @@
         transform: translateY(0vh);
     }
 }
+@keyframes SliderShow {
+    from {
+        transform: translate3d(100vw, 0vw, 0vw);
+    }
+    to {
+        transform: translate3d(23vw, 0vw, 0vw);
+    }
+}
