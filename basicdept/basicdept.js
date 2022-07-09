@@ -11,9 +11,11 @@ function ShowObjects() {
 HideObjects();
 $('#reel').hide();
 $('.hide-menu').hide();
+let marginLeft;
 setTimeout(() => {
     $('#preview').hide();
     ShowObjects();
+    marginLeft = $('.featured').offset().left;
 }, 900); // прячем логотип preview
 
 //cursor
@@ -33,39 +35,38 @@ if ($(document).width() > 1250) {
     });
 }
 
-// video
+// reel video
 let reelDown, interval;
+let time = 0;
 $('#header-cursor, .video').click(function() {
+    if ($('.full-video').attr('data-src')) {
+        $('.full-video').attr('src', 'img/reel.mp4');
+        $('.full-video').removeAttr('data-src');
+    }
     time = 0;
     reelChek = true;
     HideObjects();
     $('#reel').show();
     if (reelChek) {
-        interval = setTimeout(function reel() {
-            time++;
-            if (time > 59) { time = 1; }
-            if (time < 10) { $('#reel-time').html(`00:0${time}/00:59`);  }
-            else { $('#reel-time').html(`00:${time}/00:59`);  }
-            $('#reel-time').css('left', `${(time * 100) / 59}%`);
-            setTimeout(reel, 1000);
-        }, 1000);
-    } else {
-        interval = null;
-        time = 0;
+            interval = setInterval(() => {
+                time++;
+                if (time > 59) { time = 1; }
+                if (time < 10) { $('#reel-time').html(`00:0${time}/00:59`);  }
+                else { $('#reel-time').html(`00:${time}/00:59`);  }
+                $('#reel-time').css('left', `${(time * 100) / 59}%`);
+            }, 1000);
     }
-});
-
-//reel
-let time = 0;
     $('#reel').click(function() {
+        clearInterval(interval);
+        $('#reel-time').css('left', `${0}%`);
+        $('#reel-time').html(`00:00/00:59`);
+        $('.full-video').attr('data-src', 'img/reel.mp4');
+        $('.full-video').removeAttr('src');
         $('#reel').mousemove(function() {
             $('#reel-time').mousedown(function () {
-                console.log('Down');
                 reelDown = true; // отмечаем, что нажат
-                console.log('Down');
             });
             $('#reel-time').mouseup(function () {
-                console.log('Up');
                 reelDown = false; // отмечаем, что отжат
             });
             /* Изменяем положение фигуры, когда передвигаем его мышкой.
@@ -79,6 +80,8 @@ let time = 0;
         reelChek = false;
         ShowObjects();
     });
+});
+
 
 
 //hide menu
@@ -106,6 +109,7 @@ $('.hide-menu-header-close').click(function() {
 let start, end, cord, check = 0, leftClick;
 $('#figure').hide();
 $('.hide-menu').mousemove(function(move) {
+    $('.slider-circle').css('visibility', 'visible');
     $('.slider').css('cursor', 'none');
     if ((move.pageY >= $('.hide-menu-header')[0].clientHeight + $('.hide-menu-header')[0].offsetTop) && (move.pageY <= $(window).height() - $('.hide-menu-footer').height())) {
         $('.slider-circle').css({
@@ -138,21 +142,24 @@ $('.hide-menu').mousemove(function(move) {
         /* Изменяем положение фигуры, когда передвигаем его мышкой.
         В условии проверяем, что элемент "зацеплен" (зажат мышкой) и
         мышка находится внутри поля. */
-        if ((reelDown == true)) {
-            if (($('.slider-content').last().offset().left >= $(window).width() - $('.slider-content').last().width()) && ($('.slider-content').first().offset().left <= 10)) {
+        if (end - start < ($(window).width() * 23) / (-100)) {
+            $('.slider').css({
+                'transform': `translate3d(-${($(window).width() * 23) / 100}px, 0px, 0px)`,
+                'transition': '1s'
+            });
+        } else if (end - start > ($(window).width() * 23) / 100) {
+            $('.slider').css({
+                'transform': `translate3d(${23}vw, 0px, 0px)`,
+                'transition': '1s'
+            });
+        } else {
+            if ((reelDown == true)) {
                 $('.slider').css({
                     'transform': `translate3d(${end - start}px, 0px, 0px)`,
                     'transition': '1s'
-                }); // ставим координаты мышки в позицию элемента
-            } else {
-                $('.slider').css({
-                    'transform': `translate3d(${0}px, 0px, 0px)`,
-                    'transition': '1s'
-                }); // ставим координаты мышки в позицию элемента
-            }
-                
-        } 
-        
+                });
+        }
+        }  
     } else {
         $('.slider-circle').css({
             'left': '83vw',
@@ -174,4 +181,107 @@ $('.hide-menu').mousemove(function(move) {
             }
         }
     });
+});
+$('.hide-menu-header-close').click(function() {
+    $('.slider-circle').css('visibility', 'hidden');
+});
+
+// featured slider pc
+end = 0;
+$(window).mousemove(function(move) {
+    if ((move.pageY >= $('.featured').offset().top) && (move.pageY <= $('.featured').offset().top + $('.featured').height())) {
+        $('.featured-circle').css('visibility', 'visible');
+        $('.featured-circle').css({
+            'left': `${move.pageX - $('.slider-circle').width() / 2}px`,
+            'top': `${move.pageY - $('.slider-circle').height() / 2}px`,
+            'transition': '.1s',
+            'cursor': 'none'
+        }); // ставим координаты мышки в позицию элемента
+        $('.featured').css('cursor', 'none'); // убираем обычный курсор
+        $('.featured, .featured-circle').mousedown(function (el) {
+            $('.featured-circle').css('transform', 'scale(0.7, 0.7)');
+            $('.featured-circle-text').hide();
+            $('.featured-circle-figure-left, .featured-circle-figure-right').css('visibility', 'visible');
+            if (check == 0) {
+                start = el.pageX;
+                check = 1;
+            }
+            reelDown = true; // отмечаем, что нажат
+        });
+        $('.featured, .featured-circle').mouseup(function (e) {
+            $('.featured-circle').css('transform', 'scale(1, 1)');
+            $('.featured-circle-text').show();
+            $('.featured-circle-figure-left, .featured-circle-figure-right').css('visibility', 'hidden');
+            end = e.pageX;
+            reelDown = false; // отмечаем, что отжат
+            check = 0;
+        });
+        /* Изменяем положение фигуры, когда передвигаем его мышкой.
+        В условии проверяем, что элемент "зацеплен" (зажат мышкой) и
+        мышка находится внутри поля. */
+        
+        if (end - start < ($(window).width() * 18) / (-100)) {
+            $('.featured').css({
+                'transform': `translate3d(-${($(window).width() * 18) / 100}px, 0px, 0px)`,
+                'transition': '1s'
+            });
+        } else if (end - start > ($(window).width() * 18) / 100) {
+            $('.featured').css({
+                'transform': `translate3d(${18}vw, 0px, 0px)`,
+                'transition': '1s'
+            });
+        } else {
+            if ((reelDown == true)) {
+                $('.featured').css({
+                    'transform': `translate3d(${end - start}px, 0px, 0px)`,
+                    'transition': '1s'
+                }); 
+        }
+        } 
+         
+        
+    } else {
+        $('.featured-circle').css({
+            'left': '80vw',
+            'top': `${$('.featured').offset().top + $('.featured').height() / 2}px`
+        });
+    }
+});
+
+// featured slider mobile
+
+$(window).bind('touchmove', function(move) {
+    if ((move.pageY >= $('.featured').offset().top) && (move.pageY <= $('.featured').offset().top + $('.featured').height())) {
+        $('.featured').bind('touchstart', function (el) {
+            if (check == 0) {
+                start = el.pageX;
+                check = 1;
+            }
+            reelDown = true; // отмечаем, что нажат
+        });
+        $('.featured').bind('touchend', function (e) {
+            end = e.pageX;
+            reelDown = false; // отмечаем, что отжат
+            check = 0;
+        });
+        
+        if (end - start < ($(window).width() * 42) / (-100)) {
+            $('.featured').css({
+                'transform': `translate3d(-${($(window).width() * 42) / 100}px, 0px, 0px)`,
+                'transition': '1s'
+            });
+        } else if (end - start > ($(window).width() * 42) / 100) {
+            $('.featured').css({
+                'transform': `translate3d(${42}vw, 0px, 0px)`,
+                'transition': '1s'
+            });
+        } else {
+            if ((reelDown == true)) {
+                $('.featured').css({
+                    'transform': `translate3d(${end - start}px, 0px, 0px)`,
+                    'transition': '1s'
+                }); 
+        }
+        }  
+    }
 });

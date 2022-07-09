@@ -37,6 +37,8 @@
         .works-item:last-child { display: none; }
     }
     .company-item-text { width: 70% !important; }
+    .featured { transform: translate3d(42vw, 0px, 0px); }
+    .featured-slider-item { width: 30vw !important; }
 }
 @media (max-width: 800px) {
     .header-cursor-circle-text { font-size: $sm-text !important; }

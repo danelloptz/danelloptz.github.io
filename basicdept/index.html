@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 </head>
 <body id="body">
@@ -14,7 +13,7 @@
         </div>
     </div>
     <div class="reel" id="reel">
-        <video autoplay playsinline="true" muted="true" loop preload="metadata" src="img/reel.mp4" class="video"></video>
+        <video autoplay playsinline="true" muted="true" loop preload="metadata" data-src="img/reel.mp4" class="full-video"></video>
         <span class="reel-time" id="reel-time"></span>
     </div>
     <div class="hide-menu">
@@ -190,42 +189,102 @@
                 </section>
             </article>
             <article class="company">
-                <section class="company-item">
-                    <div class="company-item-wrapper">
-                        <img src="img/patagonia.jpg" class="company-item-wrapper-img">
-                    </div>
-                    <div class="company-item-text">
-                        <h2>PATAGONIA</h2>
-                        <p>An eCommerce experience driven by Patagonia’s brand mission</p>
-                    </div>
-                </section>
-                <section class="company-item">
-                    <div class="company-item-wrapper">
-                        <img src="img/wilson.jpg" class="company-item-wrapper-img">
-                    </div>
-                    <div class="company-item-text">
-                        <h2>WILSON</h2>
-                        <p>A century-old sports brand finding its place in culture</p>
-                    </div>
-                </section>
-                <section class="company-item">
-                    <div class="company-item-wrapper">
-                        <video src="img/google.mp4" playsinline="true" muted="true" autoplay loop preload="metadata">
-                    </div>
-                    <div class="company-item-text">
-                        <h2>GOOGLE STORE</h2>
-                        <p>An eCommerce experience helping Google bring its hardware to people across the globe</p>
-                    </div>
-                </section>
+                <a href="#">
+                    <section class="company-item">
+                        <div class="company-item-wrapper">
+                            <img src="img/patagonia.jpg" class="company-item-wrapper-img">
+                        </div>
+                        <div class="company-item-text">
+                            <h2>PATAGONIA</h2>
+                            <p>An eCommerce experience driven by Patagonia’s brand mission</p>
+                        </div>
+                    </section>
+                </a>
+                <a href="#">
+                    <section class="company-item">
+                        <div class="company-item-wrapper">
+                            <img src="img/wilson.jpg" class="company-item-wrapper-img">
+                        </div>
+                        <div class="company-item-text">
+                            <h2>WILSON</h2>
+                            <p>A century-old sports brand finding its place in culture</p>
+                        </div>
+                    </section>
+                </a>
+                <a href="#">
+                    <section class="company-item">
+                        <div class="company-item-wrapper">
+                            <video src="img/google.mp4" playsinline="true" muted="true" autoplay loop preload="metadata">
+                        </div>
+                        <div class="company-item-text">
+                            <h2>GOOGLE STORE</h2>
+                            <p>An eCommerce experience helping Google bring its hardware to people across the globe</p>
+                        </div>
+                    </section>
+                </a>
             </article>
+            <div class="line"></div>
+            <div class="line-numbers">
+                <h3>01</h3>
+                <h3>/05</h3>
+                <h3>·</h3>
+            </div>
+                <div class="featured-label">
+                    <h2 class="featured-label-text">FEATURED ENGAGEMENTS</h2>
+                </div>
+                <div class="featured-circle">
+                    <div class="featured-circle-figure-left"></div>
+                    <span class="featured-circle-text">DRAG</span>
+                    <div class="featured-circle-figure-right"></div>
+                </div>
+                <article class="featured">
+                    <div class="featured-slider">
+                        <section class="featured-slider-item">
+                            <img src="img/google-dark.svg">
+                            <h3>GOOGLE</h3>
+                            <p>
+                                Our embedded partnership with Google is as deep as it gets. We’re the lead creative agency for Google Store and provide strategy, design, and prototyping to other divisions. Learn more about our partnership <a href="#">here</a>
+                            </p>
+                        </section>
+                        <section class="featured-slider-item">
+                            <img src="img/KFC-Logo.svg">
+                            <h3>KFC</h3>
+                            <p>
+                                An award-winning global, digital transformation engagement spanning eCommerce, mobile app, and new drive thru experiences. Bringing KFC’s brand story to life while making it easier for customers to buy chicken. Learn more about our partnership <a href="#">here</a>
+                            </p>
+                        </section>
+                        <section class="featured-slider-item">
+                            <img src="img/Wilson-Logo.svg">
+                            <h3>WILSON</h3>
+                            <p>
+                                A reimagining of Wilson’s brand visual identity, and brand campaign, to support a new product drop and the launch of the first brick and mortar retail location in the brand’s 108-year history. Read our full case study  <a href="#">here</a>
+                            </p>
+                        </section>
+                        <section class="featured-slider-item">
+                            <img src="img/ATT-Logo.svg">
+                            <h3>AT&T</h3>
+                            <p>
+                                Redesigning the digital flagship for the largest telecommunications company in the world. Creating frictionless paths to purchase for a wide range of consumers across a vast portfolio of products and services.
+                            </p>
+                        </section>
+                        <section class="featured-slider-item">
+                            <img src="img/patagonia-dark.svg">
+                            <h3>PATAGONIA</h3>
+                            <p>
+                                Ongoing partnership providing strategy, branding, experience design, and development focused on bringing their mission and offerings to consumers through brand-led programs and platforms. Read our full case study   <a href="#">here</a>
+                            </p>
+                        </section>
+                    </div>
+                </article>
+                <div class="featured-wrapper">
+                    <div class="featured-wrapper-line"></div>
+                </div>
         </main>
         <footer id="footer">
             
         </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="basicdept.js"></script>
 </body>
 </html>
