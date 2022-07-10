@@ -10,6 +10,7 @@ a {
 }
 body {
     font-family: 'Grotesk';
+    overflow: hidden;
 }
 figure {
     width: 100%;
@@ -583,6 +584,7 @@ main {
     transition: 1s;
     position: relative;
     overflow-x: scroll;
+    overflow: hidden;
     .featured-slider-item {
         width: 20vw;
         display: flex;
@@ -615,6 +617,7 @@ main {
     background: $mute;
     position: relative;
     margin-top: 5vw;
+    overflow: hidden    ;
     .featured-wrapper-line {
        width: 30%;
        height: 2px;
