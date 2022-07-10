@@ -87,6 +87,10 @@
     .header-cursor-text { width: 15vw !important; }
     .works-item-btn { width: 35vw !important; height: 7vw !important; }
 }
+@media (max-width: 600px) {
+    .featured { transform: translate3d(67vw, 0px, 0px); }
+    .featured-slider-item { width: 40vw !important; }
+}
 @media (max-width: 530px) {
     .header-cursor { left: 40% !important; }
     .header-cursor-circle {
@@ -110,6 +114,8 @@
     .company-item-wrapper {
         height: 35vh !important;
     }
+    .featured { transform: translate3d(92vw, 0px, 0px); }
+    .featured-slider-item { width: 50vw !important; }
 }
 @media (max-width: 370px) {
     .works-item-btn {
