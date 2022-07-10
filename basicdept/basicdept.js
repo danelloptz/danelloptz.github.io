@@ -249,7 +249,7 @@ $(window).mousemove(function(move) {
 });
 
 // featured slider mobile
-
+let featuredWidth, featuredTransform;
 $(window).bind('touchmove', function(move) {
     if ((move.pageY >= $('.featured').offset().top) && (move.pageY <= $('.featured').offset().top + $('.featured').height())) {
         $('.featured').bind('touchstart', function (el) {
@@ -264,15 +264,24 @@ $(window).bind('touchmove', function(move) {
             reelDown = false; // отмечаем, что отжат
             check = 0;
         });
-        
-        if (end - start < ($(window).width() * 42) / (-100)) {
+        if (($(window).width() < 600) && ($(window).width() > 450)) {
+            featuredWidth = 40;
+            featuredTransform = 67;
+        } else if ($(window).width() <= 450) {
+            featuredWidth = 50;
+            featuredTransform = 92;
+        } else {
+            featuredWidth = 30;
+            featuredTransform = 42;
+        }
+        if (end - start < ($(window).width() * featuredTransform) / (-100)) {
             $('.featured').css({
-                'transform': `translate3d(-${($(window).width() * 42) / 100}px, 0px, 0px)`,
+                'transform': `translate3d(-${($(window).width() * featuredTransform) / 100}px, 0px, 0px)`,
                 'transition': '1s'
             });
-        } else if (end - start > ($(window).width() * 42) / 100) {
+        } else if (end - start > ($(window).width() * featuredTransform) / 100) {
             $('.featured').css({
-                'transform': `translate3d(${42}vw, 0px, 0px)`,
+                'transform': `translate3d(${featuredTransform}vw, 0px, 0px)`,
                 'transition': '1s'
             });
         } else {
