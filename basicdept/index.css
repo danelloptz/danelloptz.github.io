@@ -90,6 +90,7 @@ a {
 
 body {
   font-family: 'Grotesk';
+  overflow: hidden;
 }
 
 figure {
@@ -967,6 +968,7 @@ main {
   transition: 1s;
   position: relative;
   overflow-x: scroll;
+  position: relative;
 }
 
 .featured-slider .featured-slider-item {
@@ -1011,6 +1013,7 @@ main {
   background: gray;
   position: relative;
   margin-top: 5vw;
+  overflow: hidden;
 }
 
 .featured-wrapper .featured-wrapper-line {
@@ -1096,6 +1099,9 @@ main {
   .featured-slider-item {
     width: 30vw !important;
   }
+  .featured-circle {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
@@ -1107,6 +1113,19 @@ main {
     height: 5vw !important;
   }
   .company {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .company a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1161,6 +1180,16 @@ main {
   }
 }
 
+@media (max-width: 600px) {
+  .featured {
+    -webkit-transform: translate3d(67vw, 0px, 0px);
+            transform: translate3d(67vw, 0px, 0px);
+  }
+  .featured-slider-item {
+    width: 40vw !important;
+  }
+}
+
 @media (max-width: 530px) {
   .header-cursor {
     left: 40% !important;
@@ -1186,6 +1215,13 @@ main {
 @media (max-width: 450px) {
   .company-item-wrapper {
     height: 35vh !important;
+  }
+  .featured {
+    -webkit-transform: translate3d(92vw, 0px, 0px);
+            transform: translate3d(92vw, 0px, 0px);
+  }
+  .featured-slider-item {
+    width: 50vw !important;
   }
 }
 
