@@ -38,7 +38,7 @@ if ($(document).width() > 1250) {
 // reel video
 let reelDown, interval;
 let time = 0;
-$('#header-cursor, .video').click(function() {
+$('#header-cursor, .video, .header-sm-preview').click(function() {
     if ($('.full-video').attr('data-src')) {
         $('.full-video').attr('src', 'img/reel.mp4');
         $('.full-video').removeAttr('data-src');
