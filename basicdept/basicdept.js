@@ -236,6 +236,12 @@ $(window).mousemove(function(move) {
                     'transform': `translate3d(${end - start}px, 0px, 0px)`,
                     'transition': '1s'
                 }); 
+                    sum += end - start;
+                    $('.featured-wrapper-line').css({
+                        'transform': `translate3d(${sum + $('.featured-wrapper-line').width()}px, 0px, 0px)`,
+                        'transition': '1s'
+                    }); 
+                reelDown = false;
         }
         } 
          
@@ -250,19 +256,30 @@ $(window).mousemove(function(move) {
 
 // featured slider mobile
 let featuredWidth, featuredTransform;
+let sum1 = 0, sum2 = 0;
 $(window).bind('touchmove', function(move) {
-    if ((move.pageY >= $('.featured').offset().top) && (move.pageY <= $('.featured').offset().top + $('.featured').height())) {
+    if ((move.changedTouches[0].pageY >= $('.featured').offset().top) && (move.changedTouches[0].pageY <= $('.featured').offset().top + $('.featured').height())) {
         $('.featured').bind('touchstart', function (el) {
-            if (check == 0) {
-                start = el.pageX;
-                check = 1;
-            }
+            start = el.changedTouches[0].pageX;
             reelDown = true; // отмечаем, что нажат
         });
         $('.featured').bind('touchend', function (e) {
-            end = e.pageX;
-            reelDown = false; // отмечаем, что отжат
-            check = 0;
+            end = e.changedTouches[0].pageX;
+            if (reelDown) {
+                    sum1 += end - start;
+                    console.log(sum1);
+                    console.log(sum2);
+                    sum2 += start - end;
+                    $('.featured').css({
+                        'transform': `translate3d(${sum1}px, 0px, 0px)`,
+                        'transition': '1s'
+                    });
+                    $('.featured-wrapper-line').css({
+                        'left': `${sum2 - $('.featured-wrapper-line').width()}px`,
+                        'transition': '1s'
+                    });  
+                reelDown = false;
+            }
         });
         if (($(window).width() < 600) && ($(window).width() > 450)) {
             featuredWidth = 40;
@@ -284,13 +301,6 @@ $(window).bind('touchmove', function(move) {
                 'transform': `translate3d(${featuredTransform}vw, 0px, 0px)`,
                 'transition': '1s'
             });
-        } else {
-            if ((reelDown == true)) {
-                $('.featured').css({
-                    'transform': `translate3d(${end - start}px, 0px, 0px)`,
-                    'transition': '1s'
-                }); 
         }
-        }  
     }
 });

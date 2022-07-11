@@ -278,6 +278,26 @@ article a {
   font-weight: 800;
 }
 
+.header .header-sm-preview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  -webkit-transform: translateY(70vh);
+          transform: translateY(70vh);
+  -webkit-animation: VideoShow .4s ease-in;
+          animation: VideoShow .4s ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
 .header .header-video {
   position: absolute;
   width: 100%;
@@ -1013,15 +1033,18 @@ main {
   background: gray;
   position: relative;
   margin-top: 5vw;
-  overflow: hidden;
+  margin-bottom: 5vw;
 }
 
 .featured-wrapper .featured-wrapper-line {
+  position: absolute;
   width: 30%;
   height: 2px;
   background: #252422;
   left: 0;
   top: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 @media (min-width: 1600px) {
@@ -1105,6 +1128,10 @@ main {
 }
 
 @media (max-width: 800px) {
+  .hide-menu-header-close {
+    width: 5vw !important;
+    height: 5vw !important;
+  }
   .header-cursor-circle-text {
     font-size: 0.8rem !important;
   }
@@ -1173,10 +1200,17 @@ main {
   }
   .header-cursor-text {
     width: 15vw !important;
+    color: white !important;
   }
   .works-item-btn {
     width: 35vw !important;
     height: 7vw !important;
+  }
+  .header-sm-preview {
+    visibility: visible !important;
+  }
+  .header-video {
+    visibility: hidden !important;
   }
 }
 
@@ -1213,6 +1247,10 @@ main {
 }
 
 @media (max-width: 450px) {
+  .hide-menu-header-close {
+    width: 7vw !important;
+    height: 7vw !important;
+  }
   .company-item-wrapper {
     height: 35vh !important;
   }

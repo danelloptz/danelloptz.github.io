@@ -134,6 +134,20 @@ article a {
             font-weight: 800;
         }
     }
+    .header-sm-preview {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        object-fit: cover;
+        object-position: center top;
+        transform: translateY(70vh);
+        animation: VideoShow .4s ease-in;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+    }
     .header-video {
         position: absolute;
         width: 100%;
@@ -617,12 +631,14 @@ main {
     background: $mute;
     position: relative;
     margin-top: 5vw;
-    overflow: hidden    ;
+    margin-bottom: 5vw;
     .featured-wrapper-line {
-       width: 30%;
+       position: absolute;
+        width: 30%;
        height: 2px;
        background: $hide-menu-bg; 
        left: 0;
        top: 0;
+       transition: .5s;
     }
 }

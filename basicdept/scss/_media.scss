@@ -42,6 +42,10 @@
     .featured-circle { display: none; }
 }
 @media (max-width: 800px) {
+    .hide-menu-header-close {
+        width: 5vw !important;
+        height: 5vw !important;
+    }
     .header-cursor-circle-text { font-size: $sm-text !important; }
     .works-item-btn { width: 30vw !important; height: 5vw !important; }
     .company { 
@@ -84,8 +88,10 @@
         height: 15vw !important;
     }
     .header-cursor-circle-text { width: 7vw !important; }
-    .header-cursor-text { width: 15vw !important; }
+    .header-cursor-text { width: 15vw !important; color: white !important; }
     .works-item-btn { width: 35vw !important; height: 7vw !important; }
+    .header-sm-preview { visibility: visible !important; }
+    .header-video { visibility: hidden !important; }
 }
 @media (max-width: 600px) {
     .featured { transform: translate3d(67vw, 0px, 0px); }
@@ -111,6 +117,10 @@
     }
 }
 @media (max-width: 450px) {
+    .hide-menu-header-close {
+        width: 7vw !important;
+        height: 7vw !important;
+    }
     .company-item-wrapper {
         height: 35vh !important;
     }
