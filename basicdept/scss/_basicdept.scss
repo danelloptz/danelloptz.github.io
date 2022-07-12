@@ -7,6 +7,7 @@
 a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 body {
     font-family: 'Grotesk';
@@ -310,6 +311,10 @@ button {
         animation: SliderShow .5s ease-in;
         transform: translate3d(23vw, 0vw, 0vw);
         transition: 1s;
+        width: auto;
+        left: 0;
+        position: relative;
+        overflow: hidden;
         .slider-content {
             width: 28vw;
             height: 30vw;
@@ -764,6 +769,99 @@ main {
             position: absolute;
             right: 0;
             top: 2vw;
+        }
+    }
+}
+
+
+// footer class
+
+.footer {
+    width: 100%;
+    background: $hide-menu-bg;
+    color: white;
+    padding-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vw;
+    .footer-wrapper {
+        width: $pc-width;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .footer-wrapper-figure {
+            width: 5rem;
+            height: 1.6rem;
+            position: relative;
+        }
+        .footer-wrapper-text {
+            color: white;
+        }
+        h2 a {
+            text-decoration: underline;
+        }
+    }
+    .footer-links {
+        width: $pc-width;
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+        grid-column-gap: 2vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
+        .footer-links-wrapper {
+            display: flex;
+            flex-direction: column;
+            h2 {
+                color: white;
+            }
+            .input-wrapper {
+                width: 90%;
+                height: 6vw;
+                position: relative;
+                .footer-links-wrapper-input {
+                    width: 100%;
+                    height: 100;
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    color: white;
+                    font-size: $md-text;
+                    padding-bottom: 1vh;
+                    margin-top: 1vw;
+                    outline: none;
+                }
+            }
+            ul {
+                margin-top: 2vw;
+                li {
+                    font-size: $md-text;
+                    list-style-type: none;
+                }
+                li:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .deep-footer {
+        width: 100%;
+        height: 4vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        background: $deep-footer-bg;
+        .deep-footer-text {
+            display: flex;
+            justify-content: center;
+            font-size: $sm-text;
+            color: $mute-white;
+            span {
+                a:hover {
+                    text-decoration: underline;
+                    color: $mute-white;
+                }
+            }
         }
     }
 }

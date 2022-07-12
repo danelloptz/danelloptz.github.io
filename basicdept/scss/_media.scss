@@ -73,6 +73,32 @@
         height: 3vw;
         font-size: 1rem;
     }
+    .footer {
+        .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            h2 {
+                margin-top: 2vh;
+            }
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            .footer-links-wrapper .input-wrapper {
+                margin-top: 1vh;
+            }
+            .footer-links-wrapper h2 {
+                margin-top: 2vh;
+            }
+        }
+        .deep-footer {
+            height: 8vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
     
 }
 @media (max-width: 800px) {
