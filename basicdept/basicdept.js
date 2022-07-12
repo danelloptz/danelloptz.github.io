@@ -41,12 +41,12 @@ let time = 0;
 $('#header-cursor, .video, .header-sm-preview').click(function() {
     if ($('.full-video').attr('data-src')) {
         $('.full-video').attr('src', 'img/reel.mp4');
-        $('.full-video').removeAttr('data-src');
     }
     time = 0;
     reelChek = true;
     HideObjects();
     $('#reel').show();
+    $('.full-video').show();
     if (reelChek) {
             interval = setInterval(() => {
                 time++;
@@ -77,6 +77,7 @@ $('#header-cursor, .video, .header-sm-preview').click(function() {
             }
         });
         $('#reel').hide();
+        $('.full-video').hide();
         reelChek = false;
         ShowObjects();
     });
