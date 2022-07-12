@@ -340,7 +340,7 @@ if($(window).width() <= 600) {
 }
 $(window).scroll(function() {
     $('.lazy-load').each(function() {
-        if ($(window).scrollTop() + $(window).height() > $(this).offset().top)  {
+        if ($(window).scrollTop() + $(window).height() * 1.5 > $(this).offset().top)  {
             if ($(this).attr('data-src')) {
                 $(this).attr('src', `${$(this).attr('data-src')}`);
                 $(this).removeAttr('data-src');
