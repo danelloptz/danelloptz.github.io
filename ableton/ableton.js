@@ -56,12 +56,13 @@ $('#preview').on('click', function() {
     $('#preview').hide();
 });
 
-let ballEl, ball, ballDown;
-let check = true;
-/*let Cord = {
-    y_top : ($(document).height() - $('#wrapper').height()) / 2 + $('#text')[0].offsetTop,
-    y_bottom : ($(document).height() - $('#wrapper').height()) / 2 + $('#text')[0].offsetTop + $('#colba')[0].offsetTop
-}*/
-
-
-// mobile
+$(window).scroll(function() {
+    $('.lazy-load').each(function() {
+        if ($(window).scrollTop() + $(window).height() * 1.5 > $(this).offset().top)  {
+            if ($(this).attr('data-src')) {
+                $(this).attr('src', `${$(this).attr('data-src')}`);
+                $(this).removeAttr('data-src');
+            }
+        }
+    });
+});
