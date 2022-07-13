@@ -332,6 +332,7 @@ $(window).bind('touchmove', function(move) {
 
 // lazy-load and change body bg
 
+// preview load
 if($(window).width() <= 600) {
     if ($('.header-sm-preview').attr('data-src')) {
         $('.header-sm-preview').attr('src', `${$('.header-sm-preview').attr('data-src')}`);
@@ -339,6 +340,20 @@ if($(window).width() <= 600) {
     }
     
 }
+
+// Uploading videos before photos
+$(document).ready(function() {
+    $('video').each(function(){
+        if ($(this).attr('class').indexOf('lazy-load') != -1) {
+            if ($(this).attr('data-src')) {
+                $(this).attr('src', `${$(this).attr('data-src')}`);
+                $(this).removeAttr('data-src');
+            }
+        }
+    });
+});
+
+// lazy-load for other elements
 $(window).scroll(function() {
     $('.lazy-load').each(function() {
         if ($(window).scrollTop() + $(window).height() * 1.5 > $(this).offset().top)  {
