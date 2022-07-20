@@ -89,6 +89,42 @@ $('.services__dropdown').click(function() {
     }
 });
 
+// projects dropdown filters
+let count = 0;
+let Thiss = 0;
+$('.filter__first').click(function() {
+    if ($(this).children().attr('data-check') == 0) {
+        $('.filter__first').each(function() {
+            $(this).parent().find('.filter__hide').removeClass('drop-show').addClass('drop-close').css('display', 'none');
+            $(this).parent().find('img').css('transform', 'rotate(0deg)');
+            $(this).children().attr('data-check', '0');
+            Thiss = null;
+        });
+        $(this).children().attr('data-check', '1');
+        Thiss = $(this);
+        $(this).parent().find('.filter__hide').addClass('drop-show').removeClass('drop-close').css('display', 'block');
+        $(this).parent().find('img').css('transform', 'rotate(180deg)');
+        console.log(Thiss.children().attr('placeholder'));
+        count = 0;
+        $('.filter__hide__item').click(function() {
+            if (count == 0) {
+                let placeholder = $(this).attr('placeholder');
+                console.log(placeholder, Thiss.children().attr('placeholder'));
+                $(this).attr('placeholder', `${Thiss.children().attr('placeholder')}`);
+                Thiss.children().attr('placeholder', `${placeholder}`);
+                Thiss.parent().find('.filter__hide').removeClass('drop-show').addClass('drop-close').css('display', 'none');
+                Thiss.parent().find('img').css('transform', 'rotate(0deg)');
+                count = 1;
+            }
+        });
+    } else {
+        $(this).parent().find('.filter__hide').removeClass('drop-show').addClass('drop-close').css('display', 'none');
+        $(this).parent().find('img').css('transform', 'rotate(0deg)');
+        $(this).children().attr('data-check', '0');
+    }
+    
+});
+
 
 // lazy-load 
 $(window).scroll(function() {
