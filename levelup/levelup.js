@@ -137,3 +137,69 @@ $(window).scroll(function() {
         }
     });
 });
+
+// slider projects
+
+$('.slider__item').each(function() {
+    if ($(this).attr('data-check') > 0) { $(this).css('display', 'none'); }
+});
+
+$('.arrow__right').click(function() {
+    if (Number($('.control__right').html()) == 3) {
+        $('.control__right').html('01');
+        $('.control__left').html('0' + (Number($('.control__left').html()) + 1));
+        $('.slider__item').each(function() {
+            if ($(this).attr('data-check') == '2') {
+                if ($(window).width() > 1200) { $(this).css('display', 'grid'); }
+                    else { $(this).css('display', 'flex'); }
+            } else {
+                $(this).css('display', 'none');
+            }
+        });
+        $('.control__label').each(function() {
+            if ($(this).attr('data-check') == '2') {
+                $(this).css('display', 'grid');
+            } else {
+                $(this).css('display', 'none');
+            }
+        });
+    } else {
+        if (Number($('.control__left').html()) == 3) {
+            $('.control__left').html('01');
+            $('.slider__item').each(function() {
+                if ($(this).attr('data-check') == '0') {
+                    if ($(window).width() > 1200) { $(this).css('display', 'grid'); }
+                    else { $(this).css('display', 'flex'); }
+                } else {
+                    $(this).css('display', 'none');
+                }
+            });
+            $('.control__label').each(function() {
+                if ($(this).attr('data-check') == '1') {
+                    $(this).css('display', 'grid');
+                } else {
+                    $(this).css('display', 'none');
+                }
+            });
+            $('.control__right').html('0' + (Number($('.control__right').html()) + 1));
+        } else {
+            $('.control__right').html('0' + (Number($('.control__right').html()) + 1));
+            $('.control__left').html('0' + (Number($('.control__left').html()) + 1)); 
+            $('.slider__item').each(function() {
+                if ($(this).attr('data-check') == '1') {
+                    if ($(window).width() > 1200) { $(this).css('display', 'grid'); }
+                    else { $(this).css('display', 'flex'); }
+                } else {
+                    $(this).css('display', 'none');
+                }
+            });
+            $('.control__label').each(function() {
+                if ($(this).attr('data-check') == '0') {
+                    $(this).css('display', 'grid');
+                } else {
+                    $(this).css('display', 'none');
+                }
+            });
+        }
+    }
+});

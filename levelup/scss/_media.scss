@@ -144,6 +144,16 @@
             }
         }
     }
+    .partners {
+        display: flex;
+        flex-direction: column;
+        .partners__main {
+            margin-top: 2vw;
+            .partners__main__img {
+                margin-top: 2vw;
+            }
+        }
+    }
 }
 @media (max-width: 1200px) {
     .header {
@@ -416,9 +426,7 @@
         .projects__slider {
             .slider__controls {
                 justify-content: space-around;
-                h3 {
-                    display: none;
-                }
+                
                 .control {
                     width: auto;
                     height: auto;
@@ -428,6 +436,7 @@
                     }
                     .control__item {
                         height: auto;
+                        display: none;
                         .control__left, .control__right {
                             font-weight: 200;
                             font-size: 30px;
@@ -449,15 +458,37 @@
         }
     }
 }
+@media (max-width: 560px) {
+    .projects {
+        .projects__slider {
+            .slider__header {
+                .slider__header__filters {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .filter {
+                        width: 90vw;
+                        margin-top: 3vw;
+                    }
+                }
+                .slider__header__btn {
+                    width: 60vw;
+                    margin-top: 3vw;
+                }
+            }
+        }
+    }
+}
 @media (max-width: 500px) {
     .paragraph {
         .land {
             .land__header h2 {
-                font-size: 22px;
+                width: 70%;
+                font-size: 17px;
                 line-height: 30px;
             }
             .land__header span {
-                font-size: 24px;
+                font-size: 20px;
             }
             .land__main {
                 img {
@@ -469,12 +500,12 @@
                         font-size: 14px;
                     }
                     p {
-                        font-size: 22px;
+                        font-size: 17px;
                         line-height: 30px;
                         margin-top: 5vw;
                     }
                     button {
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                 }
             }
@@ -486,7 +517,7 @@
                         height: 50%;
                     }
                     .land__footer__item__text span {
-                        font-size: 15px;
+                        font-size: 13px;
                     }
                 }
             }
@@ -514,6 +545,30 @@
         .form__save {
             width: 70vw;
             height: 60px;
+        }
+    }
+    .about {
+        .about__text h3 {
+            font-size: 18px;
+        }
+        .about__text p {
+            font-size: 16px;
+        }
+        .about__label span {
+            font-size: 16px;
+        }
+        .about__label h2 {
+            font-size: 16px;
+        }
+    }
+    .partners {
+        .partners__main {
+            .partners__main__img {
+                margin-top: 4vw;
+                img {
+                    height: 50px;
+                }
+            }
         }
     }
 }

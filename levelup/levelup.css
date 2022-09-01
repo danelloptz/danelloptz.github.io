@@ -860,6 +860,10 @@ a {
   line-height: 22px;
 }
 
+.services .services__main .services__main__container .services__dropdown .services__dropdown__hide ul li {
+  margin-top: 10px;
+}
+
 .projects {
   width: 100%;
   display: -webkit-box;
@@ -1119,6 +1123,80 @@ a {
   margin-right: -2vw;
 }
 
+.control__label {
+  display: none;
+}
+
+.control__label:first-of-type {
+  display: -ms-grid;
+  display: grid;
+}
+
+.partners {
+  width: 100%;
+  margin-top: 10vw;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "title content";
+  padding-left: 2vw;
+  padding-right: 2vw;
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
+}
+
+.partners .partners__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+.partners .partners__label .partners__number {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 8vw;
+}
+
+.partners .partners__label h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.partners .partners__main .partners__main__text {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.partners .partners__main .partners__main__text:last-of-type {
+  margin-top: 10px;
+}
+
+.partners .partners__main .partners__main__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 2vw;
+  margin-top: 2vw;
+}
+
+.partners .partners__main .partners__main__img img {
+  width: auto;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1vw;
+}
+
 @media (max-width: 1880px) {
   .paragraph .land .land__main img {
     width: auto;
@@ -1207,6 +1285,21 @@ a {
   }
   .projects .projects__slider .slider__header .slider__header__filters .filter input {
     font-size: 15px;
+  }
+  .partners {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .partners .partners__main {
+    margin-top: 2vw;
+  }
+  .partners .partners__main .partners__main__img {
+    margin-top: 2vw;
   }
 }
 
@@ -1450,9 +1543,6 @@ a {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  .projects .projects__slider .slider__controls h3 {
-    display: none;
-  }
   .projects .projects__slider .slider__controls .control {
     width: auto;
     height: auto;
@@ -1463,6 +1553,7 @@ a {
   }
   .projects .projects__slider .slider__controls .control .control__item {
     height: auto;
+    display: none;
   }
   .projects .projects__slider .slider__controls .control .control__item .control__left, .projects .projects__slider .slider__controls .control .control__item .control__right {
     font-weight: 200;
@@ -1481,13 +1572,37 @@ a {
   }
 }
 
+@media (max-width: 560px) {
+  .projects .projects__slider .slider__header .slider__header__filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .projects .projects__slider .slider__header .slider__header__filters .filter {
+    width: 90vw;
+    margin-top: 3vw;
+  }
+  .projects .projects__slider .slider__header .slider__header__btn {
+    width: 60vw;
+    margin-top: 3vw;
+  }
+}
+
 @media (max-width: 500px) {
   .paragraph .land .land__header h2 {
-    font-size: 22px;
+    width: 70%;
+    font-size: 17px;
     line-height: 30px;
   }
   .paragraph .land .land__header span {
-    font-size: 24px;
+    font-size: 20px;
   }
   .paragraph .land .land__main img {
     width: 100%;
@@ -1499,12 +1614,12 @@ a {
     font-size: 14px;
   }
   .paragraph .land .land__main .land__main__item p {
-    font-size: 22px;
+    font-size: 17px;
     line-height: 30px;
     margin-top: 5vw;
   }
   .paragraph .land .land__main .land__main__item button {
-    font-size: 18px;
+    font-size: 16px;
   }
   .paragraph .land .land__footer .land__footer__item {
     width: 95%;
@@ -1514,7 +1629,7 @@ a {
     height: 50%;
   }
   .paragraph .land .land__footer .land__footer__item .land__footer__item__text span {
-    font-size: 15px;
+    font-size: 13px;
   }
   .modal__form .form h2 {
     font-size: 22px;
@@ -1533,6 +1648,24 @@ a {
   .modal__form .form .form__save {
     width: 70vw;
     height: 60px;
+  }
+  .about .about__text h3 {
+    font-size: 18px;
+  }
+  .about .about__text p {
+    font-size: 16px;
+  }
+  .about .about__label span {
+    font-size: 16px;
+  }
+  .about .about__label h2 {
+    font-size: 16px;
+  }
+  .partners .partners__main .partners__main__img {
+    margin-top: 4vw;
+  }
+  .partners .partners__main .partners__main__img img {
+    height: 50px;
   }
 }
 
