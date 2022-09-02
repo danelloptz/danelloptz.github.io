@@ -728,3 +728,65 @@ a {
         }
     }
 }
+
+.team {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 10vw; 
+    .team__label {
+        display: flex;
+        justify-content: flex-start;
+        span {
+            font-size: 20px;
+            font-weight: 400;
+            margin-right: 8vw;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 800;
+        }
+    }  
+    .team__main {
+        margin-top: 10vw;
+        margin-left: 10vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5vw;
+        row-gap: 1vw;
+        .team__main__item {
+            display: flex;
+            flex-direction: column;
+            h3 {
+                font-size: 22px;
+                line-height: 30px;
+                color: white;
+                font-weight: 700;
+            }
+            span {
+                font-size: 20px;
+                line-height: 30px;
+                color: white;
+            }
+            img {
+                margin-top: 1vw;
+                margin-left: 1vw;
+                width: 40%;
+                height: auto;
+                border-radius: 50%;
+            }
+            p:first-of-type {
+                font-size: 15px;
+            }
+            p {
+                font-size: 17px;
+                line-height: 20px;
+                color: white;
+                margin-top: 1vw;
+                letter-spacing: .6px;
+            }
+        }
+    }
+}
