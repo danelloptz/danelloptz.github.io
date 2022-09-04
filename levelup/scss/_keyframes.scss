@@ -37,18 +37,12 @@
     }
 }
 @keyframes HeightShow {
-    from {
-        height: 80px;
-    }
     to {
-        height: auto;
+        overflow: visible;
     }
 }
 @keyframes HeightClose {
-    from {
-        height: auto;
-    }
     to {
-        height: 80px;
+        overflow: hidden;
     }
 }

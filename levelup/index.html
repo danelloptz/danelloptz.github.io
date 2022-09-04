@@ -32,7 +32,7 @@
                     <a href="#">Проекты</a>
                     <a href="#">Инвесторам</a>
                     <a href="#">Контакты</a>
-                    <a class="theme">Изменить тему</a>
+                    <a class="theme" data-check="0">Изменить тему</a>
                     <a href="#"><strong>Стать партнёром</strong></a>
                 </div>
             </nav>
@@ -76,21 +76,21 @@
                     </div>
                     <div class="land__footer">
                         <div class="land__footer__item">
-                            <img data-src="img/item1.png" class="lazy-load">
+                            <img data-src="img/item1.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Надёжная репутация</h3>
                                 <span>Подтверждена лидерами рынка</span>
                             </div>
                         </div>
                         <div class="land__footer__item">
-                            <img data-src="img/item2.png" class="lazy-load">
+                            <img data-src="img/item2.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Минимализация рисков</h3>
                                 <span>Опытная команда с 15-летним опытом</span>
                             </div>
                         </div>
                         <div class="land__footer__item">
-                            <img data-src="img/item3.png" class="lazy-load">
+                            <img data-src="img/item3.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Конкурентная прибыль</h3>
                                 <span>Создание денежных потоков на ранней стадии</span>
@@ -118,21 +118,21 @@
                     </div>
                     <div class="land__footer">
                         <div class="land__footer__item">
-                            <img data-src="img/item1.png" class="lazy-load">
+                            <img data-src="img/item1.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Надёжная репутация</h3>
                                 <span>Подтверждена лидерами рынка</span>
                             </div>
                         </div>
                         <div class="land__footer__item">
-                            <img data-src="img/item2.png" class="lazy-load">
+                            <img data-src="img/item2.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Минимализация рисков</h3>
                                 <span>Опытная команда с 15-летним опытом</span>
                             </div>
                         </div>
                         <div class="land__footer__item">
-                            <img data-src="img/item3.png" class="lazy-load">
+                            <img data-src="img/item3.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Конкурентная прибыль</h3>
                                 <span>Создание денежных потоков на ранней стадии</span>
@@ -160,21 +160,21 @@
                     </div>
                     <div class="land__footer">
                         <div class="land__footer__item">
-                            <img data-src="img/item1.png" class="lazy-load">
+                            <img data-src="img/item1.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Надёжная репутация</h3>
                                 <span>Подтверждена лидерами рынка</span>
                             </div>
                         </div>
                         <div class="land__footer__item">
-                            <img data-src="img/item2.png" class="lazy-load">
+                            <img data-src="img/item2.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Минимализация рисков</h3>
                                 <span>Опытная команда с 15-летним опытом</span>
                             </div>
                         </div>
                         <div class="land__footer__item">
-                            <img src="img/item3.png">
+                            <img data-src="img/item3.png" class="lazy-load change">
                             <div class="land__footer__item__text">
                                 <h3>Конкурентная прибыль</h3>
                                 <span>Создание денежных потоков на ранней стадии</span>
@@ -316,7 +316,7 @@
                                 <div class="filter__first">
                                     <input type="text" disabled placeholder="Москва" data-check="0">
                                 </div>
-                                <img data-src="img/down.png" class="lazy-load">
+                                <img data-src="img/down.png" class="lazy-load change">
                                 <div class="filter__hide">
                                     <input type="text" readonly placeholder="Сочи" class="filter__hide__item">
                                     <input type="text" readonly placeholder="Крым" class="filter__hide__item">
@@ -326,7 +326,7 @@
                                 <div class="filter__first">
                                     <input type="text" disabled placeholder="Инвестиция" data-check="0">
                                 </div>
-                                <img data-src="img/down.png" class="lazy-load">
+                                <img data-src="img/down.png" class="lazy-load change">
                                 <div class="filter__hide">
                                     <input type="text" readonly placeholder="Покупка" class="filter__hide__item">
                                     <input type="text" readonly placeholder="Сдача" class="filter__hide__item">
@@ -336,7 +336,7 @@
                                 <div class="filter__first">
                                     <input type="text" disabled placeholder="Стадия" data-check="0">
                                 </div>
-                                <img data-src="img/down.png" class="lazy-load">
+                                <img data-src="img/down.png" class="lazy-load change">
                                 <div class="filter__hide">
                                     <input type="text" readonly placeholder="Законченный" class="filter__hide__item">
                                     <input type="text" readonly placeholder="Текущий" class="filter__hide__item">
@@ -671,9 +671,30 @@
                     </div>
                 </section>
             </article>
+            <article class="contact">
+                <section class="contact__label">
+                    <span>06</span>
+                    <h2>Контакты</h2>
+                </section>
+                <section class="contact__main">
+                    <div class="contact__main__form">
+                        <h3>Узнать больше</h3>
+                        <textarea type="text" placeholder="Ваше имя*"></textarea>
+                        <textarea type="number" placeholder="+7(___)___ __ __*"></textarea>
+                        <textarea type="text" placeholder="Сообщение" class="contact__main__form__message "></textarea>
+                        <button>Отправить</button>
+                        <p>Нажимая кнопку «отправить», вы принимаете условия обработки <a href="#"><strong>пользовательских данных</strong></a></p>
+                    </div>
+                    <div class="contact__main__links">
+                        <a href="#">info@levelup.ru</a>
+                        <a href="#">levelup в Телеграм</a>
+                    </div>
+                </section>
+            </article>
         </main>
         <footer id="footer" class="footer">
-            
+            <img data-src="img/logo.png" class="lazy-load">
+            <span>Девелоперская группа LevelUP</span>
         </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
