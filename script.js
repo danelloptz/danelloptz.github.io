@@ -189,7 +189,7 @@ function Oxygen() {
               }
           }
           
-        if ((scrollY == pageHeight - screenHeight) && (antiScroll == 0)) {
+        /*if ((scrollY == pageHeight - screenHeight) && (antiScroll == 0)) {
             $('#modal--wrapper').css({
                 'opacity': '1',
                 'pointer-events': 'auto'
@@ -204,7 +204,7 @@ function Oxygen() {
         } else {
             //$('#modal--wrapper').css('display', 'none');
             $('html').css('overflow', $('html').data('previous-overflow')); // включаем прокрутку
-        }
+        }*/
     });
 }
 setTimeout(Oxygen, 4000);
@@ -215,7 +215,7 @@ $("#wrapper--colba").mouseenter(function() { // делаем opacity при hove
     $(this).css('opacity', '.4');
 });
 
-let star = document.querySelectorAll("colba--modal--star");
+/*let star = document.querySelectorAll("colba--modal--star");
 function StarClick() { 
     let modalArr = $('.colba--modal--star');
     modalArr.each(function() {
@@ -255,7 +255,7 @@ function StarClick() {
     });
 
 }
-StarClick();
+StarClick();*/
 
 function ProjectsMenu() {
     $('.zag').on('click', function() {
