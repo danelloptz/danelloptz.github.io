@@ -39,10 +39,12 @@
 @keyframes HeightShow {
     to {
         overflow: visible;
+        opacity: 1;
     }
 }
 @keyframes HeightClose {
     to {
         overflow: hidden;
+        opacity: 0;
     }
 }
