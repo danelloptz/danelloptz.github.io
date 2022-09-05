@@ -1,29 +1,4 @@
-// fonts
-
 @font-face {
-    font-family: 'Grotesk';
-    src: url("fonts/SctoGroteskA-Bold.woff2");
+    font-family: 'Roboto';
+    src: url('fonts/Roboto Thin.ttf');
 }
-
-//sizes
-
-$pc-width: 90%; 
-
-// colors
-
-$header-text: white;
-$hide-menu-text: #f9cdcd;
-$hide-menu-bg: #252422;
-$deep-footer-bg: #181717;
-$mute-white: rgba(255, 255, 255, 0.267);
-$mute: gray;
-
-// font sizes
-$fullhd-big: 1.6rem;
-
-$mobile-large-text: 1.7rem;
-$mobile-big-text: 1.5rem;
-
-$large-text: 1.3rem;
-$md-text: 1.1rem;
-$sm-text: .8rem;

@@ -1,23 +1,50 @@
-@keyframes Preview {
+@keyframes wave {
+    from {
+        stroke-opacity: .3
+    }
+
     to {
-        transform: translateY(-20vw); 
-        height: 0vw;
+        stroke-opacity: 1
     }
 }
-@keyframes VideoShow {
-    to { transform: translateY(0vh); }
+@keyframes Show {
+    from {
+        opacity: 0;
+    } 
+    to {opacity: 1;}
 }
-@keyframes ItemShow {
+@keyframes DropShow {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    50% {
+        opacity: 0;
+    }
     to {
         opacity: 1;
-        transform: translateY(0vh);
+        transform: translateY(0px);
     }
 }
-@keyframes SliderShow {
+@keyframes DropClose {
     from {
-        transform: translate3d(100vw, 0vw, 0vw);
+        opacity: 1;
+        transform: translateY(0px);
     }
     to {
-        transform: translate3d(23vw, 0vw, 0vw);
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+@keyframes HeightShow {
+    to {
+        overflow: visible;
+        opacity: 1;
+    }
+}
+@keyframes HeightClose {
+    to {
+        overflow: hidden;
+        opacity: 0;
     }
 }
