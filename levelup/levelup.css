@@ -137,6 +137,17 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: .8;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+p {
+  font-weight: bold;
 }
 
 .header {
