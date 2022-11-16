@@ -1,0 +1,427 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background: $page-bg;
+}
+button { cursor: pointer; }
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .wp--wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .wp {
+        object-fit: cover;
+        object-position: center center;
+        height: 100%;
+        width: 100%;
+        opacity: .7;
+    }
+    .container {
+        width: 60vw;
+        height: 400px;
+        position: relative;
+        z-index: 999;
+        background: $gradient;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .content {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            .content--up {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .team--logo {
+                    width: 6vw;
+                    height: auto;
+                    object-fit: cover;
+                }
+                h1 {
+                    font-family: 'Vag';
+                    font-size: 2rem;
+                    color: $normal-green;
+                    text-shadow: 0 0 20px $bright-green,0 0 30px $bright-green,0 0 40px $bright-green,0 0 50px $bright-green;
+                    filter: brightness(1.75);
+                    font-weight: 700;
+                    letter-spacing: 1.5px;
+                    margin-top: 2vw;
+                }
+            }
+            .content--down {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .btn--group {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 85%;
+                    margin-top: 5vw;
+                        .btn--group--last, .btn--group--curr {
+                            width: 35%;
+                            height: 50px;
+                            background: $text-orange;
+                            box-shadow: 0 0 20px $bright-yellow,0 0 30px $bright-yellow,0 0 40px $bright-yellow,0 0 50px $bright-yellow;
+                            filter: brightness(1.75);
+                            border-radius: 10px;
+                            color: $page-bg;
+                            font-family: 'Vag';
+                            font-size: 19px;
+                            letter-spacing: 1px;
+                            border: none;
+                            cursor: pointer;
+                        }
+                        .btn--group--last:hover, .btn--group--curr:hover {
+                            background: $text-color-mute;
+                        }
+                    
+                }
+                .footer {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 20%;
+                    margin-top: 3vw;
+                    height: 3vw;
+                    .github--logo {
+                        width: 3vw;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                    a {
+                        font-size: 18px;
+                        font-family: 'Vag';
+                        letter-spacing: 1px;
+                        color: $normal-green;
+                        text-shadow: 0 0 20px $bright-green,0 0 30px $bright-green,0 0 40px $bright-green,0 0 50px $bright-green;
+                        filter: brightness(1.75);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// games
+
+.extra--main {
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubuntu-regular';
+    color: $text-black;
+    background: $page-bg;
+    .extra--container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .team--logo {
+            width: 6vw;
+            height: auto;
+            object-fit: cover;
+        }
+        h1, h2 {
+            font-family: 'Vag';
+            font-size: 2rem;
+            color: $normal-green;
+            text-shadow: 0 0 10px $bright-green,0 0 10px $bright-green,0 0 10px $bright-green,0 0 10px $bright-green;
+            filter: brightness(1.75);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-top: 2vw;
+        }
+        h1 { font-size: 2.5rem; }
+        .nav {
+            width: 100%;
+            margin-top: 6vw;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            .nav--panel {
+                display: flex;
+                justify-content: flex-start;
+                border-bottom: 1px solid $normal-red;
+                filter: brightness(1.75);
+                padding-bottom: 4px;
+                .nav--games, .nav--stat {
+                    font-size: 1.5rem;
+                    color: $normal-red;
+                    text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                    filter: brightness(1.75);
+                    margin-right: 2vw;
+                    cursor: pointer;
+                    transition: .3s;
+                }
+                .nav--games:hover, .nav--stat:hover {
+                    color: $text-black-mute;
+                }
+            }
+            .nav--filter {
+                width: 10vw;
+                height: 40px;
+                background: none;
+                border: 1px solid $normal-red;
+                color: $normal-red;
+                text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                filter: brightness(1.75);
+                letter-spacing: 1px;
+                font-size: 1.5rem;
+                border-radius: 8px;
+            }
+        }
+        .games {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h3 {
+                font-size: 1.8rem;
+                margin-top: 3vw;
+                color: $normal-green;
+                text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
+                filter: brightness(1.75);
+            }
+            .games--wrapper {
+                width: 80%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 5vw;
+                row-gap: 5vw;
+                margin-top: 2vw;
+                .wrapper--card {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+                    transition: .4s;
+                    background: $gradient;
+                    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                    h4 {
+                        font-size: 2rem;
+                        color: $normal-green;
+                        text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
+                        filter: brightness(1.75);
+                    }
+                    .card--sides {
+                        font-size: 1.5rem;
+                        color: $normal-red;
+                        text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                        filter: brightness(1.75);
+                    }
+                    .card--date {
+                        font-size: 1.5rem;
+                        color: $mute-red;
+                        text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                        filter: brightness(1.75);
+                    }
+                }
+            }
+            .wrapper--card:hover {
+                transform: translateY(-25px);
+                cursor: pointer;
+            }
+        }
+        
+    }
+}
+
+.games--stat {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    h3, h4 {
+        font-family: 'Vag';
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-top: 1vw;
+    }
+    h3 { 
+        color: $normal-green;
+        text-shadow: 0 0 3px $bright-green,0 0 3px $bright-green,0 0 3px $bright-green,0 0 3px $bright-green;
+        filter: brightness(1.75); 
+    }
+    h4 { 
+        color: $normal-red;
+        text-shadow: 0 0 3px $bright-red,0 0 3px $bright-red,0 0 3px $bright-red,0 0 3px $bright-red;
+        filter: brightness(1.75); 
+    }
+    .games--stat--date {
+        font-size: 1.1rem;
+        color: $mute-red;
+        text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+        filter: brightness(1.75);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .games--stat--wrapper {
+        width: 90%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1vw;
+        .games--stat--wrapper--header {
+            width: 100%;
+            margin-top: 2vw;
+            display: grid;
+            grid-template-columns: 6fr 1fr 2fr 2fr;
+            .games--stat--wrapper--header--text--container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .games--stat--wrapper--header--text {
+                    font-family: 'Vag';
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    letter-spacing: 1.5px;
+                    margin-top: 2vw;
+                    color: $text-orange;
+                    text-shadow: 0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange;
+                    filter: brightness(1.75);
+                }
+            }
+        }
+        .games--stat--wrapper--line {
+            width: 100%;
+            height: 6vw;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr 2fr 2fr;
+            margin-top: 2vw;
+            transition: .8s;
+            cursor: pointer;
+            padding-left: 15px;
+            z-index: 100;
+            img {
+                width: 4vw;
+                height: auto;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0 0 10px $bright-green,0 0 10px $bright-green,0 0 10px $bright-green,0 0 10px $bright-green;
+            }
+            h5 {
+                font-size: 1.5rem;
+                color: $mute-red;
+                text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                filter: brightness(1.75);
+                letter-spacing: 1px;
+            }
+            .games--stat--wrapper--line--text--container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .games--stat--wrapper--line--text {
+                    font-size: 1.5rem;
+                    color: $mute-red;
+                    letter-spacing: 1px;
+                    text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                    filter: brightness(1.75);
+                }
+            }
+        }
+        .games--stat--wrapper--line:hover {
+            background: $gradient;
+        }
+        .stat--modal {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.137);
+            z-index: 999;
+            .stat--modal--wrapper {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .stat--modal--container {
+                    width: 50%;
+                    height: 500px;
+                    background: $gradient;
+                    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: relative;
+                    .stat--modal--close {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        cursor: pointer;
+                    }
+                    .stat--modal--header {
+                        display: flex;
+                        justify-content: flex-start;
+                        height: 6vw;
+                        align-items: center;
+                        margin-top: 1vw;
+                        img {
+                            width: auto;
+                            height: 4vw;
+                            object-fit: cover;
+                            margin-right: 2vw;
+                            border-radius: 50%;
+                            box-shadow: 0 0 10px $bright-green,0 0 10px $bright-green,0 0 10px $bright-green,0 0 10px $bright-green;
+                        }
+                        span {
+                            font-size: 2rem; 
+                            color: $normal-green;
+                            text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
+                            filter: brightness(1.75);
+                            letter-spacing: 1px;
+                            font-weight: 700;
+                        }
+                    }
+                    .stat--modal--line {
+                        display: flex;
+                        justify-content: flex-start;
+                        margin-bottom: .3vw;
+                        .stat--modal--line--text, .stat--modal--line--value {
+                            margin-right: 2vw;
+                            font-size: 1.5rem; 
+                            letter-spacing: 1px;
+                        }
+                        .stat--modal--line--text { 
+                            color: $mute-red;
+                            text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                            filter: brightness(1.75);
+                        }
+                        .stat--modal--line--value { 
+                            color: $text-orange;
+                            text-shadow: 0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange;
+                            filter: brightness(1.75);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
