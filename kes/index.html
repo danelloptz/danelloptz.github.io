@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru" style="overflow-x: hidden;">
     <head>
         <title></title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="bullsbulls.css">
     </head>
     <body>
         <main class="extra--main">
+            <div class="hidden--menu" data-check="0">
+                <div class="hidden--menu--line"></div>
+                <div class="hidden--menu--line"></div>
+            </div>
+            <div class="hidden--modal" aria-checked="0">
+                <div class="hidden--modal--wrapper">
+                    <span class="hidden--modal--players active">Состав</span>
+                    <span class="hidden--modal--games">Игры</span>
+                    <span class="hidden--modal--stat">Статистика</span>
+                    <span class="hidden--modal--seasons">Сезоны</span>
+                </div>
+            </div>
             <div class="extra--container">
                 
                 <h1>КЭС-баскет</h1>
@@ -19,12 +32,11 @@
                         <span class="nav--stat">Статистика</span>
                         <span class="nav--seasons">Сезоны</span>
                     </div>
-                    <button class="nav--filter">Фильтр</button>
                 </section>
                 <article class="best"> 
                     <h3>ЛУЧШИЕ игроки сезона</h3>
-                    <section class="best--top"> <!--один большой слева, два в высоту первого справа-->
-                        <div class="best--top--main"><!--3 колонки-->
+                    <section class="best--top">
+                        <div class="best--top--main">
                             <div class="best--top--main--col">
                                 <img src="img/Uvarov.png">
                                 <span class="best--top--main--col--name">Уваров Егор</span>
@@ -125,6 +137,11 @@
                             <span class="card--sides">Школа 46 - Лицей 40</span>
                             <span class="card--date">- 11.11.2022</span>
                         </div>
+                        <div class="wrapper--card" aria-value="22-23_46-34" aria-number="1">
+                            <h4>120:2</h4>
+                            <span class="card--sides">Школа 46 - Школа 34</span>
+                            <span class="card--date">- 11.11.2022</span>
+                        </div>
                     </section>
                 </article>
 
@@ -136,18 +153,19 @@
                         <div class="games--stat--wrapper--header">
                             <div></div>
                             <div class="games--stat--wrapper--header--text--container">
-                                <span class="games--stat--wrapper--header--text">ОЧКИ</span>
+                                <span class="games--stat--wrapper--header--text">PTS</span>
                             </div>
                             <div class="games--stat--wrapper--header--text--container">
-                                <span class="games--stat--wrapper--header--text">ПОДБОРЫ</span>
+                                <span class="games--stat--wrapper--header--text">REB</span>
                             </div>
                             <div class="games--stat--wrapper--header--text--container">
-                                <span class="games--stat--wrapper--header--text">ПЕРЕДАЧИ</span>
+                                <span class="games--stat--wrapper--header--text">AST</span>
                             </div>
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="0" aria-name="uvarov--40--22">
                             <img src="img/Uvarov.png">
-                            <h5>Уваров Егор</h5>
+                            <h5 class="player--full--name">Уваров Егор</h5>
+                            <h5 class="player--short--name">Уваров Е.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">26</span>
                             </div>
@@ -166,7 +184,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/Uvarov.png">
-                                        <span>Уваров Егор</span>
+                                        <span class="player--full--name">Уваров Егор</span>
+                                        <span class="player--short--name">Уваров Е.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -213,7 +232,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="1" aria-name="kuznecov--40--22">
                             <img src="img/kuznecov.png">
-                            <h5>Кузнецов Кирилл</h5>
+                            <h5 class="player--full--name">Кузнецов Кирилл</h5>
+                            <h5 class="player--short--name">Кузнецов К.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">16</span>
                             </div>
@@ -232,7 +252,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/kuznecov.png">
-                                        <span>Кузнецов Кирилл</span>
+                                        <span class="player--full--name">Кузнецов Кирилл</span>
+                                        <span class="player--short--name">Кузнецов К.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -279,7 +300,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="2" aria-name="prus--40--22">
                             <img src="img/prus.jpg">
-                            <h5>Прусский Арсений</h5>
+                            <h5 class="player--full--name">Прусский Арсений</h5>
+                            <h5 class="player--short--name">Прусский А.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">9</span>
                             </div>
@@ -298,7 +320,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/prus.jpg">
-                                        <span>Прусский Арсений</span>
+                                        <span class="player--full--name">Прусский Арсений</span>
+                                        <span class="player--short--name">Прусский А.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -345,7 +368,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="3" aria-name="lavreshin--40--22">
                             <img src="img/lavreshin.png">
-                            <h5>Лаврешин Андрей</h5>
+                            <h5 class="player--full--name">Лаврешин Андрей</h5>
+                            <h5 class="player--short--name">Лаврешин А.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">8</span>
                             </div>
@@ -364,7 +388,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/lavreshin.png">
-                                        <span>Лаврешин Андрей</span>
+                                        <span class="player--full--name">Лаврешин Андрей</span>
+                                        <span class="player--short--name">Лаврешин А.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -411,7 +436,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="4" aria-name="vasilenko--40--22">
                             <img src="img/Vasilenko.png">
-                            <h5>Василенко Данил</h5>
+                            <h5 class="player--full--name">Василенко Данил</h5>
+                            <h5 class="player--short--name">Василенко Д.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">6</span>
                             </div>
@@ -430,7 +456,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/Vasilenko.png">
-                                        <span>Василенко Данил</span>
+                                        <span class="player--full--name">Василенко Данил</span>
+                                        <span class="player--short--name">Василенко Д.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -477,7 +504,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="5" aria-name="arkadiy--40--22">
                             <img src="img/arkadiy.png">
-                            <h5>Хайгонен Аркадий</h5>
+                            <h5 class="player--full--name">Хайгонен Аркадий</h5>
+                            <h5 class="player--short--name">Хайгонен А.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">2</span>
                             </div>
@@ -496,7 +524,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/arkadiy.png">
-                                        <span>Хайгонен Аркадий</span>
+                                        <span class="player--full--name">Хайгонен Аркадий</span>
+                                        <span class="player--short--name">Хайгонен А.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -543,7 +572,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="6" aria-name="bratko--40--22">
                             <img src="img/bratko.png">
-                            <h5>Братко Владимир</h5>
+                            <h5 class="player--full--name">Братко Владимир</h5>
+                            <h5 class="player--short--name">Братко В.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">0</span>
                             </div>
@@ -562,7 +592,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/bratko.png">
-                                        <span>Братко Владимир</span>
+                                        <span class="player--full--name">Братко Владимир</span>
+                                        <span class="player--short--name">Братко В.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -609,7 +640,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="7" aria-name="sliz--40--22">
                             <img src="img/sliz.png">
-                            <h5>Слиж Иван</h5>
+                            <h5 class="player--full--name">Слиж Иван</h5>
+                            <h5 class="player--short--name">Слиж И.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">0</span>
                             </div>
@@ -628,7 +660,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/sliz.png">
-                                        <span>Слиж Иван</span>
+                                        <span class="player--full--name">Слиж Иван</span>
+                                        <span class="player--short--name">Слиж И.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -675,7 +708,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="8" aria-name="koltakov--40--22">
                             <img src="img/koltakov.png">
-                            <h5>Колтаков Дмитрий</h5>
+                            <h5 class="player--full--name">Колтаков Дмитрий</h5>
+                            <h5 class="player--short--name">Колтаков Д.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">0</span>
                             </div>
@@ -694,7 +728,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/koltakov.png">
-                                        <span>Колтаков Дмитрий</span>
+                                        <span class="player--full--name">Колтаков Дмитрий</span>
+                                        <span class="player--short--name">Колтаков Д.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -742,7 +777,8 @@
                         
                         <div class="games--stat--wrapper--line" aria-value="9" aria-name="polyzerov--40--22">
                             <img src="img/polyzerov.png">
-                            <h5>Полузёров Андрей</h5>
+                            <h5 class="player--full--name">Полузёров Андрей</h5>
+                            <h5 class="player--short--name">Полузёров А.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">0</span>
                             </div>
@@ -761,7 +797,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/polyzerov.png">
-                                        <span>Полузёров Андрей</span>
+                                        <span class="player--full--name">Полузёров Андрей</span>
+                                        <span class="player--short--name">Полузёров А.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>
@@ -808,7 +845,8 @@
                         </div>
                         <div class="games--stat--wrapper--line" aria-value="10" aria-name="antonov--40--22">
                             <img src="img/antonov.png">
-                            <h5>Антонов Андрей</h5>
+                            <h5 class="player--full--name">Антонов Андрей</h5>
+                            <h5 class="player--short--name">Антонов А.</h5>
                             <div class="games--stat--wrapper--line--text--container">
                                 <span class="games--stat--wrapper--line--text">0</span>
                             </div>
@@ -827,7 +865,8 @@
                                     </div>
                                     <div class="stat--modal--header">
                                         <img src="img/antonov.png">
-                                        <span>Антонов Андрей</span>
+                                        <span class="player--full--name">Антонов Андрей</span>
+                                        <span class="player--short--name">Антонов А.</span>
                                     </div>
                                     <div class="stat--modal--line">
                                         <span class="stat--modal--line--text">Очки: </span>

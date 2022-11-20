@@ -11,6 +11,7 @@ button { cursor: pointer; }
     color: $normal-green !important;
     text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green !important;
 }
+.player--short--name { display: none; }
 
 .main {
     width: 100%;
@@ -45,6 +46,55 @@ button { cursor: pointer; }
     font-family: 'Ubuntu-regular';
     color: $text-black;
     background: $page-bg;
+    .hidden--menu {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        display: none;
+        flex-direction: column;
+        width: 20vw;
+        transition: 1s;
+        z-index: 999;
+        .hidden--menu--line {
+            width: 100%;
+            height: 2px;
+            background: $normal-green;
+            box-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green !important;
+            transition: 1s;
+        }
+        .hidden--menu--line:last-child {
+            margin-top: 4px;
+        }
+    }
+    .hidden--modal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 998;
+        background: $gradient;
+        transition: 1s;
+        .hidden--modal--wrapper {
+            display: flex;
+            flex-direction: column;
+            .hidden--modal--games, .hidden--modal--stat, .hidden--modal--players, .hidden--modal--seasons {
+                font-size: 2rem;
+                color: $normal-red;
+                text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                filter: brightness(1.75);
+                margin-right: 2vw;
+                cursor: pointer;
+                transition: .3s;
+            }
+            .hidden--modal--games:hover, .hidden--modal--stat:hover, .hidden--modal--players:hover, .hidden--modal--seasons:hover {
+                color: $text-black-mute;
+            }
+        }
+    }
     .warning--wrapper {
         width: 100%;
         height: 100vh;
@@ -69,7 +119,7 @@ button { cursor: pointer; }
             justify-content: space-around;
             align-items: center;
             width: 10%;
-            margin-top: 5vw;
+            margin-top: 6vw;
             height: 3vw;
             .github--logo {
                 width: 3vw;
@@ -116,7 +166,7 @@ button { cursor: pointer; }
             width: 100%;
             margin-top: 6vw;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             padding-left: 2vw;
             padding-right: 2vw;
             .nav--panel {
@@ -134,7 +184,7 @@ button { cursor: pointer; }
                     cursor: pointer;
                     transition: .3s;
                 }
-                .nav--games:hover, .nav--stat:hover, .nav--players:hover, .nav--seasons {
+                .nav--games:hover, .nav--stat:hover, .nav--players:hover, .nav--seasons:hover {
                     color: $text-black-mute;
                 }
             }
@@ -330,7 +380,7 @@ button { cursor: pointer; }
                 margin-top: 3vw;
                 color: $normal-green;
                 text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
-                filter: brightness(1.75);
+                filter: brightness(1);
             }
             .games--wrapper {
                 width: 80%;
@@ -377,7 +427,6 @@ button { cursor: pointer; }
         .seasons {
             width: 60vw;
             position: relative;
-            z-index: 999;
             border-radius: 10px;
             display: none;
             justify-content: center;
@@ -459,7 +508,7 @@ button { cursor: pointer; }
             width: 100%;
             margin-top: 2vw;
             display: grid;
-            grid-template-columns: 6fr 1fr 2fr 2fr;
+            grid-template-columns: 6fr 1fr 1fr 1fr;
             margin-bottom: 2vw;
             .games--stat--wrapper--header--text--container {
                 width: 100%;
@@ -482,7 +531,7 @@ button { cursor: pointer; }
             height: 6vw;
             align-items: center;
             display: grid;
-            grid-template-columns: 1fr 5fr 1fr 2fr 2fr;
+            grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
             //margin-top: 1vw;
             transition: .8s;
             cursor: pointer;
@@ -503,6 +552,7 @@ button { cursor: pointer; }
                 text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
                 filter: brightness(1.75);
                 letter-spacing: 1px;
+                margin-bottom: 0;
             }
             .games--stat--wrapper--line--text--container {
                 width: 100%;
