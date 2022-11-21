@@ -368,6 +368,155 @@ button { cursor: pointer; }
                 text-decoration: underline;
                 cursor: pointer;
             }
+            .other--top {
+                width: 100%;
+                margin-top: 2vw;
+                text-align: center;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                .other--top--wrapper {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    justify-items: center;
+                    column-gap: 0vw;
+                    row-gap: 2vw;
+                    margin-bottom: 2vw;
+                    margin-top: 2vw;
+                    .other--top--card--vertical {
+                        width: 90%;
+                        background: $gradient;
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 10px;
+                        padding-top: 20px;
+                        transition: .5s;
+                        cursor: pointer;
+                        box-shadow: 0 0 5px $btn-bg,0 0 5px $btn-bg,0 0 5px $btn-bg,0 0 5px $btn-bg;
+                        img {
+                            width: 10vw;
+                            height: auto;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            box-shadow: 0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange;
+                        }
+                        .other--top--card--vertical--col--name {
+                            font-size: 1.8rem;
+                            color: $normal-green;
+                            text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
+                            filter: brightness(1.75);
+                            margin-top: 2vw;
+                        }
+                        .other--top--card--vertical--col--position {
+                            font-size: 1.1rem;
+                            color: $mute-red;
+                            text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                            filter: brightness(1.75);
+                        }
+                        .other--top--card--vertical--row {
+                            width: 70%;
+                            height: 3vw;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .other--top--card--vertical--col--stat {
+                                font-size: 1.8rem;
+                                color: $text-orange;
+                                text-shadow: 0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange;
+                                filter: brightness(1.75);
+                                span {
+                                    font-size: 1.8rem;
+                                    color: $mute-red;
+                                    text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                                    filter: brightness(1.75);
+                                    margin-left: 1vw;
+                                }
+                            }
+                            .other--top--card--vertical--col--place {
+                                font-size: 1.1rem;
+                                color: $mute-red;
+                                text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                                filter: brightness(1.75);
+                            }
+                        }
+                    }
+                }
+                .other--top--card--horizontal {
+                    width: 95%;
+                    background: $gradient;
+                    border-radius: 10px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    justify-items: center;
+                    padding: 10px;
+                    padding-top: 20px;
+                    transition: .5s;
+                    cursor: pointer;
+                    box-shadow: 0 0 5px $btn-bg,0 0 5px $btn-bg,0 0 5px $btn-bg,0 0 5px $btn-bg;
+                    .other--top--card--horizontal--col {
+                        width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        img {
+                            width: 7vw;
+                            height: auto;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            box-shadow: 0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange;
+                        }
+                        .other--top--card--horizontal--col--name {
+                            font-size: 1.5rem;
+                            color: $normal-green;
+                            text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
+                            filter: brightness(1.75);
+                            margin-top: 1vw;
+                        }
+                        .other--top--card--horizontal--col--position {
+                            font-size: 1.1rem;
+                            color: $mute-red;
+                            text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                            filter: brightness(1.75);
+                        }
+                        .other--top--card--horizontal--row {
+                            width: 80%;
+                            height: 3vw;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .other--top--card--horizontal--col--stat {
+                                font-size: 1.5rem;
+                                color: $text-orange;
+                                text-shadow: 0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange,0 0 4px $text-mute-orange;
+                                filter: brightness(1.75);
+                                span {
+                                    font-size: 1.5rem;
+                                    color: $mute-red;
+                                    text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                                    filter: brightness(1.75);
+                                    margin-left: 1vw;
+                                }
+                            }
+                            .other--top--card--horizontal--col--place {
+                                font-size: 1.1rem;
+                                color: $mute-red;
+                                text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
+                                filter: brightness(1.75);
+                            }
+                        }
+                    }
+                    
+                    
+                }
+                .other--top--card--vertical:hover, .other--top--card--horizontal:hover {
+                    transform: scale(1.02);
+                    background: $bright-gradient;
+                    box-shadow: 0 0 8px $bright-green,0 0 8px $bright-green,0 0 8px $bright-green,0 0 8px $bright-green;
+                }
+            }
         }
         .games {
             width: 100%;

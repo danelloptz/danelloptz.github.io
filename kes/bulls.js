@@ -151,4 +151,30 @@ $(document).on('wheel', function(move) {
     } else {
         $('.hidden--menu').css('transform', 'translateY(-50px)');
     }
-})
+});
+
+let last;
+$(document).bind('touchmove', function(e){
+	 let current = e.originalEvent.touches[0].clientY;
+	 if(current > last){
+        $('.hidden--menu').css('transform', 'translateY(0px)');
+	 } else if(current < last){
+		$('.hidden--menu').css('transform', 'translateY(-50px)');
+	 }
+	 last = current;
+});
+
+// top dropdown
+
+$('.best--top--dropdown').click(function() {
+    if ($(this).attr('aria-checked') == 0) { 
+        $('.other--top').css('display', 'flex'); 
+        $(this).attr('aria-checked', '1').text('Закрыть');
+    } else {
+        $('.other--top').css('display', 'none'); 
+        $(this).attr('aria-checked', '0');
+        $(this).text('Открыть полностью');
+    }
+});
+
+

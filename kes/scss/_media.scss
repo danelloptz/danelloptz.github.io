@@ -24,6 +24,15 @@
             }
         }
     }
+    .extra--main .extra--container .best .other--top {
+        .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row {
+            margin-top: 1vw;
+            width: 90%;
+            .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span, .other--top--card--vertical--col--place {
+                font-size: 1.5rem;
+            }
+        }
+    }
     .games--stat--wrapper--line {
         height: 8vw !important;
     }
@@ -65,6 +74,52 @@
             } 
         }
     }
+    .extra--main .extra--container .best .other--top {
+        .other--top--wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .other--top--card--vertical {
+                width: 70%;
+                padding: 30px 0 30px 0;
+                .other--top--card--vertical--row {
+                    margin-top: 2vw;
+                    height: 3vw;
+                    width: 70%;
+                    .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span{
+                        font-size: 1.8rem;
+                    }
+                    .other--top--card--vertical--col--place {
+                        font-size: 1.1rem;
+                    }
+                }
+            } 
+        } 
+    }
+    .extra--main .extra--container .best .other--top .other--top--card--horizontal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        padding: 30px 0 30px 0;
+        .other--top--card--horizontal--col {
+            width: 85%;
+            img {
+                width: 10vw;
+            }
+            .other--top--card--horizontal--row {
+                margin-top: 2vw;
+                height: 3vw;
+                .other--top--card--horizontal--col--stat, .other--top--card--horizontal--col--stat span{
+                    font-size: 1.8rem;
+                }
+                .other--top--card--horizontal--col--place {
+                    font-size: 1.1rem;
+                }
+            }
+            
+        }
+    }
     .extra--main .extra--container .games .games--wrapper { width: 90%; }
     .extra--main .extra--container .games--stat .games--stat--wrapper .stat--modal .stat--modal--wrapper .stat--modal--container {
         width: 80%;
@@ -99,14 +154,13 @@
         border-top: 1px solid $bright-red; 
     }
     .best h3 { margin-top: 5vw !important; filter: brightness(1) !important; }
-    .best--top--main--row { margin-top: 4vw !important; }
-    .best--top--other--row { margin-top: 4vw !important; }
-    .best--top--main, .best--top--other {
+    .best--top--main--row, .best--top--other--row, .other--top--card--vertical--row, .other--top--card--horizontal--row { margin-top: 4vw !important; }
+    .best--top--main, .best--top--other, .other--top--card--vertical, .other--top--card--horizontal {
         width: 90% !important;
         padding: 25px 0 50px 0 !important;
         margin-top: 4vw !important;
     }
-    .best--top--main--col img, .best--top--other--col img {
+    .best--top--main--col img, .best--top--other--col img, .other--top--card--vertical img, .other--top--card--horizontal img {
         width: 15vw !important;
     }
     .games--wrapper {
@@ -125,7 +179,7 @@
 }
 
 @media only screen and (max-width: $mob-md) {
-    .best--top--main--col--stat, .best--top--main--col--stat span, .best--top--other--col--stat, .best--top--other--col--stat span {
+    .best--top--main--col--stat, .best--top--main--col--stat span, .best--top--other--col--stat, .best--top--other--col--stat span, .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span, .other--top--card--vertical--col--place, .other--top--card--horizontal--col--stat, .other--top--card--horizontal--col--stat span, .other--top--card--horizontal--col--place{
         font-size: 1.3rem !important;        
     }
     .games--stat--wrapper--header--text { font-size: 1rem !important; }

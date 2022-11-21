@@ -606,6 +606,229 @@ button {
   cursor: pointer;
 }
 
+.extra--main .extra--container .best .other--top {
+  width: 100%;
+  margin-top: 2vw;
+  text-align: center;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  -webkit-column-gap: 0vw;
+          column-gap: 0vw;
+  row-gap: 2vw;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical {
+  width: 90%;
+  background: -webkit-linear-gradient(90deg, #4f4574, #4d456e, #3d3658);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  padding-top: 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663;
+          box-shadow: 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical img {
+  width: 10vw;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242;
+          box-shadow: 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--col--name {
+  font-size: 1.8rem;
+  color: #00ff8c;
+  text-shadow: 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+  margin-top: 2vw;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--col--position {
+  font-size: 1.1rem;
+  color: #d3757b;
+  text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row {
+  width: 70%;
+  height: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat {
+  font-size: 1.8rem;
+  color: #f97e72;
+  text-shadow: 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat span {
+  font-size: 1.8rem;
+  color: #d3757b;
+  text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+  margin-left: 1vw;
+}
+
+.extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--place {
+  font-size: 1.1rem;
+  color: #d3757b;
+  text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal {
+  width: 95%;
+  background: -webkit-linear-gradient(90deg, #4f4574, #4d456e, #3d3658);
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 10px;
+  padding-top: 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663;
+          box-shadow: 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663, 0 0 5px #2e3663;
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col img {
+  width: 7vw;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242;
+          box-shadow: 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242;
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--col--name {
+  font-size: 1.5rem;
+  color: #00ff8c;
+  text-shadow: 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+  margin-top: 1vw;
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--col--position {
+  font-size: 1.1rem;
+  color: #d3757b;
+  text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row {
+  width: 80%;
+  height: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--stat {
+  font-size: 1.5rem;
+  color: #f97e72;
+  text-shadow: 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242, 0 0 4px #f97d7242;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--stat span {
+  font-size: 1.5rem;
+  color: #d3757b;
+  text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+  margin-left: 1vw;
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--place {
+  font-size: 1.1rem;
+  color: #d3757b;
+  text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
+  -webkit-filter: brightness(1.75);
+          filter: brightness(1.75);
+}
+
+.extra--main .extra--container .best .other--top .other--top--card--vertical:hover, .extra--main .extra--container .best .other--top .other--top--card--horizontal:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  background: -webkit-linear-gradient(90deg, #5a4e83, #574d7c, #443c63);
+  -webkit-box-shadow: 0 0 8px #00ff8c36, 0 0 8px #00ff8c36, 0 0 8px #00ff8c36, 0 0 8px #00ff8c36;
+          box-shadow: 0 0 8px #00ff8c36, 0 0 8px #00ff8c36, 0 0 8px #00ff8c36, 0 0 8px #00ff8c36;
+}
+
 .extra--main .extra--container .games {
   width: 100%;
   height: 100%;
@@ -1040,6 +1263,13 @@ button {
   .extra--main .extra--container .best .best--top--other .best--top--other--col .best--top--other--row {
     margin-top: 1vw;
   }
+  .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row {
+    margin-top: 1vw;
+    width: 90%;
+  }
+  .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat, .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat span, .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--place {
+    font-size: 1.5rem;
+  }
   .games--stat--wrapper--line {
     height: 8vw !important;
   }
@@ -1103,6 +1333,63 @@ button {
   .extra--main .extra--container .best .best--top .best--top--other .best--top--other--col .best--top--other--row .best--top--other--col--stat span {
     font-size: 1.8rem;
   }
+  .extra--main .extra--container .best .other--top .other--top--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical {
+    width: 70%;
+    padding: 30px 0 30px 0;
+  }
+  .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row {
+    margin-top: 2vw;
+    height: 3vw;
+    width: 70%;
+  }
+  .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat, .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat span {
+    font-size: 1.8rem;
+  }
+  .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--place {
+    font-size: 1.1rem;
+  }
+  .extra--main .extra--container .best .other--top .other--top--card--horizontal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 70%;
+    padding: 30px 0 30px 0;
+  }
+  .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col {
+    width: 85%;
+  }
+  .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col img {
+    width: 10vw;
+  }
+  .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row {
+    margin-top: 2vw;
+    height: 3vw;
+  }
+  .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--stat, .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--stat span {
+    font-size: 1.8rem;
+  }
+  .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--place {
+    font-size: 1.1rem;
+  }
   .extra--main .extra--container .games .games--wrapper {
     width: 90%;
   }
@@ -1149,18 +1436,15 @@ button {
     -webkit-filter: brightness(1) !important;
             filter: brightness(1) !important;
   }
-  .best--top--main--row {
+  .best--top--main--row, .best--top--other--row, .other--top--card--vertical--row, .other--top--card--horizontal--row {
     margin-top: 4vw !important;
   }
-  .best--top--other--row {
-    margin-top: 4vw !important;
-  }
-  .best--top--main, .best--top--other {
+  .best--top--main, .best--top--other, .other--top--card--vertical, .other--top--card--horizontal {
     width: 90% !important;
     padding: 25px 0 50px 0 !important;
     margin-top: 4vw !important;
   }
-  .best--top--main--col img, .best--top--other--col img {
+  .best--top--main--col img, .best--top--other--col img, .other--top--card--vertical img, .other--top--card--horizontal img {
     width: 15vw !important;
   }
   .games--wrapper {
@@ -1192,7 +1476,7 @@ button {
 }
 
 @media only screen and (max-width: 500px) {
-  .best--top--main--col--stat, .best--top--main--col--stat span, .best--top--other--col--stat, .best--top--other--col--stat span {
+  .best--top--main--col--stat, .best--top--main--col--stat span, .best--top--other--col--stat, .best--top--other--col--stat span, .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span, .other--top--card--vertical--col--place, .other--top--card--horizontal--col--stat, .other--top--card--horizontal--col--stat span, .other--top--card--horizontal--col--place {
     font-size: 1.3rem !important;
   }
   .games--stat--wrapper--header--text {
