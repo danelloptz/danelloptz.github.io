@@ -531,6 +531,14 @@ button { cursor: pointer; }
                 text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
                 filter: brightness(1);
             }
+            h4 {
+                font-size: 1.4rem;
+                margin-top: 3vw;
+                color: $normal-green;
+                text-shadow: 0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green,0 0 4px $bright-green;
+                filter: brightness(1);
+                letter-spacing: 1px;
+            }
             .games--wrapper {
                 width: 80%;
                 display: grid;
@@ -620,7 +628,12 @@ button { cursor: pointer; }
     flex-direction: column;
     align-items: center;
     width: 100%;
-
+    .games--stat--line {
+        width: 60vw;
+        height: 1px;
+        background: $bright-red;
+        margin-top: 4vw;
+    }
     h3, h4 {
         font-family: 'Vag';
         font-size: 2rem;
@@ -632,7 +645,7 @@ button { cursor: pointer; }
         color: $normal-green;
         text-shadow: 0 0 3px $bright-green,0 0 3px $bright-green,0 0 3px $bright-green,0 0 3px $bright-green;
         filter: brightness(1.75); 
-        margin-top: 10vw;
+        margin-top: 4vw !important;
     }
     h4 { 
         color: $normal-red;

@@ -851,6 +851,16 @@ button {
           filter: brightness(1);
 }
 
+.extra--main .extra--container .games h4 {
+  font-size: 1.4rem;
+  margin-top: 3vw;
+  color: #00ff8c;
+  text-shadow: 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  letter-spacing: 1px;
+}
+
 .extra--main .extra--container .games .games--wrapper {
   width: 80%;
   display: -ms-grid;
@@ -987,6 +997,13 @@ button {
   width: 100%;
 }
 
+.games--stat .games--stat--line {
+  width: 60vw;
+  height: 1px;
+  background: #fe445046;
+  margin-top: 4vw;
+}
+
 .games--stat h3, .games--stat h4 {
   font-family: 'Vag';
   font-size: 2rem;
@@ -1000,7 +1017,7 @@ button {
   text-shadow: 0 0 3px #00ff8c36, 0 0 3px #00ff8c36, 0 0 3px #00ff8c36, 0 0 3px #00ff8c36;
   -webkit-filter: brightness(1.75);
           filter: brightness(1.75);
-  margin-top: 10vw;
+  margin-top: 4vw !important;
 }
 
 .games--stat h4 {
