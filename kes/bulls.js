@@ -61,6 +61,7 @@ $('.games--stat--wrapper--line').click(function(el) {
     let modal = $(this).attr('aria-value');
     let id = $(this).attr('aria-name');
     let file_name;
+    let pos = el.currentTarget.offsetTop;
     if ($(location)[0].pathname.indexOf('last') != -1) { 
         file_name = 'last';
         $(location).attr('href',`${file_name}_season.html#${id}`); 
@@ -76,6 +77,7 @@ $('.games--stat--wrapper--line').click(function(el) {
     $('.stat--modal--close').click(function() {
         $(`.stat--modal:eq(${modal})`).css('display', 'none');
         $('html').css('overflow', $('html').data('previous-overflow')); // включаем прокрутку
+        window.scrollTo(0, pos);
     });
 });
 

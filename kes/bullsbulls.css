@@ -997,6 +997,25 @@ button {
   width: 100%;
 }
 
+.games--stat #city {
+  font-size: 1.8rem;
+  margin-top: 3vw;
+  color: #00ff8c;
+  text-shadow: 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+.games--stat .zag {
+  font-size: 1.4rem;
+  margin-top: 3vw;
+  color: #00ff8c;
+  text-shadow: 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36, 0 0 4px #00ff8c36;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  letter-spacing: 1px;
+}
+
 .games--stat .games--stat--line {
   width: 60vw;
   height: 1px;
