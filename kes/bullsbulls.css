@@ -729,8 +729,8 @@ button {
   border-radius: 10px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
   justify-items: center;
   padding: 10px;
   padding-top: 20px;
@@ -909,6 +909,7 @@ button {
   text-shadow: 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046, 0 0 4px #fe445046;
   -webkit-filter: brightness(1.75);
           filter: brightness(1.75);
+  text-align: center;
 }
 
 .extra--main .extra--container .games .games--wrapper .wrapper--card .card--date {
@@ -1388,7 +1389,7 @@ button {
   .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row {
     margin-top: 2vw;
     height: 3vw;
-    width: 70%;
+    width: 80%;
   }
   .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat, .extra--main .extra--container .best .other--top .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row .other--top--card--vertical--col--stat span {
     font-size: 1.8rem;
@@ -1419,6 +1420,7 @@ button {
   .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row {
     margin-top: 2vw;
     height: 3vw;
+    width: 100%;
   }
   .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--stat, .extra--main .extra--container .best .other--top .other--top--card--horizontal .other--top--card--horizontal--col .other--top--card--horizontal--row .other--top--card--horizontal--col--stat span {
     font-size: 1.8rem;
@@ -1481,7 +1483,7 @@ button {
     margin-top: 4vw !important;
   }
   .best--top--main--col img, .best--top--other--col img, .other--top--card--vertical img, .other--top--card--horizontal img {
-    width: 15vw !important;
+    width: 20vw !important;
   }
   .games--wrapper {
     display: -webkit-box !important;

@@ -449,7 +449,7 @@ button { cursor: pointer; }
                     background: $gradient;
                     border-radius: 10px;
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    grid-template-columns: 2fr 3fr;
                     justify-items: center;
                     padding: 10px;
                     padding-top: 20px;
@@ -567,6 +567,7 @@ button { cursor: pointer; }
                         color: $normal-red;
                         text-shadow: 0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red,0 0 4px $bright-red;
                         filter: brightness(1.75);
+                        text-align: center;
                     }
                     .card--date {
                         font-size: 1.5rem;

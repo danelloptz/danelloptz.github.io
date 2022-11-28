@@ -114,6 +114,8 @@ $('.wrapper--card').click(function() {
     else { 
         file_name = 'index'; 
         $(location).attr('href',`${file_name}.html#${match_name}`);
+        $('.hidden--modal--stat').addClass('active');
+        $('.hidden--modal--games').removeClass('active');
     }
     $('.nav--games, .nav--players, .nav--seasons').removeClass('active');
     $('.nav--stat').addClass('active');
@@ -179,4 +181,15 @@ $('.best--top--dropdown').click(function() {
     }
 });
 
+// lazy-load 
+$(window).scroll(function() {
+    $('.lazy-load').each(function() {
+        if ($(window).scrollTop() + $(window).height() * 1.5 > $(this).offset().top)  {
+            if ($(this).attr('data-src')) {
+                $(this).attr('src', `${$(this).attr('data-src')}`);
+                $(this).removeAttr('data-src');
+            }
+        }
+    });
+});
 

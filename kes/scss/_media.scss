@@ -85,7 +85,7 @@
                 .other--top--card--vertical--row {
                     margin-top: 2vw;
                     height: 3vw;
-                    width: 70%;
+                    width: 80%;
                     .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span{
                         font-size: 1.8rem;
                     }
@@ -110,6 +110,7 @@
             .other--top--card--horizontal--row {
                 margin-top: 2vw;
                 height: 3vw;
+                width: 100%;
                 .other--top--card--horizontal--col--stat, .other--top--card--horizontal--col--stat span{
                     font-size: 1.8rem;
                 }
@@ -161,7 +162,7 @@
         margin-top: 4vw !important;
     }
     .best--top--main--col img, .best--top--other--col img, .other--top--card--vertical img, .other--top--card--horizontal img {
-        width: 15vw !important;
+        width: 20vw !important;
     }
     .games--wrapper {
         display: flex !important;
