@@ -444,6 +444,14 @@ article {
           transform: scale(1, 1);
 }
 
+#about--article {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
 /* colba styles start */
 #wrapper--colba {
   position: fixed;
@@ -862,14 +870,32 @@ article {
   /* ОБЯЗАТЕЛЬНО РАССКОМЕНТИТЬ!!!!!!!!!!!!!!! */
 }
 
-.header_wrapper {
+.header {
+  position: fixed;
   width: 100%;
   height: 80px;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.header_wrapper {
+  width: 100%;
+  height: 100%;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 20px;
-  z-index: 1;
+  z-index: 999;
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header_logo {
@@ -906,6 +932,33 @@ article {
           transform: rotate(360deg);
   -webkit-transition: 1s ease-in;
   transition: 1s ease-in;
+}
+
+.header_nav_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 6vw;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.header_nav_menu_line {
+  width: 100%;
+  height: 2px;
+  background: cyan;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.header_nav_menu_line:last-child {
+  margin-top: 4px;
 }
 
 .header_menu_close {
@@ -979,40 +1032,32 @@ article {
 
 .header_inner_menu {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100vh;
   background: #050e1c;
-  -webkit-animation: animateStart .7s ease-out;
-          animation: animateStart .7s ease-out;
-  padding-top: 10%;
-  padding-left: 30%;
-  padding-right: 30%;
-  z-index: 999;
+  z-index: 998;
   -webkit-transition: .4s ease-in;
   transition: .4s ease-in;
 }
 
-.header_inner_menu_close {
-  width: 100%;
-  height: 100vh;
-  background: #050e1c;
-  -webkit-animation: animateEnd 2s ease-out;
-          animation: animateEnd 2s ease-out;
-  padding-top: 10%;
-  z-index: 999;
-}
-
 .header_inner_menu_text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 15px;
   letter-spacing: 2px;
-  font-weight: 600;
+  font-weight: 400;
   color: white;
 }
 
@@ -1326,10 +1371,20 @@ article {
 
 /* main_header class start */
 .main_header {
-  width: 80%;
-  margin-top: 50px;
+  width: 100%;
+  margin-top: 100px;
   margin-bottom: 200px;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 10%;
 }
 
 @-webkit-keyframes textTypingShort {
@@ -1452,7 +1507,6 @@ article {
   font-weight: 800;
   letter-spacing: 3px;
   border-right: 3px solid green;
-  padding-right: 5px;
   -webkit-animation: textTypingMiddle 2s steps(25), cursorClick 0.75s step-end infinite;
           animation: textTypingMiddle 2s steps(25), cursorClick 0.75s step-end infinite;
   -webkit-animation-delay: 4.5s;
@@ -1474,7 +1528,6 @@ article {
   font-weight: 800;
   letter-spacing: 3px;
   border-right: 3px solid green;
-  padding-right: 5px;
   -webkit-animation: textTypingMute 2s steps(38), cursorClick 0.75s step-end infinite;
           animation: textTypingMute 2s steps(38), cursorClick 0.75s step-end infinite;
   -webkit-animation-delay: 5.5s;
@@ -1530,9 +1583,17 @@ article {
 /* main_header class end */
 /* mainAbout class start */
 .mainAbout {
-  width: 40%;
-  margin-left: 10%;
-  margin: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainTitle {
@@ -1589,6 +1650,11 @@ article {
   border-radius: 150px;
   -webkit-animation: AvatarCircle 1s ease-out infinite;
           animation: AvatarCircle 1s ease-out infinite;
+}
+
+.aboutAvatar img {
+  width: 260px;
+  height: 260px;
 }
 
 @-webkit-keyframes aboutMenuHide {
@@ -1795,7 +1861,7 @@ article {
 }
 
 .aboutLine {
-  width: 70%;
+  width: 50%;
   height: 2px;
   background: #dae2fa85;
   margin: auto;
@@ -1804,7 +1870,7 @@ article {
 }
 
 .aboutText {
-  width: 100%;
+  width: 40%;
   margin-top: 25px;
   font-size: 20px;
   color: #dae2fa85;
@@ -1966,7 +2032,7 @@ article {
 }
 
 .skills-btn {
-  width: 250px;
+  width: 200px;
   height: 50px;
   text-align: center;
   background: none;
@@ -1975,6 +2041,7 @@ article {
   font-family: 'RM';
   letter-spacing: 5px;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 .skills-btn:hover {
@@ -2447,6 +2514,7 @@ article {
             animation-fill-mode: forwards;
     -webkit-animation-delay: 4s;
             animation-delay: 4s;
+    padding-left: 0%;
   }
   .main_header_btn {
     margin-top: 25px;
@@ -2496,34 +2564,24 @@ article {
             transform: translate(30%, 120%);
     padding-left: 25%;
   }
-  .header_inner_menu_text {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 40px;
-    margin-top: 15px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: white;
-  }
-  .header_inner_menu {
-    padding-top: 20%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .mainAbout {
-    margin: 0 auto;
-    width: 90%;
-  }
+  /*.header_inner_menu_text {
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        margin-top: 15px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: white;
+    }*/
   .tag {
     font-size: 14px;
   }
 }
 
 @media (max-width: 1000px) {
+  .header_nav_menu {
+    width: 12vw;
+  }
   .header-sm-txt {
     font-size: 23px;
   }
@@ -2533,9 +2591,13 @@ article {
   .aboutTitle {
     font-size: 28px;
   }
+  .aboutLine {
+    width: 90%;
+  }
   .aboutText {
     font-size: 28px;
     text-align: center;
+    width: 90%;
   }
   .aboutInnerMenuText {
     font-size: 3vw;
@@ -2627,7 +2689,19 @@ article {
 /*@media (max-width: 780px) {
     .contacts-wrapper { width: 95% !important; }
 }*/
-@media (max-width: 680px) {
+@media (max-width: 700px) {
+  .header_nav_menu {
+    width: 15vw;
+  }
+  .header-sm-txt {
+    font-size: 20px;
+  }
+  .header-bg-txt, .header-bg-txt-mute {
+    font-size: 23px;
+  }
+  .aboutText {
+    font-size: 23px;
+  }
   .pie {
     margin: .5em;
     width: 6em;
@@ -2682,6 +2756,9 @@ article {
 }
 
 @media (max-width: 535px) {
+  .header_nav_menu {
+    width: 20vw;
+  }
   #wrapper--colba {
     display: none;
   }
@@ -2696,24 +2773,28 @@ article {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 0 auto;
-    width: 95%;
+    width: 100%;
   }
   .main_header_btn {
+    width: 250px;
     margin: 0 auto;
+    font-size: 18;
     margin-top: 25px;
     -webkit-animation-delay: 4s;
             animation-delay: 4s;
   }
   .mainAbout {
-    margin-left: 20px;
-    width: 90%;
+    width: 100%;
   }
   .aboutAvatar {
-    width: 260px;
-    height: 260px;
+    width: 180px;
+    height: 180px;
     margin-top: 50px;
     margin: auto;
+  }
+  .aboutAvatar img {
+    width: 180px;
+    height: 180px;
   }
   .mainSkills {
     width: 70%;
@@ -2734,7 +2815,9 @@ article {
     margin-top: 10px;
   }
   .skillsText {
-    font-size: 23px;
+    font-size: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .header-sm-txt {
     font-size: 20px;
@@ -2757,21 +2840,23 @@ article {
     margin-top: 10px;
   }
   .aboutText {
-    font-size: 23px;
+    font-size: 20px;
   }
   .graph {
     width: 100%;
     padding-left: 5px;
     padding-right: 5px;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
   .pie {
-    width: 5em;
-    height: 5em;
+    width: 6em;
+    height: 6em;
     margin: .5em;
   }
   .pie::after {
-    width: 4em;
-    height: 4em;
+    width: 5em;
+    height: 5em;
     left: .5em;
     top: .5em;
   }
@@ -2845,6 +2930,15 @@ article {
   }
   .tag {
     width: 90%;
+  }
+  .aboutText {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px) {
+  .aboutText {
+    font-size: 16px;
   }
 }
 

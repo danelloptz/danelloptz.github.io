@@ -47,14 +47,12 @@
                         </div>
                     </div>
                 </a>
-                <a onclick="HeaderClose()">
-                    <div class="header_menu" id="header_menu"></div>
-                </a>
+                <div class="header_nav_menu" data-check="0">
+                    <div class="header_nav_menu_line"></div>
+                    <div class="header_nav_menu_line"></div>
+                </div>
             </nav>
             <nav>
-                <a onclick="HeaderClose()" class="header_close_btn" id="header_close_btn">
-                    <div class="header_menu_close"></div>
-                </a>
                 <div class="header_inner_menu" id="header_inner_menu">
                     <ul>
                         <a onclick="location.href='#aboutLink'"><li class="header_inner_menu_text about link" id="about">ОБО МНЕ</li></a>
@@ -66,7 +64,6 @@
             </nav>
         </header>
         <main class="main" id="main">
-            <article>
                 <section class="main_header">
                     <div class="header-sm-txt">Привет! Я являюсь</div>
                     <div class="header-bg-txt">Frontend-разработчиком.</div>
@@ -91,19 +88,18 @@
                         </div>
                     </div>
                 </section>
-            </article>
             <article id="about--article">
                 <div class="mainTitle" id="aboutLink">&lt;about&gt;</div>
                 <section class="mainAbout" id="mainAbout">
                     <a onclick="AboutMenuOpen()"><div class="aboutAvatar" id="aboutAvatar">
-                        <img src="img/avatar.png" width="260px" height="260px" data-bs-toggle="tooltip" data-bs-placement="top" title="Нажми на меня" alt="Василенко Данил frontend">
+                        <img src="img/avatar.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Нажми на меня" alt="Василенко Данил frontend">
                     </div></a>
                     <div class="aboutTitle">КТО ЭТО?</div>
                     <div class="aboutLine"></div>
-                    <div class="aboutText">
+                    <span class="aboutText">
                         Меня зовут Василенко Данил. Я из Петрозаводска. Специализируюсь на
                         вёрстке сайтов и создании UI эффектов и анимаций. Основной стэк: HTML5/CSS3/SCSS/JS/JQuery.
-                    </div>
+                    </span>
                 </section>
                 <div class="mainTitle">&lt;/about&gt;</div>
             </article>
@@ -128,10 +124,6 @@
                             <div class="pie p4"></div>
                             <span class="pie-text pt4">JQuery</span>
                         </div>
-                        <!--<div class="pie-wrap">
-                            <div class="pie p5"></div>
-                            <span class="pie-text pt5">Vue</span>
-                        </div>-->
                         <div class="pie-wrap">
                             <div class="pie p6"></div>
                             <span class="pie-text pt6">SCSS</span>
@@ -152,29 +144,14 @@
                 </div>
             </arcticle>
             <div class="mainTitle">&lt;/skills&gt;</div>
-            <!--<article id="modal--wrapper">
-                        <section class="okay">
-                            <div class="colba--modal--inner" id="colba--modal--inner">
-                                <div class="colba--modal--text">ПОНРАВИЛСЯ САЙТ?</div>
-                                <div class="star--wrapper">
-                                    <div class="colba--modal--star">1</div>
-                                    <div class="colba--modal--star">2</div>
-                                    <div class="colba--modal--star">3</div>
-                                    <div class="colba--modal--star">4</div>
-                                    <div class="colba--modal--star">5</div>
-                                </div>
-                                <button id="colba--modal--close">ЗАКРЫТЬ</button>
-                            </div>
-                        </section>
-            </article>-->
             <div class="mainTitle" id="projectsLink">&lt;projects&gt;</div>
             <article class="projects" id="projects--article">
-                <nav class="projects--header">
+                <!--<nav class="projects--header">
                     <span class="projects--zag zag" id="all-item"><span style="color: #FF8A65">Все</span></span>
                     <span class="projects--zag zag" id="web-item">Сайты</span>
                     <span class="projects--zag zag" id="verstka-item">Вёрстка</span>
                     <span class="projects--zag zag" id="widjets-item">Виджеты</span>
-                </nav>
+                </nav>-->
                 <div class="projects--wrapper">
                     <section class="projects--item verstka-item all-item">
                         <a href="basicdept/index.html">
@@ -204,6 +181,21 @@
                             <footer class="item--footer">
                                 <nav class="footer--tags">
                                     <button class="tag verstka">#верстка</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                    <section class="projects--item web-item all-item">
+                        <a href="bulls/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title">Bulls</title>
+                                <p class="item--text">
+                                    Статистика баскетбольной команды "Древлянка-bulls" SCSS/JQuery                             </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag web">#сайты</button>
                                 </nav>
                             </footer>
                         </a>

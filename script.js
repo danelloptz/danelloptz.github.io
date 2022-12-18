@@ -47,17 +47,12 @@ function BorderWater() {
    ему присваевается класс, с анимацией (visible).
 */
 function VisibleArticles() {
-    let articles = $('[id*="article"]'); // получаем все html элементы, в id которых есть слово article
-    for (let i = 0; i < articles.length; i++) {
-        /* indexOf в условии, чтобы повторно не присваивать класс visible
-           clientHeight - высота блока (странно, но это так). 
-           -1 после indexOf значит, что элемент не найден
-        */
-        if ((scrollY >= articles[i].offsetTop - articles[i].clientHeight - 300) && (articles[i].className.indexOf('visible') == -1)) {
-            let articleClass = articles[i].className; // сохраняем текущий класс элемента
-            articles[i].classList = articleClass + ' visible'; // добавляем к текущему классу новый
+    $('[id*="article"]').each(function() {
+        if ((scrollY >= $(this).offset().top - $(this).innerHeight()) && ($(this).hasClass('visible') == false)) {
+            $(this).addClass('visible');
         }
-    }
+    });
+    
 }
 
 window.onscroll = function() { // запускаем функции при скролле
@@ -67,50 +62,39 @@ window.onscroll = function() { // запускаем функции при ск�
 }
 
 // анимация открытия и закрытия меню и смена иконки "меню" на иконку "закрыть"
-function HeaderClose() {
-    if (i % 2 == 1) {
-        $('#header_inner_menu').removeClass('header_inner_menu_close').addClass('header_inner_menu').css('display', 'block');
-        $('#header_wrapper').css('display', 'none');
-        $('#header_close_btn').css('display', 'block').addClass('header_close_btn_active');
-        i++;
+let line_width;
+$('.header_nav_menu').click(function() {
+    if ($(this).attr('data-check') == 0) {
+        $('.header_inner_menu').css('display', 'flex');
+        $(this).attr('data-check', '1');
+        line_width = Number($('.header_nav_menu_line').css('width').slice(0, -2));
+        $('.header_nav_menu_line').first().css({
+            'transform': 'rotate(45deg)',
+            'width': `${line_width - 20}px`
+        });
+        $('.header_nav_menu_line').last().css({
+            'transform': 'rotate(-45deg) translate(4px, -4px)',
+            'width': `${line_width - 20}px`
+        });
     } else {
-        $('#header_inner_menu').removeClass('header_inner_menu').addClass('header_inner_menu_close').css('display', 'none');
-        $('#header_wrapper').css('display', 'block');
-        $('#header_close_btn').css('display', 'none');
-        i++;
+        $('.header_inner_menu').css('display', 'none');
+        $(this).attr('data-check', '0');
+        $('.header_nav_menu_line').first().css('transform', 'rotate(0deg)');
+        $('.header_nav_menu_line').last().css('transform', 'rotate(0deg) translate(0px, 0px)');
+        $('.header_nav_menu_line').css('width', `${line_width}px`);
     }
-    
-}
-// изменяем фон меню при наведении на текст
-function HoverMenu() {
-    $('#about').mouseenter(() => {
-        $('#header_inner_menu').css('background', 'url("img/about.jpg") no-repeat').css('background-size', 'cover');
-    });
-    $('#skills').mouseenter(() => {
-        $('#header_inner_menu').css('background', 'url("img/skills.jpg") no-repeat').css('background-size', 'cover');
-    });
-    $('#projects').mouseenter(() => {
-        $('#header_inner_menu').css('background', 'url("img/projects.jpg") no-repeat').css('background-size', 'cover');
-    });
-    $('#contact').mouseenter(() => {
-        $('#header_inner_menu').css('background', 'url("img/contact.jpg") no-repeat').css('background-size', 'cover');
-    });
-}
-HoverMenu();
+});
+
 
 /* При нажатии на один из пунктов меню, закрываем меню,
  меняем кнопку и переводим пользователя на нужный пункт */
-function BtnClick() { 
-    $('.link').each(function() {
-        $(this).on('click', () => {
-            $('#header_inner_menu').removeClass('header_inner_menu').addClass('header_inner_menu_close').css('display', 'none');
-            $('#header_wrapper').css('display', 'block');
-            $('#header_close_btn').css('display', 'none');
-            i++;
-        });
-    });
-}
-BtnClick();
+$('.link').click(function() {
+    $('.header_inner_menu').css('display', 'none');
+        $(this).attr('data-check', '0');
+        $('.header_nav_menu_line').first().css('transform', 'rotate(0deg)');
+        $('.header_nav_menu_line').last().css('transform', 'rotate(0deg) translate(0px, 0px)');
+        $('.header_nav_menu_line').css('width', `${line_width}px`);
+});
 
 /* анимация эллипсов */
 let ellipse = document.querySelectorAll(".ellipse");
@@ -136,6 +120,7 @@ setInterval(EllipseJump, 9000); // анимация повторяется ка�
 let scrollInt;
 let xPos, yPos;
 function AboutMenuOpen() {
+    $('.header').css('visibility', 'hidden');
     let scrollHeight = window.scrollY; // на сколько прокрутили страницу 
     $('#aboutMenu').removeClass('header_inner_menu_close').addClass('about_inner_menu').css('display', 'block');
     $('#mainAbout').css('display', 'none');
@@ -143,10 +128,12 @@ function AboutMenuOpen() {
     setTimeout(() => {
         $('html').data('scroll-position', scrollHeight).data('previous-overflow', $('html').css('overflow')).css('overflow', 'hidden'); // выключаем прокрутку
     }, 1000);
+
 }
 function AboutMenuClose() {
     $('#aboutMenu').removeClass('about_inner_menu').addClass('header_inner_menu_close').css('display', 'none');
-    $('#mainAbout').css('display', 'block');
+    $('#mainAbout').css('display', 'flex');
+    $('.header').css('visibility', 'visible');
     $('html').css('overflow', $('html').data('previous-overflow')); // включаем прокрутку
 }
 
@@ -188,23 +175,6 @@ function Oxygen() {
                 countOfScroll = 1;
               }
           }
-          
-        /*if ((scrollY == pageHeight - screenHeight) && (antiScroll == 0)) {
-            $('#modal--wrapper').css({
-                'opacity': '1',
-                'pointer-events': 'auto'
-            });
-            if (closeShow == 1) { 
-                $('#colba--modal--close').show(); 
-            } else {
-                $('#colba--modal--close').hide();
-            }
-                $('html').data('scroll-position', scrollHeight).data('previous-overflow', $('html').css('overflow')).css('overflow', 'hidden');
-                $('#water').css('height', '100%');
-        } else {
-            //$('#modal--wrapper').css('display', 'none');
-            $('html').css('overflow', $('html').data('previous-overflow')); // включаем прокрутку
-        }*/
     });
 }
 setTimeout(Oxygen, 4000);

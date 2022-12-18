@@ -1,0 +1,202 @@
+@media only screen and (max-width: $md) {
+    .extra--main {
+        .extra--container {
+            .nav .nav--panel {
+                .nav--players, .nav--stat, .nav--games, .nav--seasons { font-size: 1.2rem;}
+            }
+            .best {
+                .best--top {
+                    grid-template-areas: 
+                        "main other-first"
+                        "main other-first"
+                        "main other-second"
+                        ". other-second";
+                }
+                .best--top--main .best--top--main--col .best--top--main--row { margin-top: 1vw; }
+                .best--top--other {
+                    grid-template-areas: 
+                    "logo logo"
+                    "stat stat" !important;
+                    grid-template-columns: 1fr !important;
+                    padding: 30px 0 30px 0;
+                    .best--top--other--col .best--top--other--row {margin-top: 1vw;}
+                }
+            }
+        }
+    }
+    .extra--main .extra--container .best .other--top {
+        .other--top--wrapper .other--top--card--vertical .other--top--card--vertical--row {
+            margin-top: 1vw;
+            width: 90%;
+            .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span, .other--top--card--vertical--col--place {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .games--stat--wrapper--line {
+        height: 8vw !important;
+    }
+    .player--full--name { display: none; }
+    .player--short--name { display: block; margin-left: 1vw; }
+}
+@media only screen and (max-width: $tablet) {
+    .extra--main .extra--container .best .best--top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .best--top--main {
+            width: 70%;
+            padding: 30px 0 30px 0;
+            .best--top--main--col .best--top--main--row {
+                margin-top: 2vw;
+            }
+        }
+        .best--top--other {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0 30px 0;
+            .best--top--other--col {
+                width: 100%;
+                img {
+                    width: 10vw;
+                }
+                .best--top--other--row {
+                    margin-top: 2vw;
+                    height: 3vw;
+                    width: 70%;
+                    .best--top--other--col--stat {
+                        font-size: 1.8rem;
+                        span { font-size: 1.8rem; }
+                    }
+                }
+            } 
+        }
+    }
+    .extra--main .extra--container .best .other--top {
+        .other--top--wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .other--top--card--vertical {
+                width: 70%;
+                padding: 30px 0 30px 0;
+                .other--top--card--vertical--row {
+                    margin-top: 2vw;
+                    height: 3vw;
+                    width: 80%;
+                    .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span{
+                        font-size: 1.8rem;
+                    }
+                    .other--top--card--vertical--col--place {
+                        font-size: 1.1rem;
+                    }
+                }
+            } 
+        } 
+    }
+    .extra--main .extra--container .best .other--top .other--top--card--horizontal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        padding: 30px 0 30px 0;
+        .other--top--card--horizontal--col {
+            width: 85%;
+            img {
+                width: 10vw;
+            }
+            .other--top--card--horizontal--row {
+                margin-top: 2vw;
+                height: 3vw;
+                width: 100%;
+                .other--top--card--horizontal--col--stat, .other--top--card--horizontal--col--stat span{
+                    font-size: 1.8rem;
+                }
+                .other--top--card--horizontal--col--place {
+                    font-size: 1.1rem;
+                }
+            }
+            
+        }
+    }
+    .extra--main .extra--container .games .games--wrapper { width: 90%; }
+    .extra--main .extra--container .games--stat .games--stat--wrapper .stat--modal .stat--modal--wrapper .stat--modal--container {
+        width: 80%;
+        padding-top: 25px;
+        .stat--modal--header {
+            margin-bottom: 3vw;
+            img {
+                width: 6vw;
+                height: auto;
+            }
+        }
+    }
+    .extra--main .extra--container .seasons {
+        width: 100%;
+        .content--down .btn--group .btn--group--last, .content--down .btn--group .btn--group--curr {
+            width: 40%;   
+            font-size: 1.1rem;     
+        }
+    } 
+}
+
+@media only screen and (max-width: $mob-large) {
+    .extra--container h1 { margin-top: 8vw !important; }
+    .nav--panel {
+        .nav--players, .nav--stat, .nav--games, .nav--seasons { font-size: 1.2rem !important;}
+    }
+    .hidden--menu {
+        display: flex !important;
+    }
+    .nav { display: none !important; }
+    .best { 
+        border-top: 1px solid $bright-red; 
+    }
+    .best h3 { margin-top: 5vw !important; filter: brightness(1) !important; }
+    .best--top--main--row, .best--top--other--row, .other--top--card--vertical--row, .other--top--card--horizontal--row { margin-top: 4vw !important; }
+    .best--top--main, .best--top--other, .other--top--card--vertical, .other--top--card--horizontal {
+        width: 90% !important;
+        padding: 25px 0 50px 0 !important;
+        margin-top: 4vw !important;
+    }
+    .best--top--main--col img, .best--top--other--col img, .other--top--card--vertical img, .other--top--card--horizontal img {
+        width: 20vw !important;
+    }
+    .games--wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 70% !important;
+    }
+    .games { border-top: 1px solid $bright-red; margin-top: 4vw; }
+    .games h3 { margin-bottom: 4vw !important; margin-top: 4vw !important; }
+    .games--stat {
+        margin-top: 4vw !important;
+        border-top: 1px solid $bright-red !important;
+        padding-top: 4vw !important;
+    }
+    .games--stat--wrapper--line {height: 10vw !important; }
+}
+
+@media only screen and (max-width: $mob-md) {
+    .best--top--main--col--stat, .best--top--main--col--stat span, .best--top--other--col--stat, .best--top--other--col--stat span, .other--top--card--vertical--col--stat, .other--top--card--vertical--col--stat span, .other--top--card--vertical--col--place, .other--top--card--horizontal--col--stat, .other--top--card--horizontal--col--stat span, .other--top--card--horizontal--col--place{
+        font-size: 1.3rem !important;        
+    }
+    .games--stat--wrapper--header--text { font-size: 1rem !important; }
+    .player--short--name { font-size: 1.3rem !important; }
+    .games--stat--wrapper--line--text { font-size: 1.3rem !important; }
+    .games--stat--wrapper--line img { width: 5vw !important; }
+    .games--stat--wrapper--line {height: 12vw !important; }
+    .stat--modal--header img {
+        width: 8vw !important;
+    }
+    .stat--modal--close {
+        top: 0 !important;
+        right: 0 !important;
+    }
+    .stat--modal--container { padding-top: 40px !important; }
+    .btn--group--last, .btn--group--curr {
+        font-size: .9rem !important;
+    }
+}
