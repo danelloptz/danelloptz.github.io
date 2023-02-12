@@ -1,0 +1,64 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+.preloader_wrapper
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    left: 0
+    top: 0
+    .preloader
+        width: 300px
+        height: 300px
+        border-radius: 50%
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        .preloader_logo 
+            width: 200px
+            height: 200px
+            object-fit: cover
+            z-index: 20
+            opacity: 0
+            transform: translateY(180px)
+            animation: PreloaderImgJump 1s  alternate
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            animation-fill-mode: forwards
+        .preloader_check 
+            width: 200px
+            height: 200px
+            object-fit: cover
+            z-index: 20
+            display: none
+            opacity: 0
+            animation: PreloaderCheckShow 1s alternate
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            animation-fill-mode: forwards
+        .preloader_border 
+            width: 300px
+            height: 300px
+            position: absolute
+            left: 0
+            top: 0
+            z-index: 30
+            .preloader_circle
+                stroke: red
+                stroke-width: 8px
+                cx: 150px
+                cy: 150px
+                r: 100px
+                fill: transparent
+                transform-origin: center
+                transform: rotate(-90deg)
+                stroke-dasharray: 1000
+                stroke-dashoffset: 1000
+                animation: Preloader 2.5s alternate
+                transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+                animation-fill-mode: forwards
