@@ -1,0 +1,101 @@
+// загрузка и изменение цвета прелоадера
+@keyframes Preloader {
+    from { stroke-dashoffset: 1000; }
+    30% { stroke: red; }
+    to {
+      stroke-dashoffset: 0;
+      stroke: green;
+    }
+}
+
+// появление логотипа в прелоадере
+@keyframes PreloaderImgJump {
+    from { transform: translateY(180px); }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+// появление зелёной галочки
+@keyframes PreloaderCheckShow {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+// напечатывание текста в прелоадере
+@keyframes textTypingShort {
+    0% { width: 0; }
+    2% { opacity: 1; }
+    100% {
+        width: 170px;
+        opacity: 1;
+    }
+}
+
+// мигание курсора
+@keyframes cursorClick {
+    0% { border-color: green; }
+    50% { border-color: transparent; }
+    100% { border-color: green; }
+}
+
+// убрать прелоадер
+@keyframes HidePreloader {
+    from { opacity: 1; }
+    to { opacity: 0;}
+}
+
+// появление header
+@keyframes HeaderShow {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    10% { opacity: 1; }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+// для кнопки навигации
+@keyframes NavButnBefore {
+    from {transform: rotate(0deg) translateX(0px);}
+    to {transform: rotate(90deg) translateX(8px);}
+}
+@keyframes NavButnAfter {
+    from {transform: translateX(0px);}
+    to {transform: translateX(-8px);}
+}
+@keyframes NavWrapperRotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(135deg);}
+}
+
+@keyframes NavButnBeforeClose {
+    from {transform: rotate(90deg) translateX(8px);}
+    to {transform: rotate(0deg) translateX(0px);}
+}
+@keyframes NavButnAfterClose {
+    from {transform: translateX(-8px);}
+    to {transform: translateX(0px);}
+}
+@keyframes NavWrapperRotateClose {
+    from {transform: rotate(135deg);}
+    to {transform: rotate(0deg);}
+}
+
+// появление бургер меню
+@keyframes BurgerShow {
+    from {transform: translateX(100vw);}
+    to {transform: translateX(0vw);}
+}
+@keyframes BurgerClose {
+    from {transform: translateX(0vw);}
+    to {transform: translateX(100vw);}
+}

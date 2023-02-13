@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+// Прелоадер 
+.preloader_wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+  animation: HidePreloader 1s forwards;
+  animation-delay: 4s;
+  .preloader {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .preloader_logo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      z-index: 20;
+      opacity: 0;
+      transform: translateY(180px);
+      animation: PreloaderImgJump 3s  alternate;
+      transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+      animation-fill-mode: forwards;
+    }
+    .preloader_check {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      z-index: 20;
+      display: none;
+      opacity: 0;
+      animation: PreloaderCheckShow 1s alternate;
+      transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+      animation-fill-mode: forwards;
+    }
+    .preloader_border {
+      width: 220px;
+      height: 220px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 30;
+      .preloader_circle {
+        stroke: red;
+        stroke-width: 10px;
+        cx: 110px;
+        cy: 110px;
+        r: 100px;
+        fill: transparent;
+        transform-origin: center;
+        transform: rotate(-90deg);
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: Preloader 4s alternate;
+        transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  .preloader_text {
+    font-family: 'OverpassThin';
+    font-size: 1.8rem;
+    color: black;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 20px;
+    border-right: 3px solid green;
+    padding-right: 5px;
+    animation: textTypingShort 1.5s steps(25), cursorClick .75s step-end infinite;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    white-space: nowrap; /* не переносить текст на новую строку */
+    overflow: hidden; /* скрываем переполнение контентом */
+  }
+}
+
+// Шапка
+.header {
+  width: 100vw;
+  height: 150px;
+  display: none;
+  opacity: 0;
+  animation: HeaderShow .8s forwards;
+  transform: translateY(-200px);
+  transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 4vw 0px 4vw;
+  background: none;
+  position: relative;
+  z-index: 999;
+  @media (max-width: 500px) {
+    padding: 0px 8vw 0px 8vw;
+  }
+  .header_logo {
+    width: 5vw;
+    height: auto;
+    object-fit: cover;
+    @media (max-width: 1300px) {
+      width: 70px;
+    }
+  }
+  .header_menuBtn_wrapper {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+    cursor: pointer;
+    @media (max-width: 700px) {
+      width: 70px;
+      height: 70px;
+    }
+    @media (max-width: 500px) {
+      width: 50px;
+      height: 50px;
+    }
+    .header_menuBtn {
+      height: 1px;
+      width: 100%;
+      position: relative;
+      background: black;
+      transform-origin: center center;
+      cursor: pointer;
+    }
+    .header_menuBtn::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background: black;
+      top: 8px;
+      position: absolute;
+      left: 0;
+      cursor: pointer;
+    }
+    .header_menuBtn::before {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background: black;
+      top: -8px;
+      position: absolute;
+      left: 0;
+      cursor: pointer;
+    }
+  }
+  
+  // класс open, close, dark, light, необходимый для анимации кнопки меню
+  .open::before {
+    animation: NavButnBefore 1s forwards;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .open::after {
+    height: 0px !important;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .open {
+    animation: NavButnAfter 1s forwards;
+    transition: transform 0.8s  cubic-bezier(0.3, 0.4, 1);
+  }
+  .close::before {
+    animation: NavButnBeforeClose 1s forwards;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .close::after {
+    height: 1px !important;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .close {
+    animation: NavButnAfterClose 1s forwards;
+    transition: transform 0.8s  cubic-bezier(0.3, 0.4, 1);
+  }
+  .dark, .dark::before, .dark::after { background: white !important; }
+  .light, .light::before, .light::after { background: black !important; }
+}
+
+// Бургер меню
+.burgerMenu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  pointer-events: none;
+  transform: translateX(100vw);
+  display: flex;
+  background: black;
+  animation: none;
+  transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+  z-index: 900;
+}
