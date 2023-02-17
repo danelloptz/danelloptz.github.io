@@ -21,15 +21,87 @@
 
         <section class="burgerMenu">
             <div class="bigMenu">
-                <div class="bigMenu_item">
-                    <div class="bigMenu_item_header">
-                        <h2 class="bigMenu_item_header_number">01</h2>
-                        <div class="bigMenu_item_header_line"></div>
+                <div class="bigMenu_header">
+                    <div class="bigMenu_header_item" data-num="0">
+                        <h2 class="bigMenu_header_item_num bigMenu_header_item_numActive">Кто я?</h2>
+                        <div class="bigMenu_header_item_line bigMenu_header_item_lineActive"></div>
                     </div>
-                    <div class="bigMenu_item_card">
-                        <img data-src="" class="bigMenu_item_card_img">
+                    <div class="bigMenu_header_item" data-num="1">
+                        <h2 class="bigMenu_header_item_num">Что умею?</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item burger" data-num="2">
+                        <h2 class="bigMenu_header_item_num">Проекты</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item" data-num="3">
+                        <h2 class="bigMenu_header_item_num">Хобби</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item" data-num="4">
+                        <h2 class="bigMenu_header_item_num">Контакты</h2>
+                        <div class="bigMenu_header_item_line"></div>
                     </div>
                 </div>
+                <div class="bigMenu_container">
+                <!--<div class="bigMenu_container_hello tab" data-num="0">
+                        <h3 class="bigMenu_container_hello_title">Привет! Я являюсь </h3>
+                        <h4 class="bigMenu_container_hello_text1">Frontend-разработчиком</h4>
+                        <h4 class="bigMenu_container_hello_text2">Я делаю сайты на каждый день.</h4>
+                    </div>-->
+                    <div class="bigMenu_container_about tab bigMenu_container_show" style="display: flex;" data-num="0">
+                        <img data-src="img/about.jpg" class="lazy-load bigMenu_container_about_img">
+                        <div class="bigMenu_container_about_text">
+                            <h3>Привет!</h3>
+                            <p>Меня зовут Василенко Данил. Я специализируюсь на вёрстке сайтов с уникальным дизайном, разработкой web-приложений, создании UI эффектов и анимаций.</p>
+                        </div>
+                    </div>
+                    <div class="bigMenu_container_skills tab" data-num="1">
+                        <img data-src="img/about1.jpg" class="lazy-load bigMenu_container_skills_img">
+                        <div class="bigMenu_container_skills_text">
+                            <h3>Мои навыки</h3>
+                            <p>В своей работе использую Vue, JQuery, SCSS. Свободно владею графическими редакторами Figma и Photoshop. Полностью адаптивная и отзывчивая вёрстка pixel-perfect.</p>
+                        </div>
+                    </div>
+                    <div class="bigMenu_slider_right">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bigMenu_slider_right_arrow" viewBox="0 0 24 24" style="fill: white;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                    </div>
+                    <div class="bigMenu_slider_left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bigMenu_slider_left_arrow" viewBox="0 0 24 24" style="fill: white;"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
+                    </div>
+                    <div class="bigMenu_container_projects tab" data-num="2">
+                        <div class="bigMenu_container_projects_slider">
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobileMenu">
+                <span class="mobileMenu_link mobileMenu_link_active">Кто я?</span>
+                <span class="mobileMenu_link">Что умею?</span>
+                <span class="mobileMenu_link">Проекты</span>
+                <span class="mobileMenu_link">Хобби</span>
+                <span class="mobileMenu_link">Контакты</span>
             </div>
         </section>
         <header class="header" id="header">

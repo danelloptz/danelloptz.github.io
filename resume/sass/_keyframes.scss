@@ -99,3 +99,24 @@
     from {transform: translateX(0vw);}
     to {transform: translateX(100vw);}
 }
+
+// появление линий в бургер меню
+@keyframes BigMenuLineShow {
+    from { width: 0vw; }
+    to { width: 15vw; }
+}
+@keyframes BigMenuLineClose {
+    from { width: 15vw; }
+    to { width: 0vw; }
+}
+
+// появление container в бургер меню
+@keyframes BigMenuContainerShow {
+    from { transform: translateY(60px); opacity: 0; }
+    40% {opacity: 0;}
+    to { transform: translateY(0px); opacity: 1; }
+}
+@keyframes BigMenuContainerClose {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
