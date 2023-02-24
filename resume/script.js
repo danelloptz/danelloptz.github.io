@@ -8,6 +8,7 @@ setTimeout(() => {
 setTimeout(() => {
     $('.preloader_wrapper').css('display', 'none');
     $('.header').css('display', 'flex');
+    $('.main').css('display', 'block'); // хз
 }, 4500);
 
 /* Меню навигации */
@@ -85,6 +86,111 @@ $('.bigMenu_slider_right, .bigMenu_slider_left').click(function() {
         }
     }
 });
+
+// Прыгающие логотипы на главное странице
+let jumpCount = 0;
+function JumpLogos() {
+    if ($('.hello_icon').length == jumpCount) jumpCount = 0;
+    $('.hello_icons_wrapper').children().eq(jumpCount - 1).removeClass('hello_icon_active');
+    $('.hello_icons_wrapper').children().eq(jumpCount).addClass('hello_icon_active');
+    jumpCount += 1;
+}
+setInterval(JumpLogos, 500); 
+
+
+/* Переход на следующий блок при скролле. PC версия  */
+let scrollCount = 0;
+let scrollCan = true;
+$(window).bind('mousewheel', function(e) {
+    if (scrollCan) {
+        scrollCan = false;
+        if (e.originalEvent.deltaY > 0) {
+            let numActive = Number($('.main_active').attr('data-check'));
+            if (scrollCount == 0) $('.hello_img_wrapper').addClass('hide_hello_img').removeClass('show_hello_img'); 
+            if ($('.main_active').length == 0) {
+                numActive = 0;
+                scrollCount = 1;
+                $('.main_item').first().addClass('main_close');
+                $('.main').children().eq(1).addClass('main_active');
+                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+            } else {
+                if ($('.main_active').length >= scrollCount) {
+                    $('.main_active').addClass('main_close').removeClass('main_active');
+                    scrollCount += 1;
+                    $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                }
+            }
+        }
+        else {
+            if (scrollCount > 0) {
+                $('.main_active').addClass('main_close').removeClass('main_active');
+                scrollCount -= 1;
+                if (scrollCount == 0) {
+                    $('.hello_img_wrapper').addClass('show_hello_img').removeClass('hide_hello_img'); 
+                    $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'flex');
+                } 
+                else $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'grid');
+                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+            }
+        } 
+    }
+    setTimeout(() => scrollCan = true, 800);
+});
+
+/* Переход на следующий блок при скролле. Mobile версия  */
+let startScroll = 0;
+let endScroll = 0;
+let flag = 0;
+$(window).bind('touchstart', function(e) {
+    startScroll = e.originalEvent.touches[0].clientY;
+    flag = 1;
+});
+$(window).bind('touchend', function(e) {
+    endScroll = e.originalEvent.changedTouches[0].clientY;
+    flag = 1;
+});
+$(window).bind('touchmove', function(e) {  
+    if (flag == 1 && scrollCan) {
+        scrollCan = false;
+        if (startScroll > endScroll) {
+            let numActive = Number($('.main_active').attr('data-check'));
+            if (scrollCount == 0) $('.hello_img_wrapper').addClass('hide_hello_img').removeClass('show_hello_img'); 
+            if ($('.main_active').length == 0) {
+                numActive = 0;
+                scrollCount = 1;
+                $('.main_item').first().addClass('main_close');
+                $('.main').children().eq(1).addClass('main_active');
+                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+            } else {
+                if ($('.main_active').length >= scrollCount) {
+                    $('.main_active').addClass('main_close').removeClass('main_active');
+                    scrollCount += 1;
+                    $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                }
+            }
+        }
+        else {
+            if (scrollCount > 0) {
+                $('.main_active').addClass('main_close').removeClass('main_active');
+                scrollCount -= 1;
+                if (scrollCount == 0) {
+                    $('.hello_img_wrapper').addClass('show_hello_img').removeClass('hide_hello_img'); 
+                    $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'flex');
+                } 
+                else $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'grid');
+                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+            }
+            
+        }
+    }  
+    flag = 0;
+    startScroll = 0;
+    endScroll = 0;
+    setTimeout(() => scrollCan = true, 800);
+});
+
 
 /* lazy-load */
 $(window).on('scroll click', function() {
