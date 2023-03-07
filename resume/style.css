@@ -1161,6 +1161,13 @@ body {
   background: #007f86;
 }
 
+.content .content_bg .skills_bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #d38278;
+}
+
 @media (max-width: 1300px) {
   .content .content_bg {
     width: 75vw;
@@ -1197,9 +1204,33 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .content .content_info {
+    height: 30vh;
+  }
+}
+
+@media (max-height: 700px) {
+  .content .content_info {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .content .content_info {
+    height: 35vh;
+  }
+}
+
 @media (max-width: 410px) {
   .content .content_info {
     padding: 0 3vw 0 3vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .content .content_info {
+    height: 40vh;
   }
 }
 
@@ -1246,7 +1277,12 @@ body {
   overflow: hidden;
 }
 
+.content .content_info .content_opentag .about_opentag:first-of-type, .content .content_info .content_opentag .about_closetag:first-of-type, .content .content_info .content_closetag .about_opentag:first-of-type, .content .content_info .content_closetag .about_closetag:first-of-type {
+  display: block;
+}
+
 .content .content_info .content_opentag span, .content .content_info .content_closetag span {
+  display: none;
   font-size: 1rem;
   color: #BDDACD;
   font-family: 'MonoidRegular';
@@ -1267,7 +1303,9 @@ body {
 }
 
 .content .content_info .content_title h3 {
+  display: none;
   font-size: 3rem;
+  height: 3rem;
   color: white;
   font-family: 'SF';
   letter-spacing: 1px;
@@ -1276,24 +1314,28 @@ body {
 @media (max-width: 1600px) {
   .content .content_info .content_title h3 {
     font-size: 2.5rem;
+    height: 2.5rem;
   }
 }
 
 @media (max-width: 1150px) {
   .content .content_info .content_title h3 {
     font-size: 2.2rem;
+    height: 2.2rem;
   }
 }
 
 @media (max-width: 600px) {
   .content .content_info .content_title h3 {
     font-size: 1.8rem;
+    height: 1.8rem;
   }
 }
 
 @media (max-width: 500px) {
   .content .content_info .content_title h3 {
     font-size: 1.5rem;
+    height: 1.5rem;
   }
 }
 
@@ -1342,8 +1384,10 @@ body {
 }
 
 .content .content_info .content_text p {
+  display: none;
   font-size: 2rem;
   color: white;
+  height: 2rem;
   font-family: 'SF';
   letter-spacing: .5px;
 }
@@ -1351,18 +1395,21 @@ body {
 @media (max-width: 1600px) {
   .content .content_info .content_text p {
     font-size: 1.5rem;
+    height: 1.5rem;
   }
 }
 
 @media (max-width: 1150px) {
   .content .content_info .content_text p {
     font-size: 1.3rem;
+    height: 1.3rem;
   }
 }
 
 @media (max-width: 500px) {
   .content .content_info .content_text p {
     font-size: 1.1rem;
+    height: 1.1rem;
   }
 }
 
@@ -1398,6 +1445,7 @@ body {
 }
 
 .content .content_photo img {
+  display: none;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1427,7 +1475,7 @@ body {
 .content .content_mobile_photo {
   display: none;
   width: 80vw;
-  height: 40vh;
+  height: 70%;
   overflow: hidden;
   z-index: 103;
   margin: auto;
@@ -1443,13 +1491,46 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  display: none;
 }
 
 @media (max-width: 900px) {
   .content .content_mobile_photo {
     display: block;
-    padding-top: 8vh;
+    padding-top: 2vh;
   }
+}
+
+@media (max-width: 700px) {
+  .content .content_mobile_photo {
+    padding-top: 8vh;
+    height: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .content .content_mobile_photo {
+    padding-top: 10vh;
+    height: 100%;
+  }
+}
+
+.content .contentAnimation_close {
+  -webkit-animation: ContentAnimationClose 1s forwards;
+          animation: ContentAnimationClose 1s forwards;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+          transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+}
+
+.content .contentAnimation_show {
+  -webkit-animation: ContentAnimationShow 1s forwards;
+          animation: ContentAnimationShow 1s forwards;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+          transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+}
+
+.light {
+  color: #e5ff52;
 }
 
 .skills {
@@ -2049,6 +2130,42 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes ContentAnimationClose {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+
+@keyframes ContentAnimationClose {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+
+@-webkit-keyframes ContentAnimationShow {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes ContentAnimationShow {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

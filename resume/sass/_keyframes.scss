@@ -148,3 +148,13 @@
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+// появление элементов content
+@keyframes ContentAnimationClose {
+    from {height: 100%;}
+    to {height: 0%;}
+}
+@keyframes ContentAnimationShow {
+    from {height: 0%;}
+    to {height: 100%;}
+}

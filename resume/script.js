@@ -101,6 +101,33 @@ setInterval(JumpLogos, 500);
 /* Переход на следующий блок при скролле. PC версия  */
 let scrollCount = 0;
 let scrollCan = true;
+function SrollContentBefore(contentCount, way) {
+    $('.content_bg').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
+    $('.content_mobile_photo').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
+    $('.content_opentag').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show').css('color', 'transparent');
+    $('.content_closetag').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show').css('color', 'transparent');
+    $('.content_photo').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
+    $('.content_title').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show').css('color', 'transparent');
+    $('.content_title').children().eq(contentCount).children().css('color', 'transparent');
+    $('.content_text').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show').css('color', 'transparent');
+    $('.content_text').children().eq(contentCount).children().css('color', 'transparent');
+}    
+function SrollContentAfter(contentCount, way) {
+    $('.content_bg').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_mobile_photo').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_opentag').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_closetag').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_photo').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_title').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_text').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_opentag').children().eq(contentCount).css('color', 'white');
+    $('.content_closetag').children().eq(contentCount).css('color', 'white');
+    $('.content_title').children().eq(contentCount).css('color', 'white');
+    $('.content_text').children().eq(contentCount).css('color', 'white');
+    $('.content_title').children().eq(contentCount).children().css('color', '#e5ff52');
+    $('.content_text').children().eq(contentCount).children().css('color', '#e5ff52');
+}
+let contentCount = 0;
 $(window).bind('mousewheel', function(e) {
     if (scrollCan) {
         scrollCan = false;
@@ -115,24 +142,36 @@ $(window).bind('mousewheel', function(e) {
                 setTimeout(() => $('.main_close').css('display', 'none'), 1000);
             } else {
                 if ($('.main_active').length >= scrollCount) {
-                    $('.main_active').addClass('main_close').removeClass('main_active');
                     scrollCount += 1;
-                    $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
-                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                    if (scrollCount == 2) { // ==
+                        SrollContentBefore(contentCount, 'down');
+                        contentCount++;
+                        SrollContentAfter(contentCount, 'down');
+                    } else {
+                        $('.main_active').addClass('main_close').removeClass('main_active');
+                        $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
+                        setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                    }
+                    
                 }
             }
         }
         else {
-            if (scrollCount > 0) {
-                $('.main_active').addClass('main_close').removeClass('main_active');
+            if (scrollCount > 1) {
                 scrollCount -= 1;
-                if (scrollCount == 0) {
+                SrollContentBefore(contentCount, 'up');
+                contentCount--;
+                SrollContentAfter(contentCount, 'up');
+            }
+            else {
+                if (scrollCount - 1 >= 0) {
+                    scrollCount -= 1;
+                    $('.main_active').addClass('main_close').removeClass('main_active');
                     $('.hello_img_wrapper').addClass('show_hello_img').removeClass('hide_hello_img'); 
                     $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'flex');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
                 } 
-                else $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'grid');
-                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
-            }
+            } 
         } 
     }
     setTimeout(() => scrollCan = true, 800);
@@ -150,8 +189,9 @@ $(window).bind('touchend', function(e) {
     endScroll = e.originalEvent.changedTouches[0].clientY;
     flag = 1;
 });
-$(window).bind('touchmove', function(e) {  
+$(window).bind('touchmove', function(e) {
     if (flag == 1 && scrollCan) {
+        console.log(startScroll, endScroll);
         scrollCan = false;
         if (startScroll > endScroll) {
             let numActive = Number($('.main_active').attr('data-check'));
@@ -164,30 +204,41 @@ $(window).bind('touchmove', function(e) {
                 setTimeout(() => $('.main_close').css('display', 'none'), 1000);
             } else {
                 if ($('.main_active').length >= scrollCount) {
-                    $('.main_active').addClass('main_close').removeClass('main_active');
                     scrollCount += 1;
-                    $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
-                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                    if (scrollCount == 2) {
+                        SrollContentBefore(contentCount, 'down');
+                        contentCount++;
+                        SrollContentAfter(contentCount, 'down');
+                    } else {
+                        $('.main_active').addClass('main_close').removeClass('main_active');
+                        $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
+                        setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                    }
                 }
             }
         }
         else {
-            if (scrollCount > 0) {
-                $('.main_active').addClass('main_close').removeClass('main_active');
+            if (scrollCount > 1) {
                 scrollCount -= 1;
-                if (scrollCount == 0) {
+                SrollContentBefore(contentCount, 'up');
+                contentCount--;
+                SrollContentAfter(contentCount, 'up');
+            }
+            else {
+                if (scrollCount - 1 >= 0) {
+                    scrollCount -= 1;
+                    $('.main_active').addClass('main_close').removeClass('main_active');
                     $('.hello_img_wrapper').addClass('show_hello_img').removeClass('hide_hello_img'); 
                     $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'flex');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
                 } 
-                else $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'grid');
-                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
-            }
+            } 
             
         }
+        flag = 0;
+        startScroll = 0;
+        endScroll = 0;
     }  
-    flag = 0;
-    startScroll = 0;
-    endScroll = 0;
     setTimeout(() => scrollCan = true, 800);
 });
 
