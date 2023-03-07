@@ -1,3 +1,4 @@
+/* полноэкранный режим */
 $(document).click(function() {
     let elem = document.documentElement;
     if (elem.requestFullscreen) {
