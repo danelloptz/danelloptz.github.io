@@ -13,16 +13,20 @@ $(document).click(function() {
 });
 /* меняем логотип на галочку в прелоадере */
 setTimeout(() => {
-    $('.preloader_logo').css('display', 'none');
-    $('.preloader_check').css('display', 'block');
-}, 2500);
+    $('.preloader').addClass('pulse');
+}, 3500);
 
 /* убираем прелоадер и показываем страницу */
-setTimeout(() => {
-    $('.preloader_wrapper').css('display', 'none');
-    $('.header').css('display', 'flex');
-    $('.main').css('display', 'block'); // хз
-}, 4500);
+$('.preloader_wrapper').click(function() {
+    $('.preloader_logo').css('display', 'none');
+    $('.preloader_check').css('display', 'block');
+    $('.preloader_click_text').css('visibillity', 'hidden');
+    setTimeout(() => {
+        $('.preloader_wrapper').css('display', 'none');
+        $('.header').css('display', 'flex');
+        $('.main').css('display', 'block'); // хз
+    }, 1000);
+});
 
 /* Меню навигации */
 $('.header_menuBtn_wrapper').click(function() {

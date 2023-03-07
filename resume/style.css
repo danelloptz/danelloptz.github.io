@@ -62,10 +62,8 @@ body {
   top: 0;
   -webkit-transition-timing-function: cubic-bezier(0.3, 0.4, 1);
           transition-timing-function: cubic-bezier(0.3, 0.4, 1);
-  -webkit-animation: HidePreloader 1s forwards;
-          animation: HidePreloader 1s forwards;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  /*animation: HidePreloader 1s forwards;
+  animation-delay: 4s;*/
 }
 
 .preloader_wrapper .preloader {
@@ -83,6 +81,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .preloader_wrapper .preloader .preloader_logo {
@@ -157,8 +156,8 @@ body {
   margin-top: 20px;
   border-right: 3px solid green;
   padding-right: 5px;
-  -webkit-animation: textTypingShort 1.5s steps(25), cursorClick 0.75s step-end infinite;
-          animation: textTypingShort 1.5s steps(25), cursorClick 0.75s step-end infinite;
+  -webkit-animation: textTypingShort 2.5s steps(25), cursorClick 0.75s step-end infinite;
+          animation: textTypingShort 2.5s steps(25), cursorClick 0.75s step-end infinite;
   -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
   -webkit-animation-fill-mode: forwards;
@@ -168,6 +167,29 @@ body {
   /* не переносить текст на новую строку */
   overflow: hidden;
   /* скрываем переполнение контентом */
+}
+
+.preloader_wrapper .preloader_click_text {
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: .4s;
+  transition: .4s;
+  font-family: 'SF';
+  font-size: 1.8rem;
+  color: #505050;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 20px;
+  -webkit-animation: PreloaderClickText .4s forwards, FlashText 1.5s infinite;
+          animation: PreloaderClickText .4s forwards, FlashText 1.5s infinite;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.preloader_wrapper .pulse {
+  -webkit-animation: Pulse 1s infinite;
+          animation: Pulse 1s infinite;
 }
 
 .header {
@@ -1197,7 +1219,7 @@ body {
   display: none;
   width: 100%;
   height: 100%;
-  background: #d38278;
+  background: #c0786f;
 }
 
 @media (max-width: 1300px) {
@@ -1690,9 +1712,12 @@ body {
   2% {
     opacity: 1;
   }
-  100% {
-    width: 170px;
+  70% {
     opacity: 1;
+    width: 170px;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -1703,8 +1728,29 @@ body {
   2% {
     opacity: 1;
   }
-  100% {
+  70% {
+    opacity: 1;
     width: 170px;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes PreloaderClickText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes PreloaderClickText {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
@@ -1748,6 +1794,60 @@ body {
   }
   to {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes FlashText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes FlashText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes Pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes Pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
