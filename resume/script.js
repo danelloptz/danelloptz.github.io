@@ -1,5 +1,5 @@
 /* полноэкранный режим */
-$(document).click(function() {
+function Fullscreen() {
     let elem = document.documentElement;
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
@@ -10,7 +10,31 @@ $(document).click(function() {
     } else if (elem.msRequestFullscreen) { /* IE/Edge */
         elem.msRequestFullscreen();
     }
+}
+function CancelFullscreen() {
+    if(document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if(document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if(document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
+$('.preloader_wrapper').click(Fullscreen);
+$('.fullscreen').click(function() {
+    if ($(this).attr('data-check') == 1) {
+        Fullscreen();
+        $(this).attr('data-check', '0');
+        $('.fullscreen_btn').css('display', 'none');
+        $('.minimaze_btn').css('display', 'block');
+    } else {
+        CancelFullscreen();
+        $(this).attr('data-check', '1');
+        $('.fullscreen_btn').css('display', 'block');
+        $('.minimaze_btn').css('display', 'none');
+    }
 });
+
 /* меняем логотип на галочку в прелоадере */
 setTimeout(() => {
     $('.preloader').addClass('pulse');
@@ -23,7 +47,7 @@ $('.preloader_wrapper').click(function() {
     $('.preloader_click_text').css('visibillity', 'hidden');
     setTimeout(() => {
         $('.preloader_wrapper').css('display', 'none');
-        $('.header').css('display', 'flex');
+        $('.header, .fullscreen').css('display', 'flex');
         $('.main').css('display', 'block'); // хз
     }, 1000);
 });
