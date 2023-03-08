@@ -118,6 +118,8 @@ setInterval(JumpLogos, 500);
 /* Переход на следующий блок при скролле. PC версия  */
 let scrollCount = 0;
 let scrollCan = true;
+let labels = ['Кто я?', 'Что умею?', 'Проекты', 'Хобби', 'Контакты'];
+
 function SrollContentBefore(contentCount, way) {
     $('.content_bg').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
     $('.content_mobile_photo').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
@@ -160,10 +162,13 @@ $(window).bind('mousewheel', function(e) {
             } else {
                 if ($('.main_active').length >= scrollCount) {
                     scrollCount += 1;
-                    if (scrollCount == 2) { // ==
+                    if (scrollCount == 2) {
                         SrollContentBefore(contentCount, 'down');
+                        $('.content_line').eq(contentCount).addClass('dot_line_active');
                         contentCount++;
                         SrollContentAfter(contentCount, 'down');
+                        $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                        $('.content_line_dot').eq(contentCount).addClass('dot_line_active');
                     } else {
                         $('.main_active').addClass('main_close').removeClass('main_active');
                         $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
@@ -177,8 +182,11 @@ $(window).bind('mousewheel', function(e) {
             if (scrollCount > 1) {
                 scrollCount -= 1;
                 SrollContentBefore(contentCount, 'up');
+                $('.content_line_dot').eq(contentCount).removeClass('dot_line_active');                
                 contentCount--;
                 SrollContentAfter(contentCount, 'up');
+                $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                $('.content_line').eq(contentCount).removeClass('dot_line_active');
             }
             else {
                 if (scrollCount - 1 >= 0) {
@@ -208,7 +216,6 @@ $(window).bind('touchend', function(e) {
 });
 $(window).bind('touchmove', function(e) {
     if (flag == 1 && scrollCan) {
-        console.log(startScroll, endScroll);
         scrollCan = false;
         if (startScroll > endScroll) {
             let numActive = Number($('.main_active').attr('data-check'));
@@ -224,8 +231,11 @@ $(window).bind('touchmove', function(e) {
                     scrollCount += 1;
                     if (scrollCount == 2) {
                         SrollContentBefore(contentCount, 'down');
+                        $('.content_line').eq(contentCount).addClass('dot_line_active');
                         contentCount++;
                         SrollContentAfter(contentCount, 'down');
+                        $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                        $('.content_line_dot').eq(contentCount).addClass('dot_line_active');
                     } else {
                         $('.main_active').addClass('main_close').removeClass('main_active');
                         $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
@@ -238,8 +248,11 @@ $(window).bind('touchmove', function(e) {
             if (scrollCount > 1) {
                 scrollCount -= 1;
                 SrollContentBefore(contentCount, 'up');
+                $('.content_line_dot').eq(contentCount).removeClass('dot_line_active');                
                 contentCount--;
                 SrollContentAfter(contentCount, 'up');
+                $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                $('.content_line').eq(contentCount).removeClass('dot_line_active');
             }
             else {
                 if (scrollCount - 1 >= 0) {

@@ -1288,42 +1288,60 @@ body {
   }
 }
 
-.content .content_info .content_line {
-  height: 1px;
+.content .content_info .content_line_wrapper {
+  height: 10px;
   width: 100%;
   position: relative;
   margin-bottom: 4vh;
-  background: white;
   z-index: 104;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (max-width: 900px) {
-  .content .content_info .content_line {
+  .content .content_info .content_line_wrapper {
     display: none;
   }
 }
 
-.content .content_info .content_line .content_line_text {
+.content .content_info .content_line_wrapper .content_line_text {
   font-size: 1.2rem;
   font-family: 'SF';
   color: #BDDACD;
   letter-spacing: 1px;
   position: absolute;
+  -webkit-transition: .5s;
+  transition: .5s;
   left: -15px;
   top: -35px;
 }
 
-.content .content_info .content_line .content_line_dot {
+.content .content_info .content_line_wrapper .content_line_dot {
   width: 10px;
   height: 10px;
+  margin-top: -5px;
   border-radius: 50%;
   background: white;
-  position: absolute;
-  left: 0;
-  top: -5px;
   -webkit-transition: .5s;
   transition: .5s;
   z-index: 105;
+}
+
+.content .content_info .content_line_wrapper .content_line {
+  height: 1px;
+  width: 25%;
+  background: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 105;
+}
+
+.content .content_info .content_line_wrapper .dot_line_active {
+  background: #e5ff52;
 }
 
 .content .content_info .content_opentag, .content .content_info .content_closetag {
@@ -1496,6 +1514,8 @@ body {
   height: 500px;
   overflow: hidden;
   z-index: 103;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .content .content_photo img {
@@ -1536,6 +1556,8 @@ body {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .content .content_mobile_photo img {

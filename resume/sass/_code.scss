@@ -758,13 +758,14 @@ body {
     @media (max-width: 400px) {
       height: 40vh;
     }
-    .content_line {
-      height: 1px;
+    .content_line_wrapper {
+      height: 10px;
       width: 100%;
       position: relative;
       margin-bottom: 4vh;
-      background: white;
       z-index: 104;
+      display: flex;
+      justify-content: space-between;
       @media (max-width: 900px) {
         display: none;
       }
@@ -774,19 +775,28 @@ body {
         color: #BDDACD;
         letter-spacing: 1px;
         position: absolute;
+        transition: .5s;
         left: -15px;
         top: -35px;
       }
       .content_line_dot {
         width: 10px;
         height: 10px;
+        margin-top: -5px;
         border-radius: 50%;
         background: white;
-        position: absolute;
-        left: 0;
-        top: -5px;
         transition: .5s;
         z-index: 105;
+      }
+      .content_line {
+        height: 1px;
+        width: 25%;
+        background: white;
+        transition: .5s;
+        z-index: 105;
+      }
+      .dot_line_active {
+        background: #e5ff52;
       }
     }
     .content_opentag, .content_closetag {
@@ -902,6 +912,7 @@ body {
     height: 500px;
     overflow: hidden;
     z-index: 103;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     img {
       display: none;
       width: 100%;
@@ -927,6 +938,7 @@ body {
     z-index: 103;
     margin: auto;
     align-self: end;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     img {
       width: 100%;
       height: 100%;
