@@ -172,3 +172,11 @@
     from {height: 0%;}
     to {height: 100%;}
 }
+@keyframes ContentAnimationTextClose {
+    from {opacity: 1;transform: translateY(0px);}
+    to {opacity: 0; transform: translateY(30px);}
+}
+@keyframes ContentAnimationTextShow {
+    from {opacity: 0;transform: translateY(30px);}
+    to {opacity: 1;transform: translateY(0px);}
+}
