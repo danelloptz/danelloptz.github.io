@@ -4,276 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-        <div id="wrapper--colba">
-            <div id="colba">
-                <div id="water">
-                
+       
+        <section class="preloader_wrapper">
+            <div class="preloader">
+                <img src="img/bruh.png" class="preloader_logo">
+                <img src="img/chek.png" class="preloader_check">
+                <svg class="preloader_border">
+                    <circle class="preloader_circle"/>
+                </svg>
+            </div>
+            <h1 class="preloader_text">Hello, world!</h1>
+            <h2 class="preloader_click_text">Нажмите, чтобы продолжить</h2>
+        </section>
+
+        <section class="burgerMenu">
+            <div class="bigMenu">
+                <div class="bigMenu_header">
+                    <div class="bigMenu_header_item" data-num="0">
+                        <h2 class="bigMenu_header_item_num bigMenu_header_item_numActive">Кто я?</h2>
+                        <div class="bigMenu_header_item_line bigMenu_header_item_lineActive"></div>
+                    </div>
+                    <div class="bigMenu_header_item" data-num="1">
+                        <h2 class="bigMenu_header_item_num">Что умею?</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item burger" data-num="2">
+                        <h2 class="bigMenu_header_item_num">Проекты</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item" data-num="3">
+                        <h2 class="bigMenu_header_item_num">Хобби</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item" data-num="4">
+                        <h2 class="bigMenu_header_item_num">Контакты</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="animate_logo" id="animate_logo">
-            <div class="animate_wrap">
-                <div class="logo_text">B</div>
-                <div class="left-top"></div>
-                <div class="left"></div>
-                <div class="left-bottom"></div>
-                <div class="bottom"></div>
-                <div class="right-bottom"></div>
-                <div class="right"></div>
-                <div class="right-top"></div>
-                <div class="top"></div>
-            </div>
-        </div>
-        <header class="header" id="header">
-            <nav class="header_wrapper" id="header_wrapper">
-                <a href="#">
-                    <div class="header_logo" id="header_logo">
-                        <div class="animate_logoMenu">
-                            <div class="animate_wrapMenu">
-                                <div class="logo_text">B</div>
-                                <div class="left-top"></div>
-                                <div class="left"></div>
-                                <div class="left-bottom"></div>
-                                <div class="bottom"></div>
-                                <div class="right-bottom"></div>
-                                <div class="right"></div>
-                                <div class="right-top"></div>
-                                <div class="top"></div>
+                <div class="bigMenu_container">
+                <!--<div class="bigMenu_container_hello tab" data-num="0">
+                        <h3 class="bigMenu_container_hello_title">Привет! Я являюсь </h3>
+                        <h4 class="bigMenu_container_hello_text1">Frontend-разработчиком</h4>
+                        <h4 class="bigMenu_container_hello_text2">Я делаю сайты на каждый день.</h4>
+                    </div>-->
+                    <div class="bigMenu_container_about tab bigMenu_container_show" style="display: flex;" data-num="0">
+                        <img data-src="img/about.jpg" class="lazy-load bigMenu_container_about_img">
+                        <div class="bigMenu_container_about_text">
+                            <h3>Привет!</h3>
+                            <p>Меня зовут Василенко Данил. Я специализируюсь на вёрстке сайтов с уникальным дизайном, разработкой web-приложений, создании UI эффектов и анимаций.</p>
+                        </div>
+                    </div>
+                    <div class="bigMenu_container_skills tab" data-num="1">
+                        <img data-src="img/about1.jpg" class="lazy-load bigMenu_container_skills_img">
+                        <div class="bigMenu_container_skills_text">
+                            <h3>Мои навыки</h3>
+                            <p>В своей работе использую Vue, JQuery, SCSS. Свободно владею графическими редакторами Figma и Photoshop. Полностью адаптивная и отзывчивая вёрстка pixel-perfect.</p>
+                        </div>
+                    </div>
+                    <div class="bigMenu_slider_right">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bigMenu_slider_right_arrow" viewBox="0 0 24 24" style="fill: white;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                    </div>
+                    <div class="bigMenu_slider_left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bigMenu_slider_left_arrow" viewBox="0 0 24 24" style="fill: white;"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
+                    </div>
+                    <div class="bigMenu_container_projects tab" data-num="2">
+                        <div class="bigMenu_container_projects_slider">
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/ableton.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/resume.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img data-src="img/game.png" class="lazy-load">
+                            </div>                        
                             </div>
                         </div>
                     </div>
-                </a>
-                <div class="header_nav_menu" data-check="0">
-                    <div class="header_nav_menu_line"></div>
-                    <div class="header_nav_menu_line"></div>
                 </div>
-            </nav>
-            <nav>
-                <div class="header_inner_menu" id="header_inner_menu">
-                    <ul>
-                        <a onclick="location.href='#aboutLink'"><li class="header_inner_menu_text about link" id="about">ОБО МНЕ</li></a>
-                        <a onclick="location.href='#skillsLink'"><li class="header_inner_menu_text skills link" id="skills">НАВЫКИ</li></a>
-                        <a onclick="location.href='#projectsLink'"><li class="header_inner_menu_text project link" id="projects">ПРОЕКТЫ</li></a>
-                        <a onclick="location.href='#contactsLink'"><li class="header_inner_menu_text contact link" id="contact">О САЙТЕ</li></a>
-                    </ul>
-                </div>
-            </nav>
+            </div>
+            <div class="mobileMenu">
+                <span class="mobileMenu_link mobileMenu_link_active">Кто я?</span>
+                <span class="mobileMenu_link">Что умею?</span>
+                <span class="mobileMenu_link">Проекты</span>
+                <span class="mobileMenu_link">Хобби</span>
+                <span class="mobileMenu_link">Контакты</span>
+            </div>
+        </section>
+        <header class="header" id="header">
+            <img src="img/bruh.png" class="header_logo">
+            <div class="header_menuBtn_wrapper">
+                <div class="header_menuBtn close" data-check="0"></div>
+            </div>
         </header>
+        <div class="fullscreen" data-check="0">
+            <img src="img/full-screen.svg" class="fullscreen_btn">
+            <img src="img/minimize.svg" class="minimaze_btn">
+        </div>
         <main class="main" id="main">
-                <section class="main_header">
-                    <div class="header-sm-txt">Привет! Я являюсь</div>
-                    <div class="header-bg-txt">Frontend-разработчиком.</div>
-                    <div class="header-bg-txt-mute">Я ДЕЛАЮ САЙТЫ НА КАЖДЫЙ ДЕНЬ</div>
-                    <a onclick="location.href='#aboutLink'"><button class="main_header_btn">УЗНАТЬ БОЛЬШЕ</button></a>
-                </section>
-                <section class="about_inner_menu" id="aboutMenu">
-                    <a onclick="AboutMenuClose()"><div class="aboutInnerMenuCLose"></div></a>
-                    <div class="aboutInnerMenuWrapper">
-                        <span class="aboutInnerMenuTitle">КТО Я?</span>
-                        <div class="aboutInnerMenuText">
-                            <ul class="aboutInnerMenuUl">
-                                <li class="aboutInnerMenuLi"><span class="liTitle">ФИО:</span> Василенко Данил Олегович</li>
-                                <li class="aboutInnerMenuLi"><span class="liTitle">Возраст:</span> 16 лет</li>
-                                <li class="aboutInnerMenuLi"><span class="liTitle">Город:</span> Петрозаводск, Карелия</li>
-                                <li class="aboutInnerMenuLi"><span class="liTitle">Навыки:</span> адаптивная вёрстка HTML/CSS; JS в связке с JQuery и Vue; работа с графическим дизайном в Figma и Photoshop</li>
-                                <li class="aboutInnerMenuLi"><span class="liTitle">Опыт:</span> 2 года</li>
-                                <li class="aboutInnerMenuLi"><span class="liTitle">Предпочтения в работе:</span> креативные и подвижные сайты, анимации разных уровней сложности</li>
-                                <li class="aboutInnerMenuLi"><span class="liTitle">Вне работы:</span> баскетболист, фотограф, турист</li>
-                            </ul>
-                            <button class="aboutInnerMenuButton">КОНТАКТЫ</button>
+            <section class="hello main_item" data-check="0">
+                <div class="hello_smtext_wrapper">
+                    <span class="hello_smtext">Привет! Меня зовут <span style="color: #f35182;">Василенко Данил</span> и я</span>
+                </div>
+                <div class="hello_bgtext_black_wrapper">
+                    <h1 class="hello_bgtext_black">Frontend-разработчик</h1>
+                </div>
+                <div class="hello_bgtext_mute_wrapper">
+                    <h2 class="hello_bgtext_mute">Крутые сайты на каждый день.</h2>
+                </div>
+                <div class="hello_icons_wrapper">
+                    <img src="img/instagram.svg" class="hello_icon">
+                    <img src="img/telegram.svg" class="hello_icon">
+                    <img src="img/github.svg" class="hello_icon">
+                    <img src="img/mail.svg" class="hello_icon">
+                    <img src="img/pinterest.svg" class="hello_icon">
+                </div>
+                <div class="hello_img_wrapper">
+                    <a href="https://dribbble.com/kunchevsky"><img src="img/HelloGif.gif" class="hello_img"></a> <!--Author: https://dribbble.com/kunchevsky Amazing work!-->
+                </div>
+                
+            </section>
+            <section class="content main_item" data-check="1">
+                <div class="content_bg">
+                    <div class="about_bg"></div>
+                    <div class="skills_bg"></div>
+                    <div class="projects_bg"></div>
+                    <div class="basketball_bg"></div>
+                </div>
+                <div class="content_info">
+                    <div class="content_line_wrapper">
+                        <span class="content_line_text">Кто я?</span>
+                        <div class="content_line_dot dot_line_active"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                    </div>
+                    <div class="content_opentag">
+                        <span class="about_opentag">&lt;about&gt;</span>
+                        <span class="about_opentag">&lt;skills&gt;</span>
+                        <span class="about_opentag">&lt;projects&gt;</span>
+                        <span class="about_opentag">&lt;basketball&gt;</span>
+                    </div>
+                    <div class="content_title">
+                        <h3 class="about_title" style="display: block;">Меня зовут <span class="light">Василенко Данил</span></h3>
+                        <h3 class="about_title">Я <span class="light">Frontend </span>разработчик</h3>
+                        <h3 class="about_title">Мои <span class="light">проекты</span></h3>
+                        <h3 class="about_title">Мои <span class="light">хобби</span></h3>
+                    </div>
+                    <div class="content_text">
+                        <p class="about_text" style="display: block;">
+                            Мне 17 лет. Я живу в г.Петрозаводск. Специализируюсь на <span class="light">вёрстке</span> сайтов с уникальным дизайном, разработкой <span class="light">web-приложений</span>, создании <span class="light">UI</span> эффектов и <span class="light">анимаций</span>.
+                        </p>
+                        <p class="about_text">
+                            В своей работе использую <span class="light">JQuery</span>, <span class="light">SCSS</span>. Свободно владею графическими редакторами <span class="light">Figma</span> и <span class="light">Photoshop</span>. Полностью адаптивная и отзывчивая вёрстка <span class="light">pixel-perfect</span>.
+                        </p>
+                        <p class="about_text">
+                            Здесь представлены <span class="light_purple">проекты</span>, которые я создал в ходе своей работы. В каждой из них используется <span class="light_purple">различный стэк технологий</span>.
+                        </p>
+                        <div class="about_text">
+                            Уже больше <span class="light">3-х лет</span> я играю в <span class="light">баскетбол</span>. Вместе с командой <span class="light">"Древлянка-буллс"</span> в ШБЛ "Кэс-Баскет" мы стали:
+                            <ul>
+                                <li style="color: white; margin-left: 10px;">- Чемпионами <span class="light">города</span> (2 раза)</li>
+                                <li style="color: white;margin-left: 10px;">- Чемпионами <span class="light">Республики Карелия</span> (1 раз)</li>
+                                <li style="color: white;margin-left: 10px;">- Представляли наш регион на <span class="light">Федеральном</span> уровне</li>
+                            </ul> 
+                        </div>
+                            
+                    </div>
+                    <div class="content_closetag">
+                        <span class="about_closetag">&lt;/about&gt;</span>
+                        <span class="about_closetag">&lt;/skills&gt;</span>
+                        <span class="about_closetag">&lt;/projects&gt;</span>
+                        <span class="about_closetag">&lt;/basketball&gt;</span>
+                    </div>
+                </div>
+                <div class="content_photo">
+                    <img data-src="img/me1.jpg" class="about_img lazy-load" style="display: block;">
+                    <img data-src="img/about.jpg" class="about_img lazy-load">
+                    <img data-src="img/about2.jpg" class="about_img lazy-load">
+                </div>
+                <div class="content_mobile_photo">
+                    <img data-src="img/me1.jpg" class="content_mobile_img lazy-load" style="display: block;">
+                    <img data-src="img/about.jpg" class="content_mobile_img lazy-load">
+                    <img data-src="img/about3.jpg" class="content_mobile_img lazy-load">
+                </div>
+                <div class="project_slider">
+                    <img src="img/left-arrow.svg" class="project_slider_left">
+                    <div class="project_slider_wrapper">
+                        <div class="project_slider_container">
+                            <img data-src="img/basicdept.png" class="project_slider_container_img lazy-load">
+                            <img data-src="img/ableton.png" class="project_slider_container_img lazy-load">
+                            <img data-src="img/resume.png" class="project_slider_container_img lazy-load">
+                            <img data-src="img/game.png" class="project_slider_container_img lazy-load">
                         </div>
                     </div>
-                </section>
-            <article id="about--article">
-                <div class="mainTitle" id="aboutLink">&lt;about&gt;</div>
-                <section class="mainAbout" id="mainAbout">
-                    <a onclick="AboutMenuOpen()"><div class="aboutAvatar" id="aboutAvatar">
-                        <img src="img/avatar.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Нажми на меня" alt="Василенко Данил frontend">
-                    </div></a>
-                    <div class="aboutTitle">КТО ЭТО?</div>
-                    <div class="aboutLine"></div>
-                    <span class="aboutText">
-                        Меня зовут Василенко Данил. Я из Петрозаводска. Специализируюсь на
-                        вёрстке сайтов и создании UI эффектов и анимаций. Основной стэк: HTML5/CSS3/SCSS/JS/JQuery.
-                    </span>
-                </section>
-                <div class="mainTitle">&lt;/about&gt;</div>
-            </article>
-            <div class="mainTitle" id="skillsLink">&lt;skills&gt;</div>
-            <arcticle id="skills--article">
-                <div class="my-skills">
-                    <section class="graph">
-                        <div class="pie-wrap">
-                            <div class="pie p1"></div>
-                            <span class="pie-text pt1">HTML</span>
-                        </div>
-                        <div class="pie-wrap">
-                            <div class="pie p2"></div>
-                            <span class="pie-text pt2">CSS</span>
-                        </div>
-                        <div class="pie-wrap">
-                            <div class="pie p3"></div>
-                            <span class="pie-text pt3">JS</span>
-                        </div>
-        
-                        <div class="pie-wrap">
-                            <div class="pie p4"></div>
-                            <span class="pie-text pt4">JQuery</span>
-                        </div>
-                        <div class="pie-wrap">
-                            <div class="pie p6"></div>
-                            <span class="pie-text pt6">SCSS</span>
-                        </div>
-                    </section>
-                    <section class="skillsTextWrap">
-                        <div class="runLine"></div>
-                        <ul>
-                            <li class="skillsText">&#10004; Адаптивная вёрстка для любых устройств</li>
-                            <li class="skillsText">&#9734; Flex и Grid разметка</li>
-                            <li class="skillsText">&#9786; JQuery вместе с ванильным JS</li>
-                            <li class="skillsText">&#10047; SASS/SCSS</li>
-                            <li class="skillsText">&#9729; Вёрстка по стандартам HTML5</li>
-                            <li class="skillsText">&#9745; Чистый и читабельный код</li>
-                            <li class="skillsText"><button class="skills-btn">РЕЗЮМЕ</button></li>
-                        </ul>
-                    </section>
+                    <img src="img/right-arrow.svg" class="project_slider_right">
                 </div>
-            </arcticle>
-            <div class="mainTitle">&lt;/skills&gt;</div>
-            <div class="mainTitle" id="projectsLink">&lt;projects&gt;</div>
-            <article class="projects" id="projects--article">
-                <!--<nav class="projects--header">
-                    <span class="projects--zag zag" id="all-item"><span style="color: #FF8A65">Все</span></span>
-                    <span class="projects--zag zag" id="web-item">Сайты</span>
-                    <span class="projects--zag zag" id="verstka-item">Вёрстка</span>
-                    <span class="projects--zag zag" id="widjets-item">Виджеты</span>
-                </nav>-->
-                <div class="projects--wrapper">
-                    <section class="projects--item verstka-item all-item">
-                        <a href="basicdept/index.html">
-                            <header class="item--header">
-                                <title class="projects--year">2022</title>
-                                <title class="projects--title">BASIC/DEPT</title>
-                                <p class="item--text">
-                                    Вёрстка главной страницы basicagency.com. SCSS/JQuery.
-                                </p>
-                            </header>
-                            <footer class="item--footer">
-                                <nav class="footer--tags">
-                                    <button class="tag verstka">#верстка</button>
-                                </nav>
-                            </footer>
-                        </a>
-                    </section>
-                    <section class="projects--item verstka-item all-item">
-                        <a href="levelup/index.html">
-                            <header class="item--header">
-                                <title class="projects--year">2022</title>
-                                <title class="projects--title">LevelUP</title>
-                                <p class="item--text">
-                                    LevelUp - продуктивная и слаженная команда с 15-ти летним опытом в девелопменте.
-                                </p>
-                            </header>
-                            <footer class="item--footer">
-                                <nav class="footer--tags">
-                                    <button class="tag verstka">#верстка</button>
-                                </nav>
-                            </footer>
-                        </a>
-                    </section>
-                    <section class="projects--item web-item all-item">
-                        <a href="bulls/index.html">
-                            <header class="item--header">
-                                <title class="projects--year">2022</title>
-                                <title class="projects--title">Bulls</title>
-                                <p class="item--text">
-                                    Статистика баскетбольной команды "Древлянка-bulls" SCSS/JQuery                             </p>
-                            </header>
-                            <footer class="item--footer">
-                                <nav class="footer--tags">
-                                    <button class="tag web">#сайты</button>
-                                </nav>
-                            </footer>
-                        </a>
-                    </section>
-                    <section class="projects--item verstka-item all-item">
-                        <a href="ableton/index.html">
-                            <header class="item--header">
-                                <title class="projects--year">2022</title>
-                                <title class="projects--title">Ableton</title>
-                                <p class="item--text">
-                                    Вёрстка одной из страниц сайта ableton.com. SCSS/JQuery.
-                                </p>
-                            </header>
-                            <footer class="item--footer">
-                                <nav class="footer--tags">
-                                    <button class="tag verstka">#верстка</button>
-                                </nav>
-                            </footer>
-                        </a>
-                    </section>
-                    <section class="projects--item widjets-item all-item">
-                        <a href="game/index.html">
-                            <header class="item--header">
-                                <title class="projects--year">2022</title>
-                                <title class="projects--title">Пятнашки</title>
-                                <p class="item--text">
-                                    Всем известная игра написанная на JS.
-                                </p>
-                            </header>
-                            <footer class="item--footer">
-                                <nav class="footer--tags">
-                                    <button class="tag widjets">#виджеты</button>
-                                </nav>
-                            </footer>
-                        </a>
-                    </section>
-                    <section class="projects--item widjets-item all-item">
-                        <a href="tic-tac/index.html">
-                            <header class="item--header">
-                                <title class="projects--year">2022</title>
-                                <title class="projects--title" style="width: 90%;">Крестики-нолики</title>
-                                <p class="item--text">
-                                    Web-игра написанная на JS. 
-                                </p>
-                            </header>
-                            <footer class="item--footer">
-                                <nav class="footer--tags">
-                                    <button class="tag widjets">#виджеты</button>
-                                </nav>
-                            </footer>
-                        </a>
-                    </section>
-                </div>
-            </article>
-            <div class="mainTitle">&lt;/projects&gt;</div>
-            <div class="mainTitle" id="contactsLink">&lt;contacts&gt;</div>
-            <article class="contacts">
-                <section class="contacts-wrapper">
-                    <span class="contacts-label">О сайте</span>
-                    <span class="contacts-text">
-                        Исходный код с комментариями доступен в свободном доступе на <a class="contacts-text-link" href="https://github.com/danelloptz">github</a>. 
-                        Для сотрудничества перейдите по ссылкам ниже.
-                    </span>
-                    <div class="contacts-btn">
-                        <a href="https://github.com/danelloptz"><button class="contacts-btn-github">GitHub</button></a>
-                        <a href="mailto:denvasik05@gmail.com"><button class="contacts-btn-email">Email</button></a>
-                        <a href="tg://resolve?domain=lui_baton"><button class="contacts-btn-telegram">Telegram</button></a>
+                <div class="basketball">
+                    <iframe id="video" class="basketball_video"
+                        src="https://frontend.vh.yandex.ru/player/{video_content_id}?from=partner&autoplay=1&mute=1" 
+                        allow="autoplay; encrypted-media" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> 
+            </section>
+            <!--<section class="hobbies main_item" data-check="2">
+                <div class="hobbies_section">
+                    <img src="img/about2.jpg" class="hobbies_section_img">
+                    <div class="hobbies_section_text">
+                        <h2>Какой-то заголовок</h2>
+                        <p>
+                            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+                        </p>
+                        <a href="#">Ссылка на информацию</a>
                     </div>
-                </section>
-            </article>
+                </div>
+                <div class="hobbies_section">
+                    <img src="img/about1.jpg" class="hobbies_section_img">
+                    <div class="hobbies_section_text">
+                        <h2>Какой-то заголовок</h2>
+                        <p>
+                            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+                        </p>
+                        <a href="#">Ссылка на информацию</a>
+                    </div>
+                </div>
+            </section>-->
         </main>
         <footer>
             
         </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

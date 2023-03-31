@@ -1,242 +1,476 @@
-let antiScroll = 0, closeShow = 0;
-window.onload = () => {
-    window.scrollTo(0, 0);
-    $('#body').css('position', 'fixed');
-}
-
-// удаляем прелоадер 
-function DivRemove() {
-    $('#animate_logo').hide();
-    $('#body').css({
-        'position': 'relative',
-        'background' : '#0a192f'
-    });
-    $('#wrapper--colba').css('opacity', '.2'); // меняем прозрачность индикатора чтения текста 
-}
-setTimeout(DivRemove, 4000); // 4 секунды анимация прелоадера, потом убираем его
-
-let i = 1; let x = 1;
-
-/* Функции, связанные с положением пользователя на странице */
-
-function ChangeBackground() { // меняем цвет фона при промотке 500 пискелей
-    if (window.scrollY >= 500) {
-        $('#body').css('background', 'black');
-    }
-    else {
-        $('#body').css('background', '#0a192f');
+/* полноэкранный режим */
+function Fullscreen() {
+    let elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
     }
 }
-
-/* "Колба" - индикатор количества прочитанной страницы.
-   В нормальном состоянии верх "жидкости" плоский, но когда 
-   "вода" доходит верха, необходимо края закруглить.
-   Скорее всего непонятно, что тут я написал, но визуально
-   на странице всё просто. */ 
-function BorderWater() { 
-    if (parseInt($('#water').css('height').slice(0, -1), 10) > 90) {
-        // получаем число из строки в 10 сс (у элемента water. получаем его высоту. убираем в конце знак %)
-        $('#water').css('border-radius', '15px');
+function CancelFullscreen() {
+    if(document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if(document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if(document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
+$('.preloader_wrapper').click(Fullscreen);
+$('.fullscreen').click(function() {
+    if ($(this).attr('data-check') == 1) {
+        Fullscreen();
+        $(this).attr('data-check', '0');
+        $('.fullscreen_btn').css('display', 'none');
+        $('.minimaze_btn').css('display', 'block');
     } else {
-        $('#water').css('border-radius', '0 0 15px 15px');
+        CancelFullscreen();
+        $(this).attr('data-check', '1');
+        $('.fullscreen_btn').css('display', 'block');
+        $('.minimaze_btn').css('display', 'none');
     }
-}
-/* функция, благодаря которой элементы появляются, когда пользователь
-   прокручивает страницу до места, где находится этот элемент.
-   Если прокрученное количество пикселей больше, чем расстояние до блока, то
-   ему присваевается класс, с анимацией (visible).
-*/
-function VisibleArticles() {
-    $('[id*="article"]').each(function() {
-        if ((scrollY >= $(this).offset().top - $(this).innerHeight()) && ($(this).hasClass('visible') == false)) {
-            $(this).addClass('visible');
+});
+$('.project_slider').hide();
+/* меняем логотип на галочку в прелоадере */
+setTimeout(() => {
+    $('.preloader').addClass('pulse');
+}, 3500);
+
+/* убираем прелоадер и показываем страницу */
+$('.preloader_wrapper').click(function() {
+    $('.preloader_logo').css('display', 'none');
+    $('.preloader_check').css('display', 'block');
+    $('.preloader_click_text').css('visibillity', 'hidden');
+    setTimeout(() => {
+        $('.preloader_wrapper').css('display', 'none');
+        $('.header, .fullscreen').css('display', 'flex');
+        $('.main').css('display', 'block'); // хз
+    }, 1000);
+});
+
+/* Меню навигации */
+$('.header_menuBtn_wrapper').click(function() {
+    if ($('.header_menuBtn').attr('data-check') == 0) {
+        $('.header_menuBtn').addClass('open dark').removeClass('close white').attr('data-check', '1');
+        $('.header_menuBtn_wrapper').css('animation', 'NavWrapperRotate .8s forwards');
+        $('.burgerMenu').css('animation', 'BurgerShow .7s forwards');
+        $('.bigMenu_header_item_line').addClass('bigMenu_header_item_lineShow').removeClass('bigMenu_header_item_lineClose');
+    } else {
+        $('.header_menuBtn').removeClass('open dark').addClass('close white').attr('data-check', '0');
+        $('.bigMenu_header_item_line').addClass('bigMenu_header_item_lineClose').removeClass('bigMenu_header_item_lineShow');
+        $('.tab').each(function() {
+            $(this).addClass('bigMenu_container_close').css('display', 'none');
+        });
+        setTimeout(() => {
+            $('.header_menuBtn_wrapper').css('animation', 'NavWrapperRotateClose .8s forwards');
+            $('.burgerMenu').css('animation', 'BurgerClose .7s forwards');
+        }, 400);
+        setTimeout(() => {
+            $('.tab').each(function() {
+                if ($(this).hasClass('bigMenu_container_show')) $(this).removeClass('bigMenu_container_close').css('display', 'flex');
+            });
+        }, 700)
+    }
+});
+
+/* Вкладки в меню навигации */
+$('.bigMenu_header_item').hover(function() {
+    let num = $(this).attr('data-num');
+    $('.bigMenu_header_item').each(function() {
+        if ($(this).attr('data-num') == num) {
+            $(this).children().first().addClass('bigMenu_header_item_numActive ');
+            $(this).children().last().addClass('bigMenu_header_item_lineActive');
+            if ($(this).hasClass('burger')) $('.bigMenu_slider_right, .bigMenu_slider_left').css('display', 'flex')
+            else $('.bigMenu_slider_right, .bigMenu_slider_left').css('display', 'none');
+        } 
+        else {
+            $(this).children().first().removeClass('bigMenu_header_item_numActive');
+            $(this).children().last().removeClass('bigMenu_header_item_lineActive');
+        } 
+    });
+    $('.tab').each(function() {
+        if ($(this).attr('data-num') == num) {
+            $(this).addClass('bigMenu_container_show').removeClass('bigMenu_container_close').css('display', 'flex');
+        } 
+        else {
+            $(this).addClass('bigMenu_container_close').removeClass('bigMenu_container_show').css('display', 'none');
         }
     });
-    
-}
+});
 
-window.onscroll = function() { // запускаем функции при скролле
-    //ChangeBackground();
-    BorderWater();
-    VisibleArticles();
-}
+/* Слайдер в бургер меню */
+let currTranslate = 0;
+let sumTranslate = 0;
+$('.bigMenu_slider_right, .bigMenu_slider_left').click(function() {
+    let cardWidth = Number($('.bigMenu_container_projects_card').css('width').slice(0, -2));
+    if ($(this).hasClass('bigMenu_slider_right') && (sumTranslate < Number($('.bigMenu_container_projects_slider').css('width').slice(0, -2)))) {
+        currTranslate += 1;
+        sumTranslate += currTranslate * cardWidth;
+        $('.bigMenu_container_projects_slider').css('transform', `translate3d(-${currTranslate * cardWidth}px, 0px, 0px)`);
 
-// анимация открытия и закрытия меню и смена иконки "меню" на иконку "закрыть"
-let line_width;
-$('.header_nav_menu').click(function() {
-    if ($(this).attr('data-check') == 0) {
-        $('.header_inner_menu').css('display', 'flex');
-        $(this).attr('data-check', '1');
-        line_width = Number($('.header_nav_menu_line').css('width').slice(0, -2));
-        $('.header_nav_menu_line').first().css({
-            'transform': 'rotate(45deg)',
-            'width': `${line_width - 20}px`
-        });
-        $('.header_nav_menu_line').last().css({
-            'transform': 'rotate(-45deg) translate(4px, -4px)',
-            'width': `${line_width - 20}px`
-        });
     } else {
-        $('.header_inner_menu').css('display', 'none');
-        $(this).attr('data-check', '0');
-        $('.header_nav_menu_line').first().css('transform', 'rotate(0deg)');
-        $('.header_nav_menu_line').last().css('transform', 'rotate(0deg) translate(0px, 0px)');
-        $('.header_nav_menu_line').css('width', `${line_width}px`);
+        if ($(this).hasClass('bigMenu_slider_left')) {
+            if ((currTranslate - 1 > 0)) {
+                currTranslate -= 1;
+                sumTranslate -= currTranslate * cardWidth;
+                $('.bigMenu_container_projects_slider').css('transform', `translate3d(-${currTranslate * cardWidth}px, 0px, 0px)`);
+            }
+            else {
+                currTranslate = 0;
+                sumTranslate = 0;
+                $('.bigMenu_container_projects_slider').css('transform', `translate3d(${currTranslate}, 0px, 0px)`);
+            }
+        }
     }
 });
 
+// Прыгающие логотипы на главное странице
+let jumpCount = 0;
+function JumpLogos() {
+    if ($('.hello_icon').length == jumpCount) jumpCount = 0;
+    $('.hello_icons_wrapper').children().eq(jumpCount - 1).removeClass('hello_icon_active');
+    $('.hello_icons_wrapper').children().eq(jumpCount).addClass('hello_icon_active');
+    jumpCount += 1;
+}
+setInterval(JumpLogos, 500); 
 
-/* При нажатии на один из пунктов меню, закрываем меню,
- меняем кнопку и переводим пользователя на нужный пункт */
-$('.link').click(function() {
-    $('.header_inner_menu').css('display', 'none');
-        $(this).attr('data-check', '0');
-        $('.header_nav_menu_line').first().css('transform', 'rotate(0deg)');
-        $('.header_nav_menu_line').last().css('transform', 'rotate(0deg) translate(0px, 0px)');
-        $('.header_nav_menu_line').css('width', `${line_width}px`);
+
+/* Переход на следующий блок при скролле. PC версия  */
+let scrollCount = 0;
+let scrollCan = true;
+let labels = ['Кто я?', 'Что умею?', 'Проекты', 'Хобби', 'Контакты'];
+
+function SrollContentBefore(contentCount, way) {
+    $('.content_bg').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
+    $('.content_mobile_photo').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
+    $('.content_opentag').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show').css('color', 'transparent');
+    $('.content_closetag').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show').css('color', 'transparent');
+    $('.content_photo').children().eq(contentCount).addClass('contentAnimation_close').removeClass('contentAnimation_show');
+    $('.content_title').children().eq(contentCount).addClass('contentAnimationText_close').removeClass('contentAnimationText_show').css( {
+        'color': 'transparent',
+        'display': 'none'
+    });
+    $('.content_text').children().eq(contentCount).addClass('contentAnimationText_close').removeClass('contentAnimationText_show').css( {
+        'color': 'transparent',
+        'display': 'none'
+    });
+    $('.content_text').children().eq(contentCount).children().css('color', 'transparent');
+}    
+function SrollContentAfter(contentCount, way) {
+    $('.content_bg').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_mobile_photo').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_opentag').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_closetag').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_photo').children().eq(contentCount).addClass('contentAnimation_show').removeClass('contentAnimation_close').css('display', 'block');
+    $('.content_title').children().eq(contentCount).addClass('contentAnimationText_show').removeClass('contentAnimationText_close').css('display', 'block');
+    $('.content_text').children().eq(contentCount).addClass('contentAnimationText_show').removeClass('contentAnimationText_close').css('display', 'block');
+    $('.content_opentag').children().eq(contentCount).css('color', 'white');
+    $('.content_closetag').children().eq(contentCount).css('color', 'white');
+    $('.content_title').children().eq(contentCount).css('color', 'white');
+    $('.content_text').children().eq(contentCount).css('color', 'white');
+    $('.content_title').children().eq(contentCount).children().css('color', '#e5ff52');
+    $('.content_text').children().eq(contentCount).children().css('color', '#e5ff52');
+}
+
+let contentCount = 0;
+let currProjects = 0;
+let sumProjects = 0;
+let flagMobilePhoto = false;
+$('.project_slider_right, .project_slider_left').click(function() {
+    let projectsCardWidth = Number($('.project_slider_container_img').css('width').slice(0, -2));
+    if ($(this).hasClass('project_slider_right') && (currProjects + 1 < $('.project_slider_container_img').length)) {
+        currProjects += 1;
+        sumProjects += projectsCardWidth;
+        console.log(currProjects, sumProjects);
+        $('.project_slider_container').css('transform', `translate3d(-${currProjects * projectsCardWidth}px, 0px, 0px)`);
+    } else {
+        if ($(this).hasClass('project_slider_left')) {
+            if ((currProjects - 1 > 0)) {
+                currProjects -= 1;
+                sumProjects -= projectsCardWidth;
+                console.log(currProjects, sumProjects);
+                $('.project_slider_container').css('transform', `translate3d(-${currProjects * projectsCardWidth}px, 0px, 0px)`);
+            }
+            else {
+                currProjects = 0;
+                sumProjects = 0;
+                $('.project_slider_container').css('transform', `translate3d(${currProjects}px, 0px, 0px)`);
+            }
+        }
+    }
 });
-
-/* анимация эллипсов */
-let ellipse = document.querySelectorAll(".ellipse");
-function EllipseJump() { 
-        for (let i = 0; i<ellipse.length; i++) {
-            setTimeout(() => {
-                ellipse[i].style.animationPlayState = 'running';
-                ellipse[i].style.width = '90px';
-                ellipse[i].style.height = '90px';
-                ellipse[i].style.background = '#f5f8ff3d';
-            }, (i+1)*1000); // вот это
-            setTimeout(() => {
-                ellipse[i].style.animationPlayState = 'paused';
-                ellipse[i].style.width = '80px';
-                ellipse[i].style.height = '80px';
-                ellipse[i].style.background = 'none';
-            }, (i+1)*2000 - i*1000); // и это просто нужно, чтобы работало
+$(window).bind('mousewheel', function(e) {
+    if (scrollCan) {
+        scrollCan = false;
+        if (flagMobilePhoto) {
+            $('.content_mobile_photo').show();
+            flagMobilePhoto = false;
         } 
-}
-setInterval(EllipseJump, 9000); // анимация повторяется каждые 9 секунд
-
-
-let scrollInt;
-let xPos, yPos;
-function AboutMenuOpen() {
-    $('.header').css('visibility', 'hidden');
-    let scrollHeight = window.scrollY; // на сколько прокрутили страницу 
-    $('#aboutMenu').removeClass('header_inner_menu_close').addClass('about_inner_menu').css('display', 'block');
-    $('#mainAbout').css('display', 'none');
-    scrollInt = document.getElementById("aboutMenu").scrollIntoView(true); // перемещаем к блоку с текстом, т.к. по другому не получалось
-    setTimeout(() => {
-        $('html').data('scroll-position', scrollHeight).data('previous-overflow', $('html').css('overflow')).css('overflow', 'hidden'); // выключаем прокрутку
-    }, 1000);
-
-}
-function AboutMenuClose() {
-    $('#aboutMenu').removeClass('about_inner_menu').addClass('header_inner_menu_close').css('display', 'none');
-    $('#mainAbout').css('display', 'flex');
-    $('.header').css('visibility', 'visible');
-    $('html').css('overflow', $('html').data('previous-overflow')); // включаем прокрутку
-}
-
-/* Функция для движения воды в колбе и появления пузырьков */
-
-let countOfScroll = 0; // помогательная переменная для появления пузырьков
-function Oxygen() {
-    window.addEventListener('scroll', function() {
-        let screenHeight = window.innerHeight; // высота разрешения экрана
-        let pageHeight = Math.max( // высота всей страницы
-            document.body.scrollHeight, document.documentElement.scrollHeight,
-            document.body.offsetHeight, document.documentElement.offsetHeight,
-            document.body.clientHeight, document.documentElement.clientHeight
-          );
-          let scrollHeight = window.scrollY; // на сколько прокрутили страницу 
-          let colbaHeight = (scrollHeight * 100) / (pageHeight - screenHeight); // высчитываем высоту в процентах
-          $('#water').css('height', `${colbaHeight}%`); // присваиваем её
-          if (countOfScroll == 0) {
-              if (scrollY > 200) {
-                let xMin = 2; // 4 точки отсчёта для высчитывания рандомных координат пузырьков
-                let yMin = 30;
-                let xMax = $('#wrapper--colba').width() - 5;
-                let yMax = $('#wrapper--colba').height() - 5;
-                    setInterval(() => {
-                        if ($('#water').height() < 20) { // если высота воды меньше 20, то пузырьки не дабавляем, т.к мало места
-                            $('#water').empty(); // очищаем все пузырьки
-                        } else {
-                            let waterMargin = $('#colba').height() - $('#water').height(); // высчитываем высоту пространства между верхом колбы и уровнем воды
-                            /* ниже создаём div с position: absolute, указываем координаты (получили через random) 
-                            с помощью left и top.
-                            */
-                            $('#water').append($('<div class="oxygen--fixed"></div>').css("left", `${Math.floor(Math.random() * (xMax - xMin + 1)) + xMin}px`).css("top", `${Math.floor(Math.random() * (yMax - + waterMargin - 5)) + waterMargin}px`));
-                            $('#wrapper--colba').css('opacity', '.4'); // просто так надо
+        if (e.originalEvent.deltaY > 0) {
+            let numActive = Number($('.main_active').attr('data-check'));
+            if (scrollCount == 0) $('.hello_img_wrapper').addClass('hide_hello_img').removeClass('show_hello_img'); 
+            if ($('.main_active').length == 0) {
+                numActive = 0;
+                scrollCount = 1;
+                $('.main_item').first().addClass('main_close');
+                $('.main').children().eq(1).addClass('main_active');
+                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+            } else {
+                scrollCount += 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
+                if (scrollCount >= 2) {
+                    SrollContentBefore(contentCount, 'down');
+                    $('.content_line').eq(contentCount).addClass('dot_line_active');
+                    contentCount++;
+                    SrollContentAfter(contentCount, 'down');
+                    if (scrollCount == 3) {
+                        if ($('.content_mobile_photo').css('display') == 'block') {
+                            flagMobilePhoto = true;
+                            $('.content_mobile_photo').hide();
                         }
-                    }, 300); // повторяем каждые 300 мс
-                    setInterval(() => {
-                        $('#water').empty(); // каждые 10 сек чистим воду от пузырьков
-                    }, 10000); 
-                countOfScroll = 1;
-              }
-          }
-    });
-}
-setTimeout(Oxygen, 4000);
-
-$("#wrapper--colba").mouseenter(function() { // делаем opacity при hover на fixed колбе
-    $(this).css('opacity', '1');
-}).mouseleave(function() {
-    $(this).css('opacity', '.4');
+                        $('.project_slider').show();
+                        $('.project_slider_wrapper').addClass('contentAnimation_show').removeClass('contentAnimation_close');
+                        $('.content_photo').hide();
+                        $('.content').css('grid-template-columns', '7fr 7fr');
+                        $('.project_slider').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.project_slider').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
+                    } else if (scrollCount == 4) {
+                        $('.basketball').css('display', 'block');
+                        $('.project_slider, .content_mobile_photo').hide();
+                        $('.content_text').css('height', 'auto');
+                        $('.basketball_video').trigger('play');
+                        $('.basketball_video').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.basketball_video').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
+                    } else {
+                        currProjects = 0;
+                        sumProjects = 0;
+                        $('.project_slider_wrapper').addClass('contentAnimation_close').removeClass('contentAnimation_show');
+                        $('.project_slider_container').css('transform', `translate3d(${currProjects}px, 0px, 0px)`);
+                        $('.project_slider').hide();
+                        $('.content_photo').show();
+                        $('.content').css('grid-template-columns', '7fr 5fr');
+                    }
+                    let marginLeft = $('.content_line').width() * contentCount + $('.content_line_dot').width()*(contentCount + 1) - $('.content_line_text').width() / 2;
+                    $('.content_line_text').html(labels[contentCount]).css('left', `${marginLeft}px`);
+                    $('.content_line_dot').eq(contentCount).addClass('dot_line_active');
+                } else {
+                    $('.main_active').addClass('main_close').removeClass('main_active');
+                    $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                } 
+            }
+        }
+        else {
+            if (scrollCount > 1) {
+                scrollCount -= 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
+                SrollContentBefore(contentCount, 'up');
+                $('.content_line_dot').eq(contentCount).removeClass('dot_line_active');                
+                contentCount--;
+                SrollContentAfter(contentCount, 'up');
+                if (scrollCount == 3) {
+                    $('.project_slider').show();
+                    $('.content_photo').hide();
+                    $('.content').css('grid-template-columns', '7fr 7fr');
+                    $('.project_slider').mouseenter(function() {
+                        $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                    });
+                    $('.project_slider').mouseleave(function() {
+                        $('.content_bg, .content_info').css('filter', 'none');
+                    });
+                } else if (scrollCount == 4) {
+                    $('.basketball').css('display', 'block');
+                        $('.project_slider, .content_mobile_photo').hide();
+                        $('.content_text').css('height', 'auto');
+                        $('.basketball_video').trigger('play');
+                        $('.basketball_video').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.basketball_video').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
+                } else{
+                    $('.project_slider').hide();
+                    $('.content_photo').show();
+                    $('.content').css('grid-template-columns', '7fr 5fr');
+                }
+                $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                $('.content_line').eq(contentCount).removeClass('dot_line_active');
+            }
+            else {
+                if (scrollCount - 1 >= 0) {
+                    scrollCount -= 1;
+                    $('.main_active').addClass('main_close').removeClass('main_active');
+                    $('.hello_img_wrapper').addClass('show_hello_img').removeClass('hide_hello_img'); 
+                    $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'flex');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                } 
+            } 
+        } 
+    }
+    setTimeout(() => scrollCan = true, 800);
 });
 
-/*let star = document.querySelectorAll("colba--modal--star");
-function StarClick() { 
-    let modalArr = $('.colba--modal--star');
-    modalArr.each(function() {
-        $(this).on('click', function() {
-            let countStar = $(this).text();
-            let newStar = ($.grep(modalArr, function(n, i){
-                return i < countStar;
-            }));
-            newStar.forEach((item) => {
-                item.style.background = 'url("img/starClicked.png") no-repeat';
-                item.style.backgroundSize = 'cover';
-            });
-            let screenHeight = window.innerHeight;
-            if (screenHeight <=700) {
-                $('#colba--modal--inner').css('height', '40vh');
+/* Переход на следующий блок при скролле. Mobile версия  */
+let startScroll = 0;
+let endScroll = 0;
+let flag = 0;
+$(window).bind('touchstart', function(e) {
+    startScroll = e.originalEvent.touches[0].clientY;
+    flag = 1;
+});
+$(window).bind('touchend', function(e) {
+    endScroll = e.originalEvent.changedTouches[0].clientY;
+    flag = 1;
+});
+$(window).bind('touchmove', function(e) {
+    if (flag == 1 && scrollCan) {
+        scrollCan = false;
+        if (flagMobilePhoto) {
+            $('.content_mobile_photo').show();
+            flagMobilePhoto = false;
+        } 
+        if (startScroll > endScroll) {
+            let numActive = Number($('.main_active').attr('data-check'));
+            if (scrollCount == 0) $('.hello_img_wrapper').addClass('hide_hello_img').removeClass('show_hello_img'); 
+            if ($('.main_active').length == 0) {
+                numActive = 0;
+                scrollCount = 1;
+                $('.main_item').first().addClass('main_close');
+                $('.main').children().eq(1).addClass('main_active');
+                setTimeout(() => $('.main_close').css('display', 'none'), 1000);
             } else {
-                $('#colba--modal--inner').css('height', '30vh');
+                scrollCount += 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
+                if (scrollCount > 1) {
+                    SrollContentBefore(contentCount, 'down');
+                    $('.content_line').eq(contentCount).addClass('dot_line_active');
+                    contentCount++;
+                    SrollContentAfter(contentCount, 'down');
+                    if (scrollCount == 3) {
+                        if ($('.content_mobile_photo').css('display') == 'block') {
+                            flagMobilePhoto = true;
+                            $('.content_mobile_photo').hide();
+                        }
+                        $('.project_slider').show();
+                        $('.project_slider_wrapper').addClass('contentAnimation_show').removeClass('contentAnimation_close');
+                        $('.content_photo').hide();
+                        $('.content').css('grid-template-columns', '7fr 7fr');
+                        $('.project_slider').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.project_slider').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
+                    } else if (scrollCount == 4) {
+                        $('.basketball').css('display', 'block');
+                            $('.project_slider, .content_mobile_photo').hide();
+                            $('.content_text').css('height', 'auto');
+                            $('.basketball_video').trigger('play');
+                            $('.basketball_video').mouseenter(function() {
+                                $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                            });
+                            $('.basketball_video').mouseleave(function() {
+                                $('.content_bg, .content_info').css('filter', 'none');
+                            });
+                    } else {
+                        currProjects = 0;
+                        sumProjects = 0;
+                        $('.project_slider_wrapper').addClass('contentAnimation_close').removeClass('contentAnimation_show');
+                        $('.project_slider_container').css('transform', `translate3d(${currProjects}px, 0px, 0px)`);
+                        $('.project_slider').hide();
+                        $('.content_photo').show();
+                        $('.content').css('grid-template-columns', '7fr 5fr');
+                    }
+                    $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                    $('.content_line_dot').eq(contentCount).addClass('dot_line_active');
+                } else {
+                    $('.main_active').addClass('main_close').removeClass('main_active');
+                    $('.main').children().eq(scrollCount).addClass('main_active').removeClass('main_close').css('display', 'grid');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                }
             }
-            
-            $('#colba--modal--close').show();
-            $('#colba--modal--close').on('click', function() {
-                $('#modal--wrapper').css({
-                    'opacity': '0',
-                    'pointer-events': 'none'
-                });
-                antiScroll = 1;
-                window.scrollTo(0, 0);
-                $('html').css('overflow', $('html').data('previous-overflow'));
-                setTimeout(() => {
-                    modalArr.each(function() {
-                        $(this).css('pointer-events', 'none');
+        }
+        else {
+            if (scrollCount > 1) {
+                scrollCount -= 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
+                SrollContentBefore(contentCount, 'up');
+                $('.content_line_dot').eq(contentCount).removeClass('dot_line_active');                
+                contentCount--;
+                SrollContentAfter(contentCount, 'up');
+                if (scrollCount == 3) {
+                    $('.project_slider').show();
+                    $('.content_photo').hide();
+                    $('.content').css('grid-template-columns', '7fr 7fr');
+                    $('.project_slider').mouseenter(function() {
+                        $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
                     });
-                    closeShow = 1;
-                }, 2000);
-            });
-        });
-    });
-
-}
-StarClick();*/
-
-function ProjectsMenu() {
-    $('.zag').on('click', function() {
-        let zagId = $(this)[0].id;
-        $('.projects--item').each(function() {
-            if ($(this)[0].className.indexOf(zagId) == -1) {
-                $(this).hide();
-            } else {
-                $(this).show();
+                    $('.project_slider').mouseleave(function() {
+                        $('.content_bg, .content_info').css('filter', 'none');
+                    });
+                } else if (scrollCount == 4) {
+                    $('.basketball').css('display', 'block');
+                        $('.project_slider, .content_mobile_photo').hide();
+                        $('.content_text').css('height', 'auto');
+                        $('.basketball_video').trigger('play');
+                        $('.basketball_video').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.basketball_video').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
+                } else {
+                    $('.project_slider').hide();
+                    $('.content_photo').show();
+                    $('.content').css('grid-template-columns', '7fr 5fr');
+                }
+                $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                $('.content_line').eq(contentCount).removeClass('dot_line_active');
             }
-        });
+            else {
+                if (scrollCount - 1 >= 0) {
+                    scrollCount -= 1;
+                    $('.main_active').addClass('main_close').removeClass('main_active');
+                    $('.hello_img_wrapper').addClass('show_hello_img').removeClass('hide_hello_img'); 
+                    $('.main').children().eq(scrollCount).removeClass('main_close').addClass('main_active').css('display', 'flex');
+                    setTimeout(() => $('.main_close').css('display', 'none'), 1000);
+                } 
+            } 
+            
+        }
+        flag = 0;
+        startScroll = 0;
+        endScroll = 0;
+    }  
+    setTimeout(() => scrollCan = true, 800);
+});
+
+
+/* lazy-load */
+$(window).on('scroll click', function() {
+    $('.lazy-load').each(function() {
+        if ($(window).scrollTop() + $(window).height() * 1.5 > $(this).offset().top)  {
+            if ($(this).attr('data-src')) {
+                $(this).attr('src', `${$(this).attr('data-src')}`);
+                $(this).removeAttr('data-src');
+            }
+        }
     });
-}
-ProjectsMenu();
+});
