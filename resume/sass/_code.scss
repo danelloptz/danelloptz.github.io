@@ -768,6 +768,12 @@ body {
       height: 100%;
       background: #9086c2;
     }
+    .basketball_bg {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: #2830B5;
+    }
     @media (max-width: 1300px) {
       width: 75vw;
     }
@@ -814,8 +820,10 @@ body {
       z-index: 104;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       @media (max-width: 900px) {
-        display: none;
+        margin-bottom: 15px;
+        margin-top: 20px;
       }
       .content_line_text {
         font-size: 1.2rem;
@@ -826,15 +834,25 @@ body {
         transition: .5s;
         left: -15px;
         top: -35px;
+        @media (max-width: 900px) {
+          font-size: 1.1rem;
+        }
+        @media (max-width: 600px) {
+          font-size: 1rem;
+          top: -25px;
+        }
       }
       .content_line_dot {
         width: 10px;
         height: 10px;
-        margin-top: -5px;
         border-radius: 50%;
         background: white;
         transition: .5s;
         z-index: 105;
+        @media (max-width: 600px) {
+          width: 8px;
+          height: 8px;
+        }
       }
       .content_line {
         height: 1px;
@@ -919,7 +937,7 @@ body {
       margin-top: 50px;
       margin-bottom: 5vh;
       margin-left: 2vw;
-      p {
+      .about_text {
         display: none;
         font-size: 2rem;
         color: white;
@@ -960,7 +978,7 @@ body {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: top;
     }
     @media (max-width: 1450px) {
       height: 400px;
@@ -985,7 +1003,7 @@ body {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: top;
       display: none;
     }
     @media (max-width: 900px) {
@@ -1064,6 +1082,21 @@ body {
       }
     }
   }
+  .basketball {
+    display: none;
+    width: 45vw;
+    height: auto;
+    z-index: 990;
+    transition: .5s;
+    cursor: pointer;
+    @media (max-width: 900px) {
+      width: 80vw;
+    }
+    .basketball_video {
+      width: 100%;
+      height: auto;
+    }
+  }
   .project_slider:hover {
     cursor: pointer;
   }
@@ -1086,15 +1119,61 @@ body {
 }
 .light {color:#e5ff52;}
 //.light_purple {color: #EA9BF4;}
-.skills {
+.hobbies {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: gray;
-  color: white;
-  position: relative;
-  z-index: 102;
-  //transform: translateY(100vh);;
+  background: black;
+  .hobbies_section {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      transition: .4s;
+      cursor: pointer;
+      z-index: 900;
+      opacity: .5;
+    }
+    img:hover {
+      transform: scale(1.1, 1.1);
+    }
+    .hobbies_section_text {
+      width: 80%;
+      height: 100%;
+      margin: auto;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: .4s;
+      z-index: 901;
+      font-family: 'SF';
+      h2 {
+        font-size: 3rem;
+        color: #e5ff52;
+      }
+      p {
+        margin-top: 4vh;
+        font-size: 1.8rem;
+        color: white;
+      }
+      a {
+        margin-top: 4vh;
+        font-size: 2rem;
+        color: #20b5f5;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.hobbies:hover > :not(:hover) {
+  filter: blur(5px);
 }
 .main_active {
   animation: MainShow 1s forwards;

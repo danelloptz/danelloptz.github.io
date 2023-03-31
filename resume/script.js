@@ -221,6 +221,8 @@ $(window).bind('mousewheel', function(e) {
                 setTimeout(() => $('.main_close').css('display', 'none'), 1000);
             } else {
                 scrollCount += 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
                 if (scrollCount >= 2) {
                     SrollContentBefore(contentCount, 'down');
                     $('.content_line').eq(contentCount).addClass('dot_line_active');
@@ -241,6 +243,17 @@ $(window).bind('mousewheel', function(e) {
                         $('.project_slider').mouseleave(function() {
                             $('.content_bg, .content_info').css('filter', 'none');
                         });
+                    } else if (scrollCount == 4) {
+                        $('.basketball').css('display', 'block');
+                        $('.project_slider, .content_mobile_photo').hide();
+                        $('.content_text').css('height', 'auto');
+                        $('.basketball_video').trigger('play');
+                        $('.basketball_video').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.basketball_video').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
                     } else {
                         currProjects = 0;
                         sumProjects = 0;
@@ -250,7 +263,8 @@ $(window).bind('mousewheel', function(e) {
                         $('.content_photo').show();
                         $('.content').css('grid-template-columns', '7fr 5fr');
                     }
-                    $('.content_line_text').html(labels[contentCount]).css('left', `${22*contentCount}%`);
+                    let marginLeft = $('.content_line').width() * contentCount + $('.content_line_dot').width()*(contentCount + 1) - $('.content_line_text').width() / 2;
+                    $('.content_line_text').html(labels[contentCount]).css('left', `${marginLeft}px`);
                     $('.content_line_dot').eq(contentCount).addClass('dot_line_active');
                 } else {
                     $('.main_active').addClass('main_close').removeClass('main_active');
@@ -262,6 +276,8 @@ $(window).bind('mousewheel', function(e) {
         else {
             if (scrollCount > 1) {
                 scrollCount -= 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
                 SrollContentBefore(contentCount, 'up');
                 $('.content_line_dot').eq(contentCount).removeClass('dot_line_active');                
                 contentCount--;
@@ -276,7 +292,18 @@ $(window).bind('mousewheel', function(e) {
                     $('.project_slider').mouseleave(function() {
                         $('.content_bg, .content_info').css('filter', 'none');
                     });
-                } else {
+                } else if (scrollCount == 4) {
+                    $('.basketball').css('display', 'block');
+                        $('.project_slider, .content_mobile_photo').hide();
+                        $('.content_text').css('height', 'auto');
+                        $('.basketball_video').trigger('play');
+                        $('.basketball_video').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.basketball_video').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
+                } else{
                     $('.project_slider').hide();
                     $('.content_photo').show();
                     $('.content').css('grid-template-columns', '7fr 5fr');
@@ -328,6 +355,8 @@ $(window).bind('touchmove', function(e) {
                 setTimeout(() => $('.main_close').css('display', 'none'), 1000);
             } else {
                 scrollCount += 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
                 if (scrollCount > 1) {
                     SrollContentBefore(contentCount, 'down');
                     $('.content_line').eq(contentCount).addClass('dot_line_active');
@@ -348,6 +377,17 @@ $(window).bind('touchmove', function(e) {
                         $('.project_slider').mouseleave(function() {
                             $('.content_bg, .content_info').css('filter', 'none');
                         });
+                    } else if (scrollCount == 4) {
+                        $('.basketball').css('display', 'block');
+                            $('.project_slider, .content_mobile_photo').hide();
+                            $('.content_text').css('height', 'auto');
+                            $('.basketball_video').trigger('play');
+                            $('.basketball_video').mouseenter(function() {
+                                $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                            });
+                            $('.basketball_video').mouseleave(function() {
+                                $('.content_bg, .content_info').css('filter', 'none');
+                            });
                     } else {
                         currProjects = 0;
                         sumProjects = 0;
@@ -369,6 +409,8 @@ $(window).bind('touchmove', function(e) {
         else {
             if (scrollCount > 1) {
                 scrollCount -= 1;
+                $('.basketball').css('display', 'none');
+                $('.basketball_video').trigger('pause');
                 SrollContentBefore(contentCount, 'up');
                 $('.content_line_dot').eq(contentCount).removeClass('dot_line_active');                
                 contentCount--;
@@ -383,6 +425,17 @@ $(window).bind('touchmove', function(e) {
                     $('.project_slider').mouseleave(function() {
                         $('.content_bg, .content_info').css('filter', 'none');
                     });
+                } else if (scrollCount == 4) {
+                    $('.basketball').css('display', 'block');
+                        $('.project_slider, .content_mobile_photo').hide();
+                        $('.content_text').css('height', 'auto');
+                        $('.basketball_video').trigger('play');
+                        $('.basketball_video').mouseenter(function() {
+                            $('.content_bg, .content_info').css('filter', 'brightness(0.7) blur(5px)');
+                        });
+                        $('.basketball_video').mouseleave(function() {
+                            $('.content_bg, .content_info').css('filter', 'none');
+                        });
                 } else {
                     $('.project_slider').hide();
                     $('.content_photo').show();

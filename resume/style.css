@@ -1287,6 +1287,13 @@ body {
   background: #9086c2;
 }
 
+.content .content_bg .basketball_bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #2830B5;
+}
+
 @media (max-width: 1300px) {
   .content .content_bg {
     width: 75vw;
@@ -1361,11 +1368,15 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 900px) {
   .content .content_info .content_line_wrapper {
-    display: none;
+    margin-bottom: 15px;
+    margin-top: 20px;
   }
 }
 
@@ -1381,15 +1392,34 @@ body {
   top: -35px;
 }
 
+@media (max-width: 900px) {
+  .content .content_info .content_line_wrapper .content_line_text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content .content_info .content_line_wrapper .content_line_text {
+    font-size: 1rem;
+    top: -25px;
+  }
+}
+
 .content .content_info .content_line_wrapper .content_line_dot {
   width: 10px;
   height: 10px;
-  margin-top: -5px;
   border-radius: 50%;
   background: white;
   -webkit-transition: .5s;
   transition: .5s;
   z-index: 105;
+}
+
+@media (max-width: 600px) {
+  .content .content_info .content_line_wrapper .content_line_dot {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .content .content_info .content_line_wrapper .content_line {
@@ -1512,7 +1542,7 @@ body {
   margin-left: 2vw;
 }
 
-.content .content_info .content_text p {
+.content .content_info .content_text .about_text {
   display: none;
   font-size: 2rem;
   color: white;
@@ -1521,26 +1551,26 @@ body {
 }
 
 @media (max-width: 1600px) {
-  .content .content_info .content_text p {
+  .content .content_info .content_text .about_text {
     font-size: 1.5rem;
   }
 }
 
 @media (max-width: 1150px) {
-  .content .content_info .content_text p {
+  .content .content_info .content_text .about_text {
     font-size: 1.3rem;
   }
 }
 
 @media (max-width: 900px) {
-  .content .content_info .content_text p {
+  .content .content_info .content_text .about_text {
     margin-bottom: 20px;
     margin-top: 20px;
   }
 }
 
 @media (max-width: 500px) {
-  .content .content_info .content_text p {
+  .content .content_info .content_text .about_text {
     font-size: 1.1rem;
   }
 }
@@ -1574,8 +1604,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
 }
 
 @media (max-width: 1450px) {
@@ -1615,8 +1645,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
   display: none;
 }
 
@@ -1752,6 +1782,27 @@ body {
   }
 }
 
+.content .basketball {
+  display: none;
+  width: 45vw;
+  height: auto;
+  z-index: 990;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .content .basketball {
+    width: 80vw;
+  }
+}
+
+.content .basketball .basketball_video {
+  width: 100%;
+  height: auto;
+}
+
 .content .project_slider:hover {
   cursor: pointer;
 }
@@ -1788,16 +1839,85 @@ body {
   color: #e5ff52;
 }
 
-.skills {
+.hobbies {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: gray;
-  color: white;
+  background: black;
+}
+
+.hobbies .hobbies_section {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
   position: relative;
-  z-index: 102;
+}
+
+.hobbies .hobbies_section img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  -webkit-transition: .4s;
+  transition: .4s;
+  cursor: pointer;
+  z-index: 900;
+  opacity: .5;
+}
+
+.hobbies .hobbies_section img:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+.hobbies .hobbies_section .hobbies_section_text {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 901;
+  font-family: 'SF';
+}
+
+.hobbies .hobbies_section .hobbies_section_text h2 {
+  font-size: 3rem;
+  color: #e5ff52;
+}
+
+.hobbies .hobbies_section .hobbies_section_text p {
+  margin-top: 4vh;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.hobbies .hobbies_section .hobbies_section_text a {
+  margin-top: 4vh;
+  font-size: 2rem;
+  color: #20b5f5;
+  text-decoration: underline;
+}
+
+.hobbies:hover > :not(:hover) {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .main_active {

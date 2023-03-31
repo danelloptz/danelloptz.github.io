@@ -135,6 +135,7 @@
                     <div class="about_bg"></div>
                     <div class="skills_bg"></div>
                     <div class="projects_bg"></div>
+                    <div class="basketball_bg"></div>
                 </div>
                 <div class="content_info">
                     <div class="content_line_wrapper">
@@ -153,11 +154,13 @@
                         <span class="about_opentag">&lt;about&gt;</span>
                         <span class="about_opentag">&lt;skills&gt;</span>
                         <span class="about_opentag">&lt;projects&gt;</span>
+                        <span class="about_opentag">&lt;basketball&gt;</span>
                     </div>
                     <div class="content_title">
-                        <h3 class="about_title" title="Меня зовут Василенко Данил" style="display: block;">Меня зовут <span class="light">Василенко Данил</span></h3>
+                        <h3 class="about_title" style="display: block;">Меня зовут <span class="light">Василенко Данил</span></h3>
                         <h3 class="about_title">Я <span class="light">Frontend </span>разработчик</h3>
-                        <h3 class="about_title">Мои проекты</h3>
+                        <h3 class="about_title">Мои <span class="light">проекты</span></h3>
+                        <h3 class="about_title">Мои <span class="light">хобби</span></h3>
                     </div>
                     <div class="content_text">
                         <p class="about_text" style="display: block;">
@@ -169,21 +172,31 @@
                         <p class="about_text">
                             Здесь представлены <span class="light_purple">проекты</span>, которые я создал в ходе своей работы. В каждой из них используется <span class="light_purple">различный стэк технологий</span>.
                         </p>
+                        <div class="about_text">
+                            Уже больше <span class="light">3-х лет</span> я играю в <span class="light">баскетбол</span>. Вместе с командой <span class="light">"Древлянка-буллс"</span> в ШБЛ "Кэс-Баскет" мы стали:
+                            <ul>
+                                <li style="color: white; margin-left: 10px;">- Чемпионами <span class="light">города</span> (2 раза)</li>
+                                <li style="color: white;margin-left: 10px;">- Чемпионами <span class="light">Республики Карелия</span> (1 раз)</li>
+                                <li style="color: white;margin-left: 10px;">- Представляли наш регион на <span class="light">Федеральном</span> уровне</li>
+                            </ul> 
+                        </div>
+                            
                     </div>
                     <div class="content_closetag">
                         <span class="about_closetag">&lt;/about&gt;</span>
                         <span class="about_closetag">&lt;/skills&gt;</span>
                         <span class="about_closetag">&lt;/projects&gt;</span>
+                        <span class="about_closetag">&lt;/basketball&gt;</span>
                     </div>
                 </div>
                 <div class="content_photo">
-                    <img data-src="img/about1.jpg" class="about_img lazy-load" style="display: block;">
+                    <img data-src="img/me1.jpg" class="about_img lazy-load" style="display: block;">
                     <img data-src="img/about.jpg" class="about_img lazy-load">
                     <img data-src="img/about2.jpg" class="about_img lazy-load">
                 </div>
                 <div class="content_mobile_photo">
-                    <img data-src="img/about2.jpg" class="content_mobile_img lazy-load" style="display: block;">
-                    <img data-src="img/about3.jpg" class="content_mobile_img lazy-load">
+                    <img data-src="img/me1.jpg" class="content_mobile_img lazy-load" style="display: block;">
+                    <img data-src="img/about.jpg" class="content_mobile_img lazy-load">
                     <img data-src="img/about3.jpg" class="content_mobile_img lazy-load">
                 </div>
                 <div class="project_slider">
@@ -198,10 +211,35 @@
                     </div>
                     <img src="img/right-arrow.svg" class="project_slider_right">
                 </div>
+                <div class="basketball">
+                    <iframe id="video" class="basketball_video"
+                        src="https://frontend.vh.yandex.ru/player/{video_content_id}?from=partner&autoplay=1&mute=1" 
+                        allow="autoplay; encrypted-media" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> 
             </section>
-            <section class="skills main_item" data-check="2">
-                <h1>Skills block</h1>
-            </section>
+            <!--<section class="hobbies main_item" data-check="2">
+                <div class="hobbies_section">
+                    <img src="img/about2.jpg" class="hobbies_section_img">
+                    <div class="hobbies_section_text">
+                        <h2>Какой-то заголовок</h2>
+                        <p>
+                            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+                        </p>
+                        <a href="#">Ссылка на информацию</a>
+                    </div>
+                </div>
+                <div class="hobbies_section">
+                    <img src="img/about1.jpg" class="hobbies_section_img">
+                    <div class="hobbies_section_text">
+                        <h2>Какой-то заголовок</h2>
+                        <p>
+                            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+                        </p>
+                        <a href="#">Ссылка на информацию</a>
+                    </div>
+                </div>
+            </section>-->
         </main>
         <footer>
             
