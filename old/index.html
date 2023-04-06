@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+        <div id="wrapper--colba">
+            <div id="colba">
+                <div id="water">
+                
+                </div>
+            </div>
+        </div>
+        <div class="animate_logo" id="animate_logo">
+            <div class="animate_wrap">
+                <div class="logo_text">B</div>
+                <div class="left-top"></div>
+                <div class="left"></div>
+                <div class="left-bottom"></div>
+                <div class="bottom"></div>
+                <div class="right-bottom"></div>
+                <div class="right"></div>
+                <div class="right-top"></div>
+                <div class="top"></div>
+            </div>
+        </div>
+        <header class="header" id="header">
+            <nav class="header_wrapper" id="header_wrapper">
+                <a href="#">
+                    <div class="header_logo" id="header_logo">
+                        <div class="animate_logoMenu">
+                            <div class="animate_wrapMenu">
+                                <div class="logo_text">B</div>
+                                <div class="left-top"></div>
+                                <div class="left"></div>
+                                <div class="left-bottom"></div>
+                                <div class="bottom"></div>
+                                <div class="right-bottom"></div>
+                                <div class="right"></div>
+                                <div class="right-top"></div>
+                                <div class="top"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="header_nav_menu" data-check="0">
+                    <div class="header_nav_menu_line"></div>
+                    <div class="header_nav_menu_line"></div>
+                </div>
+            </nav>
+            <nav>
+                <div class="header_inner_menu" id="header_inner_menu">
+                    <ul>
+                        <a onclick="location.href='#aboutLink'"><li class="header_inner_menu_text about link" id="about">ОБО МНЕ</li></a>
+                        <a onclick="location.href='#skillsLink'"><li class="header_inner_menu_text skills link" id="skills">НАВЫКИ</li></a>
+                        <a onclick="location.href='#projectsLink'"><li class="header_inner_menu_text project link" id="projects">ПРОЕКТЫ</li></a>
+                        <a onclick="location.href='#contactsLink'"><li class="header_inner_menu_text contact link" id="contact">О САЙТЕ</li></a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main" id="main">
+                <section class="main_header">
+                    <div class="header-sm-txt">Привет! Я являюсь</div>
+                    <div class="header-bg-txt">Frontend-разработчиком.</div>
+                    <div class="header-bg-txt-mute">Я ДЕЛАЮ САЙТЫ НА КАЖДЫЙ ДЕНЬ</div>
+                    <a onclick="location.href='#aboutLink'"><button class="main_header_btn">УЗНАТЬ БОЛЬШЕ</button></a>
+                </section>
+                <section class="about_inner_menu" id="aboutMenu">
+                    <a onclick="AboutMenuClose()"><div class="aboutInnerMenuCLose"></div></a>
+                    <div class="aboutInnerMenuWrapper">
+                        <span class="aboutInnerMenuTitle">КТО Я?</span>
+                        <div class="aboutInnerMenuText">
+                            <ul class="aboutInnerMenuUl">
+                                <li class="aboutInnerMenuLi"><span class="liTitle">ФИО:</span> Василенко Данил Олегович</li>
+                                <li class="aboutInnerMenuLi"><span class="liTitle">Возраст:</span> 16 лет</li>
+                                <li class="aboutInnerMenuLi"><span class="liTitle">Город:</span> Петрозаводск, Карелия</li>
+                                <li class="aboutInnerMenuLi"><span class="liTitle">Навыки:</span> адаптивная вёрстка HTML/CSS; JS в связке с JQuery и Vue; сборка сайтов на WordPress; работа с графическим дизайном в Figma и Photoshop</li>
+                                <li class="aboutInnerMenuLi"><span class="liTitle">Опыт:</span> 2 года</li>
+                                <li class="aboutInnerMenuLi"><span class="liTitle">Предпочтения в работе:</span> креативные и подвижные сайты, анимации разных уровней сложности</li>
+                                <li class="aboutInnerMenuLi"><span class="liTitle">Вне работы:</span> баскетболист, фотограф, турист</li>
+                            </ul>
+                            <button class="aboutInnerMenuButton">КОНТАКТЫ</button>
+                        </div>
+                    </div>
+                </section>
+            <article id="about--article">
+                <div class="mainTitle" id="aboutLink">&lt;about&gt;</div>
+                <section class="mainAbout" id="mainAbout">
+                    <a onclick="AboutMenuOpen()"><div class="aboutAvatar" id="aboutAvatar">
+                        <img src="img/avatar.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Нажми на меня" alt="Василенко Данил frontend">
+                    </div></a>
+                    <div class="aboutTitle">КТО ЭТО?</div>
+                    <div class="aboutLine"></div>
+                    <span class="aboutText">
+                        Меня зовут Василенко Данил. Я из Петрозаводска. Специализируюсь на
+                        вёрстке сайтов и создании UI эффектов и анимаций. Основной стэк: HTML5/CSS3/SCSS/JS/JQuery.
+                    </span>
+                </section>
+                <div class="mainTitle">&lt;/about&gt;</div>
+            </article>
+            <div class="mainTitle" id="skillsLink">&lt;skills&gt;</div>
+            <arcticle id="skills--article">
+                <div class="my-skills">
+                    <section class="graph">
+                        <div class="pie-wrap">
+                            <div class="pie p1"></div>
+                            <span class="pie-text pt1">HTML</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p2"></div>
+                            <span class="pie-text pt2">CSS</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p3"></div>
+                            <span class="pie-text pt3">JS</span>
+                        </div>
+        
+                        <div class="pie-wrap">
+                            <div class="pie p4"></div>
+                            <span class="pie-text pt4">JQuery</span>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie p6"></div>
+                            <span class="pie-text pt6">SCSS</span>
+                        </div>
+                    </section>
+                    <section class="skillsTextWrap">
+                        <div class="runLine"></div>
+                        <ul>
+                            <li class="skillsText">&#10004; Адаптивная вёрстка для любых устройств</li>
+                            <li class="skillsText">&#9734; Flex и Grid разметка</li>
+                            <li class="skillsText">&#9786; JQuery вместе с ванильным JS</li>
+                            <li class="skillsText">&#10047; SASS/SCSS</li>
+                            <li class="skillsText">&#9729; Вёрстка по стандартам HTML5</li>
+                            <li class="skillsText">&#9745; Чистый и читабельный код</li>
+                            <li class="skillsText"><button class="skills-btn">РЕЗЮМЕ</button></li>
+                        </ul>
+                    </section>
+                </div>
+            </arcticle>
+            <div class="mainTitle">&lt;/skills&gt;</div>
+            <div class="mainTitle" id="projectsLink">&lt;projects&gt;</div>
+            <article class="projects" id="projects--article">
+                <!--<nav class="projects--header">
+                    <span class="projects--zag zag" id="all-item"><span style="color: #FF8A65">Все</span></span>
+                    <span class="projects--zag zag" id="web-item">Сайты</span>
+                    <span class="projects--zag zag" id="verstka-item">Вёрстка</span>
+                    <span class="projects--zag zag" id="widjets-item">Виджеты</span>
+                </nav>-->
+                <div class="projects--wrapper">
+                    <section class="projects--item verstka-item all-item">
+                        <a href="../basicdept/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title">BASIC/DEPT</title>
+                                <p class="item--text">
+                                    Вёрстка главной страницы basicagency.com. SCSS/JQuery.
+                                </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag verstka">#верстка</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                    <section class="projects--item verstka-item all-item">
+                        <a href="../levelup/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title">LevelUP</title>
+                                <p class="item--text">
+                                    LevelUp - продуктивная и слаженная команда с 15-ти летним опытом в девелопменте.
+                                </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag verstka">#верстка</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                    <section class="projects--item web-item all-item">
+                        <a href="../bulls/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title">Bulls</title>
+                                <p class="item--text">
+                                    Статистика баскетбольной команды "Древлянка-bulls" SCSS/JQuery                             </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag web">#сайты</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                    <section class="projects--item verstka-item all-item">
+                        <a href="../ableton/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title">Ableton</title>
+                                <p class="item--text">
+                                    Вёрстка одной из страниц сайта ableton.com. SCSS/JQuery.
+                                </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag verstka">#верстка</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                    <section class="projects--item widjets-item all-item">
+                        <a href="../game/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title">Пятнашки</title>
+                                <p class="item--text">
+                                    Всем известная игра написанная на JS.
+                                </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag widjets">#виджеты</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                    <section class="projects--item widjets-item all-item">
+                        <a href="tic-tac/index.html">
+                            <header class="item--header">
+                                <title class="projects--year">2022</title>
+                                <title class="projects--title" style="width: 90%;">Крестики-нолики</title>
+                                <p class="item--text">
+                                    Web-игра написанная на JS. 
+                                </p>
+                            </header>
+                            <footer class="item--footer">
+                                <nav class="footer--tags">
+                                    <button class="tag widjets">#виджеты</button>
+                                </nav>
+                            </footer>
+                        </a>
+                    </section>
+                </div>
+            </article>
+            <div class="mainTitle">&lt;/projects&gt;</div>
+            <div class="mainTitle" id="contactsLink">&lt;contacts&gt;</div>
+            <article class="contacts">
+                <section class="contacts-wrapper">
+                    <span class="contacts-label">О сайте</span>
+                    <span class="contacts-text">
+                        Исходный код с комментариями доступен в свободном доступе на <a class="contacts-text-link" href="https://github.com/danelloptz">github</a>. 
+                        Для сотрудничества перейдите по ссылкам ниже.
+                    </span>
+                    <div class="contacts-btn">
+                        <a href="https://github.com/danelloptz"><button class="contacts-btn-github">GitHub</button></a>
+                        <a href="mailto:denvasik05@gmail.com"><button class="contacts-btn-email">Email</button></a>
+                        <a href="tg://resolve?domain=lui_baton"><button class="contacts-btn-telegram">Telegram</button></a>
+                    </div>
+                </section>
+            </article>
+        </main>
+        <footer>
+            
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
