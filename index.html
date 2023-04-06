@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <base target="_blank">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+       
+        <section class="preloader_wrapper">
+            <div class="preloader">
+                <img src="img/bruh.png" class="preloader_logo">
+                <img src="img/chek.png" class="preloader_check">
+                <svg class="preloader_border">
+                    <circle class="preloader_circle"/>
+                </svg>
+            </div>
+            <h1 class="preloader_text">Hello, world!</h1>
+            <h2 class="preloader_click_text">Нажмите, чтобы продолжить</h2>
+        </section>
+
+        <section class="burgerMenu">
+            <div class="bigMenu">
+                <div class="bigMenu_header">
+                    <div class="bigMenu_header_item" name="about" data-num="0" data-scroll="2">
+                        <h2 class="bigMenu_header_item_num bigMenu_header_item_numActive">Кто я?</h2>
+                        <div class="bigMenu_header_item_line bigMenu_header_item_lineActive"></div>
+                    </div>
+                    <div class="bigMenu_header_item" name="skills" data-num="1" data-scroll="3">
+                        <h2 class="bigMenu_header_item_num">Что умею?</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item burger" name="projects" data-num="2" data-scroll="4">
+                        <h2 class="bigMenu_header_item_num">Проекты</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item" name="hobbies" data-num="3" data-scroll="5">
+                        <h2 class="bigMenu_header_item_num">Хобби</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                    <div class="bigMenu_header_item" name="contact" data-num="4" data-scroll="6">
+                        <h2 class="bigMenu_header_item_num">Контакты</h2>
+                        <div class="bigMenu_header_item_line"></div>
+                    </div>
+                </div>
+                <div class="bigMenu_container">
+                    <div class="bigMenu_container_about tab bigMenu_container_show" style="display: flex;" data-num="0">
+                        <img data-src="img/me1.jpg" class="lazy-load bigMenu_container_about_img">
+                        <div class="bigMenu_container_about_text">
+                            <h3>Привет!</h3>
+                            <p>Меня зовут Василенко Данил. Я специализируюсь на вёрстке сайтов с уникальным дизайном, разработкой web-приложений, создании UI эффектов и анимаций.</p>
+                        </div>
+                    </div>
+                    <div class="bigMenu_container_skills tab" data-num="1">
+                        <img data-src="img/about.jpg" class="lazy-load bigMenu_container_skills_img">
+                        <div class="bigMenu_container_skills_text">
+                            <h3>Мои навыки</h3>
+                            <p>В своей работе использую Vue, JQuery, SCSS. Свободно владею графическими редакторами Figma и Photoshop. Полностью адаптивная и отзывчивая вёрстка pixel-perfect.</p>
+                        </div>
+                    </div>
+                    <div class="bigMenu_slider_right">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bigMenu_slider_right_arrow" viewBox="0 0 24 24" style="fill: white;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                    </div>
+                    <div class="bigMenu_slider_left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bigMenu_slider_left_arrow" viewBox="0 0 24 24" style="fill: white;"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
+                    </div>
+                    <div class="bigMenu_container_projects tab" data-num="2">
+                        <div class="bigMenu_container_projects_slider">
+                            <div class="bigMenu_container_projects_card">
+                                <img onclick="location.href='https://danelloptz.github.io/basicdept'" data-src="img/basicdept.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img  onclick="location.href='https://danelloptz.github.io/ableton'" data-src="img/ableton.png" class="lazy-load">
+                            </div>
+                            <div class="bigMenu_container_projects_card">
+                                <img  onclick="location.href='https://danelloptz.github.io'" data-src="img/resume.png" class="lazy-load">
+                            </div>
+                            <div  onclick="location.href='https://danelloptz.github.io/game'" class="bigMenu_container_projects_card">
+                                <img data-src="img/game.png" class="lazy-load">
+                            </div>                        
+                            </div>
+                        </div>
+                        <div class="bigMenu_container_hobbies tab" data-num="3">
+                            <div class="bigMenu_container_hobbies_el">
+                                <img src="img/about2.jpg" alt="Баскетболист под 9 номером">
+                                <div class="bigMenu_container_hobbies_el_text">
+                                    <h3>Баскетбол</h3>
+                                    <p>
+                                        Уже больше 3-х лет я играю в баскетбол. Вместе с командой "Древлянка-буллс" в ШБЛ "Кэс-Баскет" мы стали:
+                                        <ul style="list-style-type: none;">
+                                            <li style="margin-left: 10px;">- Чемпионами города (2 раза)</li>
+                                            <li style="margin-left: 10px;">- Чемпионами Республики Карелия (1 раз)</li>
+                                            <li style="margin-left: 10px;">- Представляли наш регион на Федеральном уровне</li>
+                                        </ul> 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bigMenu_container_hobbies_el">
+                                <img src="img/about1.jpg" alt="Баскетболист под 9 номером">
+                                <div class="bigMenu_container_hobbies_el_text">
+                                    <h3>Фотосъёмка</h3>
+                                    <p>
+                                        В свободное время я: фотограф-любитель. Уже как 2 года я снимаю своих друзей и знакомых. Также меня очень привлекает уличная съёмка. Она помогает отвлечься от повседневной суеты.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bigMenu_container_contact tab" data-num="4">
+                            <h3>Контакты</h3>
+                            <p>
+                                Если у вас есть вопросы или вы заинтересованы в сотрудничестве, то свяжитесь со мной
+                            </p>
+                            <div class="bigMenu_container_contact_icons_wrapper">
+                                <div class="bigMenu_container_contact_icons_wrapper_line">
+                                    <img src="img/instagram.svg" class="bigMenu_container_contact_icons_wrapper_line_icon">
+                                    <a href="https://instagram.com/vasilek.jpg/">@vasilek.jpg</a>
+                                </div>
+                                <div class="bigMenu_container_contact_icons_wrapper_line">
+                                    <img src="img/telegram.svg" class="bigMenu_container_contact_icons_wrapper_line_icon">
+                                    <a>+7 (921) 226-78-30</a>
+                                </div>
+                                <div class="bigMenu_container_contact_icons_wrapper_line">
+                                    <img src="img/github.png" class="bigMenu_container_contact_icons_wrapper_line_icon">
+                                    <a href="https://github.com/danelloptz">@danelloptz</a>
+                                </div>
+                                <div class="bigMenu_container_contact_icons_wrapper_line">
+                                    <img src="img/mail.svg" class="bigMenu_container_contact_icons_wrapper_line_icon">
+                                    <a href="mailto:denvasik05@yandex.ru">denvasik05@yandex.ru</a>
+                                </div>
+                                <div class="bigMenu_container_contact_icons_wrapper_line">
+                                    <img src="img/pinterest.svg" class="bigMenu_container_contact_icons_wrapper_line_icon">
+                                    <a href="https://pinterest.com/vasilekjpg/">@vasilekjpg</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobileMenu">
+                <a name="about" data-num="0" data-scroll="2" class="mobileMenu_link mobileMenu_link_active">Кто я?</span>
+                <a name="skills" data-num="1" data-scroll="3" class="mobileMenu_link">Что умею?</a>
+                <a name="projects" data-num="2" data-scroll="4" class="mobileMenu_link">Проекты</a>
+                <a name="hobbies" data-num="3" data-scroll="5" class="mobileMenu_link">Хобби</a>
+                <a name="contact" data-num="4" data-scroll="6" class="mobileMenu_link">Контакты</a>
+            </div>
+        </section>
+        <header class="header" id="header">
+            <img src="img/bruh.png" class="header_logo">
+            <div class="header_menuBtn_wrapper">
+                <div class="header_menuBtn close" data-check="0"></div>
+            </div>
+        </header>
+        <div class="fullscreen" data-check="0">
+            <img src="img/full-screen.svg" class="fullscreen_btn">
+            <img src="img/minimize.svg" class="minimaze_btn">
+        </div>
+        <main class="main" id="main">
+            <section class="hello main_item" data-check="0">
+                <div class="hello_smtext_wrapper">
+                    <span class="hello_smtext">Привет! Меня зовут <span style="color: #f35182;">Василенко Данил</span> и я</span>
+                </div>
+                <div class="hello_bgtext_black_wrapper">
+                    <h1 class="hello_bgtext_black">Frontend-разработчик</h1>
+                </div>
+                <div class="hello_bgtext_mute_wrapper">
+                    <h2 class="hello_bgtext_mute">Крутые сайты на каждый день.</h2>
+                </div>
+                <div class="hello_icons_wrapper">
+                    <img src="img/instagram.svg" class="hello_icon">
+                    <img src="img/telegram.svg" class="hello_icon">
+                    <img src="img/github.svg" class="hello_icon">
+                    <img src="img/mail.svg" class="hello_icon">
+                    <img src="img/pinterest.svg" class="hello_icon">
+                </div>
+                <div class="hello_img_wrapper">
+                    <a href="https://dribbble.com/kunchevsky"><img src="img/HelloGif.gif" class="hello_img"></a> <!--Author: https://dribbble.com/kunchevsky Amazing work!-->
+                </div>
+                
+            </section>
+            <section class="content main_item" data-check="1">
+                <div class="content_bg">
+                    <div class="about_bg"></div>
+                    <div class="skills_bg"></div>
+                    <div class="projects_bg"></div>
+                    <div class="basketball_bg"></div>
+                    <div class="photography_bg"></div>
+                </div>
+                <div class="content_info">
+                    <div class="content_line_wrapper">
+                        <span class="content_line_text">Кто я?</span>
+                        <div class="content_line_dot dot_line_active"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                        <div class="content_line"></div>
+                        <div class="content_line_dot"></div>
+                    </div>
+                    <div class="content_opentag">
+                        <span class="about_opentag">&lt;about&gt;</span>
+                        <span class="about_opentag">&lt;skills&gt;</span>
+                        <span class="about_opentag">&lt;projects&gt;</span>
+                        <span class="about_opentag">&lt;basketball&gt;</span>
+                        <span class="about_opentag">&lt;photography&gt;</span>
+                    </div>
+                    <div class="content_title">
+                        <h3 id="about" class="about_title" style="display: block;">Меня зовут <span class="light">Василенко Данил</span></h3>
+                        <h3 id="skills" class="about_title">Я <span class="light">Frontend </span>разработчик</h3>
+                        <h3 id="projects" class="about_title">Мои <span class="light">проекты</span></h3>
+                        <h3 id="skills" class="about_title"><span class="light">Баскетбол</span></h3>
+                        <h3 class="about_title"><span class="light">Фотосъёмка</span></h3>
+                    </div>
+                    <div class="content_text">
+                        <p class="about_text" style="display: block;">
+                            Мне 17 лет. Я живу в г.Петрозаводск. Специализируюсь на <span class="light">вёрстке</span> сайтов с уникальным дизайном, разработкой <span class="light">web-приложений</span>, создании <span class="light">UI</span> эффектов и <span class="light">анимаций</span>.
+                        </p>
+                        <p class="about_text">
+                            В своей работе использую <span class="light">JQuery</span>, <span class="light">SCSS</span>. Свободно владею графическими редакторами <span class="light">Figma</span> и <span class="light">Photoshop</span>. Полностью адаптивная и отзывчивая вёрстка <span class="light">pixel-perfect</span>.
+                        </p>
+                        <p class="about_text">
+                            Здесь представлены <span class="light_purple">проекты</span>, которые я создал в ходе своей работы. В каждой из них используется <span class="light_purple">различный стэк технологий</span>.
+                        </p>
+                        <div class="about_text">
+                            Уже больше <span class="light">3-х лет</span> я играю в <span class="light">баскетбол</span>. Вместе с командой <span class="light">"Древлянка-буллс"</span> в ШБЛ "Кэс-Баскет" мы стали:
+                            <ul style="list-style-type: none;">
+                                <li style="color: white; margin-left: 10px;">- Чемпионами <span class="light">города</span> (2 раза)</li>
+                                <li style="color: white;margin-left: 10px;">- Чемпионами <span class="light">Республики Карелия</span> (1 раз)</li>
+                                <li style="color: white;margin-left: 10px;">- Представляли наш регион на <span class="light">Федеральном</span> уровне</li>
+                            </ul> 
+                        </div>
+                        <p class="about_text">
+                            В свободное время я: <span class="light">фотограф-любитель</span>. Уже как <span class="light">2</span> года я снимаю своих друзей и знакомых. Также меня очень привлекает <span class="light">уличная</span> съёмка. Она помогает <span class="light">отвлечься</span> от повседневной суеты. 
+                        </p> 
+                    </div>
+                    <div class="content_closetag">
+                        <span class="about_closetag">&lt;/about&gt;</span>
+                        <span class="about_closetag">&lt;/skills&gt;</span>
+                        <span class="about_closetag">&lt;/projects&gt;</span>
+                        <span class="about_closetag">&lt;/basketball&gt;</span>
+                        <span class="about_closetag">&lt;/photography&gt;</span>
+                    </div>
+                </div>
+                <div class="content_photo">
+                    <img src="img/me1.jpg" class="about_img lazy-load" style="display: block;">
+                    <img src="img/about.jpg" class="about_img lazy-load">
+                </div>
+                <div class="content_mobile_photo">
+                    <img src="img/me1.jpg" class="content_mobile_img lazy-load" style="display: block;">
+                    <img src="img/about.jpg" class="content_mobile_img lazy-load">
+                    <img src="img/about3.jpg" class="content_mobile_img lazy-load">
+                </div>
+                <div class="project_slider">
+                    <img src="img/left-arrow.svg" class="project_slider_left">
+                    <div class="project_slider_wrapper">
+                        <div class="project_slider_container">
+                            <img onclick="location.href='https://danelloptz.github.io/basicdept'" src="img/basicdept.png" class="project_slider_container_img lazy-load">
+                            <img onclick="location.href='https://danelloptz.github.io/ableton'" src="img/ableton.png" class="project_slider_container_img lazy-load">
+                            <img onclick="location.href='https://danelloptz.github.io'" src="img/resume.png" class="project_slider_container_img lazy-load">
+                            <img onclick="location.href='https://danelloptz.github.io/game'" src="img/game.png" class="project_slider_container_img lazy-load">
+                        </div>
+                    </div>
+                    <img src="img/right-arrow.svg" class="project_slider_right">
+                </div>
+                <div class="basketball">
+                    <video class="basketball_video" id="video" loop autoplay controls src="img/hoop.mp4"></video>
+                </div> 
+                <div class="photography">
+                    <img src="img/1_1.jpg" class="lazy-load photography_img" alt="Остановка зимой вечером">
+                    <img src="img/2_1.jpg" class="lazy-load photography_img" alt="Сырая улица вечером">
+                    <img src="img/3_1.jpg" class="lazy-load photography_img" alt="Девушка вечером на пешеходном переходе"> 
+                    <img src="img/4_1.jpg" class="lazy-load photography_img" alt="Девушка вечером на улице">
+                    <img src="img/5_1.jpg" class="lazy-load photography_img" alt="Автозаправка вечером">
+                    <img src="img/6_1.jpg" class="lazy-load photography_img" alt="Улица зимой днём">
+                    <img src="img/7_1.jpg" class="lazy-load photography_img" alt="Девушка в пальто с сумкой">
+                    <img src="img/8_1.jpg" class="lazy-load photography_img" alt="Портрет девушки">
+                    <img src="img/9_0.jpg" class="lazy-load photography_img" alt="Девушка в пальто с сумкой на улице">
+                    <img src="img/9_2.jpg" class="lazy-load photography_img" alt="Портрет девушки в пальто">
+                    <img src="img/10_1.jpg" class="lazy-load photography_img" alt="Девушка осенью на улице с листьями">
+                    <img src="img/11_1.jpg" class="lazy-load photography_img" alt="Девушка с красной гитарой в чёрной кожаной куртке">
+                    <img src="img/12_1.jpg" class="lazy-load photography_img" alt="Мужской портрет с оранжевым и синим светом">
+                    <img src="img/13_1.jpg" class="lazy-load photography_img" alt="Мужской портрет в переходе с синим светом">
+                    <img src="img/14_1.jpg" class="lazy-load photography_img" alt="Женский портрет зимой со вспышкой в контровом свете">
+                    <img src="img/15_1.jpg" class="lazy-load photography_img" alt="Женский портрет зимой со вспышкой">
+                    <img src="img/16_1.jpg" class="lazy-load photography_img" alt="Парень у подъезда зимой тянется к лампе">
+                    <img src="img/17_1.jpg" class="lazy-load photography_img" alt="Женский портрет зимой со вспышкой">
+                </div>
+                <div class="modalPhoto">
+                    <div class="modalPhoto_close_wrapper">
+                        <div class="modalPhoto_close"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact main_item" data-check="2">
+                <div class="wave">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="contact_content">
+                    <h2>Контакты</h2>
+                    <div class="contact_line"></div>
+                    <p>
+                       Если у вас есть вопросы или вы заинтересованы в сотрудничестве, то свяжитесь со мной 
+                    </p>
+                    <div class="contact_icons_wrapper">
+                        <div class="contact_icon_line">
+                            <img src="img/instagram.svg" class="contact_icon">
+                            <a href="https://instagram.com/vasilek.jpg/">@vasilek.jpg</a>
+                        </div>
+                        <div class="contact_icon_line">
+                            <img src="img/telegram.svg" class="contact_icon">
+                            <a>+7 (921) 226-78-30</a>
+                        </div>
+                        <div class="contact_icon_line">
+                            <img src="img/github.svg" class="contact_icon">
+                            <a href="https://github.com/danelloptz">@danelloptz</a>
+                        </div>
+                        <div class="contact_icon_line">
+                            <img src="img/mail.svg" class="contact_icon">
+                            <a href="mailto:denvasik05@yandex.ru">denvasik05@yandex.ru</a>
+                        </div>
+                        <div class="contact_icon_line">
+                            <img src="img/pinterest.svg" class="contact_icon">
+                            <a href="https://pinterest.com/vasilekjpg/">@vasilekjpg</a>
+                        </div>
+                    </div>
+                  </div>
+                  <h3>©Василенко Данил, 11а школа №46</h3>
+            </section>
+        </main>
+        <footer>
+            
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

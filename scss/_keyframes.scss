@@ -1,0 +1,182 @@
+// загрузка и изменение цвета прелоадера
+@keyframes Preloader {
+    from { stroke-dashoffset: 1000; }
+    30% { stroke: red; }
+    to {
+      stroke-dashoffset: 0;
+      stroke: green;
+    }
+}
+
+// появление логотипа в прелоадере
+@keyframes PreloaderImgJump {
+    from { transform: translateY(180px); }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+// появление зелёной галочки
+@keyframes PreloaderCheckShow {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+// напечатывание текста в прелоадере
+@keyframes textTypingShort {
+    0% { width: 0; }
+    2% { opacity: 1; }
+    70% {opacity: 1; width: 170px;}
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes PreloaderClickText {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+// мигание курсора
+@keyframes cursorClick {
+    0% { border-color: green; }
+    50% { border-color: transparent; }
+    100% { border-color: green; }
+}
+
+// убрать прелоадер
+@keyframes HidePreloader {
+    from { opacity: 1; }
+    to { opacity: 0;}
+}
+@keyframes FlashText {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes Pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+// появление header
+@keyframes HeaderShow {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    10% { opacity: 1; }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+// для кнопки навигации
+@keyframes NavButnBefore {
+    from {transform: rotate(0deg) translateX(0px);}
+    to {transform: rotate(90deg) translateX(8px);}
+}
+@keyframes NavButnAfter {
+    from {transform: translateX(0px);}
+    to {transform: translateX(-8px);}
+}
+@keyframes NavWrapperRotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(135deg);}
+}
+
+@keyframes NavButnBeforeClose {
+    from {transform: rotate(90deg) translateX(8px);}
+    to {transform: rotate(0deg) translateX(0px);}
+}
+@keyframes NavButnAfterClose {
+    from {transform: translateX(-8px);}
+    to {transform: translateX(0px);}
+}
+@keyframes NavWrapperRotateClose {
+    from {transform: rotate(135deg);}
+    to {transform: rotate(0deg);}
+}
+
+// появление бургер меню
+@keyframes BurgerShow {
+    from {transform: translateX(100vw);}
+    to {transform: translateX(0vw);}
+}
+@keyframes BurgerClose {
+    from {transform: translateX(0vw);}
+    to {transform: translateX(100vw);}
+}
+
+// появление линий в бургер меню
+@keyframes BigMenuLineShow {
+    from { width: 0vw; }
+    to { width: 15vw; }
+}
+@keyframes BigMenuLineClose {
+    from { width: 15vw; }
+    to { width: 0vw; }
+}
+
+// появление container в бургер меню
+@keyframes BigMenuContainerShow {
+    from { transform: translateY(60px); opacity: 0; }
+    40% {opacity: 0;}
+    to { transform: translateY(0px); opacity: 1; }
+}
+@keyframes BigMenuContainerClose {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+// появление текста и фото в блоке hello
+@keyframes HelloTextShow {
+    from {height: 0%;}
+    to {height: 100%;}
+}
+@keyframes HellImgShow {
+    from {height: 0%; border-radius: 50%;}
+    to {height: 100%; border-radius: 0%;}
+}
+
+// появление блока about
+@keyframes MainShow {
+    from {height: 0vh;}
+    to {height: 100vh;}
+}
+@keyframes MainClose {
+    from {transform: translateY(0vh); height: 100vh;}
+    to {transform: translateY(100vh); height: 0vh;}
+}
+@keyframes HideHelloImg {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes ShowHelloImg {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+// появление элементов content
+@keyframes ContentAnimationClose {
+    from {height: 100%;}
+    to {height: 0%;}
+}
+@keyframes ContentAnimationShow {
+    from {height: 0%;}
+    to {height: 100%;}
+}
+@keyframes ContentAnimationTextClose {
+    from {opacity: 1;transform: translateY(0px);}
+    to {opacity: 0; transform: translateY(30px);}
+}
+@keyframes ContentAnimationTextShow {
+    from {opacity: 0;transform: translateY(30px);}
+    to {opacity: 1;transform: translateY(0px);}
+}
