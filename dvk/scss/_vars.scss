@@ -1,0 +1,33 @@
+// labels
+$labels_largest: 150px;
+$labels_huge: 100px;
+$labels_big: 60px;
+$labels_medium: 45px;
+$labels_normal: 30px;
+$labels_small: 20px;
+$labels_tiny: 15px;
+
+// text 
+$text_normal: 30px;
+
+// colors
+$orange: #F3A61D;
+$yellow: #FBCC24;
+$dark: #2E2754;
+$gray: #C5C5C5;
+
+// fonts
+$SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// buttons
+.big_orange_btn {
+    width: 362px;
+    height: 70px;
+    background: none;
+    border: 2px solid $orange;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

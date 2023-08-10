@@ -1,0 +1,253 @@
+@import './vars';
+@import './keyframes';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow: hidden;
+    font-family: $SegoeUI;
+}
+h1 {
+    font-size: $labels_huge;        
+    line-height: normal;
+}
+
+.burger {
+    background: $dark;
+    opacity: .9;
+    transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    transform: translateX(100vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    a {
+      font-size: $labels_big;
+      color: white;
+      margin-bottom: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      position: relative;
+      padding: 0 25px 0 25px;
+      transition: all 2s ease-in-out;
+      @media (max-width: 700px) {
+        font-size: $labels_medium;
+      }
+      @media (max-width: 700px) {
+        font-size: $labels_normal;
+      }
+    }
+    a::before, a::after {
+      content: "";
+      height: 100%;
+      width: 4px;
+      position: absolute;
+      background: $orange;
+      opacity: 0;
+      border-radius: 2px;
+    }
+    a::before { left: 0; top: 0; }
+    a::after { right: 0; top: 0; }
+    a:hover {
+      &::before, &::after {
+        opacity: 1;
+      }
+    }
+    
+
+}
+// класс open, close, dark, light, необходимый для анимации кнопки меню
+.open::before {
+    animation: NavButnBefore 1s forwards;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .open::after {
+    height: 0px !important;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .open {
+    animation: NavButnAfter 1s forwards;
+    transition: transform 0.8s  cubic-bezier(0.3, 0.4, 1);
+  }
+  .close::before {
+    animation: NavButnBeforeClose 1s forwards;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .close::after {
+    height: 1px !important;
+    transition: transform 0.8s cubic-bezier(0.3, 0.4, 1);
+  }
+  .close {
+    animation: NavButnAfterClose 1s forwards;
+    transition: transform 0.8s  cubic-bezier(0.3, 0.4, 1);
+  }
+
+.main {
+  width: 100vw;
+  overflow: hidden;
+    .hello {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .nav {
+          width: 100vw;
+          height: 100px;
+          padding: 28px 85px 0px 85px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 6;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          animation: DropUpsideDown .5s;
+          transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+          @media (max-width: 800px) {
+            padding: 28px 50px 0px 50px;
+          }
+          .nav_logo {
+              width: 98px;
+              height: 98px;
+              object-fit: cover;
+              cursor: pointer;
+              @media (max-width: 800px) {
+                width: 60px;
+                height: 60px;
+              }
+          }
+          .nav_burger_wrapper {
+              width: 100px;
+              height: 100px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transition-timing-function: cubic-bezier(0.3, 0.4, 1);
+              cursor: pointer;
+              @media (max-width: 700px) {
+                width: 70px;
+                height: 70px;
+              }
+              @media (max-width: 500px) {
+                width: 50px;
+                height: 50px;
+              }
+              .nav_burger {
+                height: 2px;
+                width: 100%;
+                position: relative;
+                background: white;
+                transform-origin: center center;
+                cursor: pointer;
+                border-radius: 1px;
+              }
+              .nav_burger::after {
+                content: "";
+                height: 2px;
+                width: 100%;
+                background: white;
+                top: 8px;
+                position: absolute;
+                left: 0;
+                cursor: pointer;
+                border-radius: 1px;
+              }
+              .nav_burger::before {
+                content: "";
+                height: 2px;
+                width: 100%;
+                background: white;
+                top: -8px;
+                position: absolute;
+                left: 0;
+                cursor: pointer;
+                border-radius: 1px;
+              }
+            }
+      }
+        .hello_video {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(.6) contrast(1.5);
+        }
+        .hello_effect {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 2;
+        }
+        .hello_textWrapper {
+          display: flex;
+          flex-direction: column;
+          width: 70vw;
+          z-index: 2;
+          @media (max-width: 1100px) {
+            width: 80vw;
+          }
+          @media (max-width: 600px) {
+            width: 90vw;
+          }
+          h3 {
+            font-size: $labels_normal;
+            color: white;
+            opacity: .6;
+            font-weight: 700;
+            margin-bottom: 18px;
+            animation-delay: .6s;
+            @media (max-width: 1100px) {
+              font-size: $labels_small;
+            }
+            @media (max-width: 600px) {
+              font-size: $labels_tiny;
+            }
+          }
+          h1, h3 {
+              -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 110%);
+              clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 110%);
+              transform: translateY(-50px);
+              opacity: 0;
+              animation-name: titleAnimation;
+              animation-timing-function:ease;
+              animation-duration: 3s;
+              animation-fill-mode: forwards;
+          }
+          h1 {
+            &:first-child{
+                animation-delay: 0.5s;
+            
+              }
+              &:last-child{
+                animation-delay: 0.2s;
+              }
+              @media (max-width: 1100px) {
+                font-size: $labels_big;
+              }
+              @media (max-width: 600px) {
+                font-size: $labels_medium;
+              }
+              @media (max-width: 374px) {
+                font-size: $labels_normal;
+              }
+          }
+        }
+    }
+}

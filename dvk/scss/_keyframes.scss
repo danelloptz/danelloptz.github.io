@@ -1,0 +1,66 @@
+@keyframes DropUpsideDown {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes titleAnimation {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+  20% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+}
+
+// для кнопки навигации
+@keyframes NavButnBefore {
+    from {transform: rotate(0deg) translateX(0px);}
+    to {transform: rotate(90deg) translateX(8px);}
+}
+@keyframes NavButnAfter {
+    from {transform: translateX(0px);}
+    to {transform: translateX(-8px);}
+}
+@keyframes NavWrapperRotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(135deg);}
+}
+
+@keyframes NavButnBeforeClose {
+    from {transform: rotate(90deg) translateX(8px);}
+    to {transform: rotate(0deg) translateX(0px);}
+}
+@keyframes NavButnAfterClose {
+    from {transform: translateX(-8px);}
+    to {transform: translateX(0px);}
+}
+@keyframes NavWrapperRotateClose {
+    from {transform: rotate(135deg);}
+    to {transform: rotate(0deg);}
+}
+
+// появление бургер меню
+@keyframes BurgerShow {
+    from {transform: translateX(100vw);}
+    to {transform: translateX(0vw);}
+}
+@keyframes BurgerClose {
+    from {transform: translateX(0vw);}
+    to {transform: translateX(100vw);}
+}
