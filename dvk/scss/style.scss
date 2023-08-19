@@ -6,6 +6,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     overflow: hidden;
     font-family: $SegoeUI;
@@ -26,7 +27,7 @@ h1 {
     top: 0;
     z-index: 5;
     transform: translateX(100vw);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -91,6 +92,9 @@ h1 {
     transition: transform 0.8s  cubic-bezier(0.3, 0.4, 1);
   }
 
+body::-webkit-scrollbar {
+    display: none;
+}
 .main {
   width: 100vw;
   overflow: hidden;
@@ -186,10 +190,11 @@ h1 {
             object-fit: cover;
             object-position: center;
             filter: brightness(.6) contrast(1.5);
+            animation: Opacity .5s ease-in-out forwards;
         }
         .hello_effect {
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             left: 0;
             width: 100%;
             height: auto;
@@ -212,7 +217,7 @@ h1 {
             opacity: .6;
             font-weight: 700;
             margin-bottom: 18px;
-            animation-delay: .6s;
+            animation-delay: .9s;
             @media (max-width: 1100px) {
               font-size: $labels_small;
             }
@@ -225,18 +230,17 @@ h1 {
               clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 110%);
               transform: translateY(-50px);
               opacity: 0;
-              animation-name: titleAnimation;
-              animation-timing-function:ease;
-              animation-duration: 3s;
-              animation-fill-mode: forwards;
+              animation: titleAnimation 3s ease forwards;
+              animation-delay: .3s;
           }
           h1 {
+            //animation: DropDownUp .7s forwards;
             &:first-child{
-                animation-delay: 0.5s;
+                animation-delay: 0.8s;
             
               }
               &:last-child{
-                animation-delay: 0.2s;
+                animation-delay: 0.5s;
               }
               @media (max-width: 1100px) {
                 font-size: $labels_big;
@@ -249,5 +253,235 @@ h1 {
               }
           }
         }
+    }
+    .about {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 0 155px 0 155px;
+      margin-top: 200px;
+      @media (max-width: 1700px) {
+        padding: 0 100px 0 100px;
+      }
+      @media (max-width: 1200px) {
+        padding: 0 50px 0 50px;
+      }
+      @media (max-width: 500px) {
+        padding: 0 25px 0 25px;
+      }
+      .about_info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        width: 40vw;
+        margin-top: 75px;
+        @media (max-width: 1200px) {
+          width: 50vw;
+        }
+        @media (max-width: 900px) {
+          width: auto;
+        }
+        h3 {
+          font-size: $labels_normal;
+          color: $orange;
+          opacity: 0;
+          @media (max-width: 1200px) {
+            font-size: $labels_small;
+          }
+        }
+        h2 {
+          font-size: $labels_big;
+          color: $dark;
+          font-weight: 700;
+          letter-spacing: 3px;
+          opacity: 0;
+          @media (max-width: 1200px) {
+            font-size: $labels_medium;
+          }
+        }
+        p {
+          font-size: $text_normal;
+          color: $dark;
+          font-weight: 300;
+          letter-spacing: 1.5px;
+          margin-bottom: 15px;
+          opacity: 0;
+          @media (max-width: 1200px) {
+            font-size: $text_small;
+          }
+        }
+        button {opacity: 0; animation-delay: .5s;}
+      }
+      img {
+        width: 670px;
+        height: 670px;
+        object-fit: cover;
+        opacity: 0;
+        @media (max-width: 1700px) {
+          width: 40vw;
+          height: auto;
+          object-fit: contain;
+        }
+        @media (max-width: 1200px) {
+          width: 35vw;
+        }
+        @media (max-width: 700px) {
+          display: none;
+        }
+      }
+    }
+    .awards {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      padding: 0 0 0 155px;
+      margin-top: 200px;
+      @media (max-width: 1800px) {
+        padding: 0 0 0 50px;
+      }
+      @media (max-width: 1200px) {
+        padding: 0;
+      }
+      @media (max-width: 700px) {
+        height: auto;
+      }
+      img {
+        width: 534px;
+        height: 801px;
+        opacity: 0;
+        object-fit: contain;
+        @media (max-width: 1600px) {
+          width: 35vw;
+          height: auto;
+        }
+        @media (max-width: 1200px) {
+          display: none;
+        }
+      }
+      .awards_info {
+        width: 1093px;
+        height: auto;
+        background: $dark;
+        transform: translateX(100%);
+        padding: 108px 68px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: .7s ease-in-out;
+        @media (max-width: 1600px) {
+          width: 60vw;
+        }
+        @media (max-width: 1200px) {
+          width: 100vw;
+        }
+        .awards_info_smlabel::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 45%;
+          width: 50px;
+          height: 2px;
+          background: $orange;
+          @media (max-width: 500px) {
+            width: 25px;
+          }
+        }
+        .awards_info_smlabel::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 45%;
+          width: 50px;
+          height: 2px;
+          background: $orange;
+          @media (max-width: 500px) {
+            width: 25px;
+          }
+        }
+        .awards_info_smlabel {
+          font-size: $labels_normal;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          color: $orange;
+          position: relative;
+          opacity: 0;
+          padding: 0 70px;
+          @media (max-width: 600px) {
+            font-size: $labels_small;
+          }
+          @media (max-width: 500px) {
+            padding: 0 30px;
+          }
+          @media (max-width: 400px) {
+            font-size: $labels_tiny;
+          }
+        }
+        h2 {
+          font-size: $labels_big;
+          font-weight: 700;
+          letter-spacing: 3px;
+          color: white;
+          opacity: 0;
+          @media (max-width: 600px) {
+            font-size: $labels_normal;
+            margin-top: 15px;
+          }
+        }
+        .awards_info_stats {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 100px;
+          row-gap: 40px;
+          margin-top: 94px;
+          @media (max-width: 700px) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+          }
+          .awards_info_stats_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 13px;
+            .awards_info_stats_item_num {
+              font-size: $labels_big;
+              font-weight: 700;
+              letter-spacing: 3px;
+              color: $orange;
+              opacity: 0;
+              @media (max-width: 600px) {
+                font-size: $labels_medium;
+              }
+            }
+            .awards_info_stats_item_text {
+              font-size: $labels_normal;
+              font-weight: 700;
+              letter-spacing: 1.5px;
+              color: white;
+              text-align: center;
+              opacity: 0;
+              @media (max-width: 1600px) {
+                font-size: $labels_small;
+              }
+              @media (max-width: 1200px) {
+                font-size: $labels_normal;
+              }
+              @media (max-width: 910px) {
+                font-size: $labels_small;
+              }
+              @media (max-width: 700px) {
+                font-size: $labels_normal;
+              }
+              @media (max-width: 700px) {
+                font-size: $labels_small;
+              }
+              @media (max-width: 500px) {
+                font-size: $labels_tiny;
+              }
+            }
+          }
+        }
+      }
     }
 }
