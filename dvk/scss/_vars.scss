@@ -54,7 +54,6 @@ $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     animation: titleAnimation 3s ease forwards;
 }
 .visible {
-    section {
         h3, h2, p {
             -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 110%);
             clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 110%);
@@ -65,9 +64,12 @@ $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         p {
             animation-delay: .3s;
         }
-    }
     img, span, button {
         animation: Opacity .5s ease-in-out forwards;
+        animation-delay: .3s;
+    }
+    svg {
+        animation: Arrow .5s ease-in-out forwards;
         animation-delay: .3s;
     }
 }
