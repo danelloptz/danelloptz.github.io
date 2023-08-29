@@ -9,13 +9,13 @@
 </head>
 <body class="body">
         <section class="burger">
-            <a href="#">О КОМАНДЕ</a>
-            <a href="#">ДОСТИЖЕНИЯ</a>
-            <a href="#">ИСТОРИЯ</a>
-            <a href="#">ГАЛЛЕРЕЯ</a>
+            <a class="burger_link" data-link="about">О КОМАНДЕ</a>
+            <a class="burger_link" data-link="awards">ДОСТИЖЕНИЯ</a>
+            <a class="burger_link" data-link="history-hello">ИСТОРИЯ</a>
+            <a>ГАЛЛЕРЕЯ</a>
         </section>
         <main class="main" id="main">
-            <section class="hello">
+            <section class="hello" data-lightSwitch="true">
                 <nav class="nav">
                     <img src="media/logo.png" class="nav_logo" alt="Древлянка-буллс баскетбольная команда">
                     <div class="nav_burger_wrapper">
@@ -30,7 +30,7 @@
                 </div>
                 <img src="media/effect.png" class="hello_effect">
             </section>
-            <article class="about block" data-heightCoef="1">
+            <article class="about block" data-heightCoef="1" data-lightSwitch="true" id="about">
                 <section class="about_info">
                     <h3>О КОМАНДЕ</h3>
                     <h2>ДРЕВЛЯНКА-БУЛЛС</h2>
@@ -41,7 +41,7 @@
                 </section>
                 <img src="media/logo_brush.png" alt="Древлянка-буллс баскетбольная команда">
             </article>
-            <article class="awards block" data-heightCoef="1.3">
+            <article class="awards block" data-lightSwitch="true" data-heightCoef="0.6" id="awards">
                 <img src="media/numbers3.png" alt="Уваров Егор баскетболист 46 школы г.Петрозаводск">
                 <section class="awards_info">
                     <h3 class="awards_info_smlabel">НЕМНОГО ЦИФР</h3>
@@ -74,7 +74,7 @@
                     </div>
                 </section>
             </article>
-            <article class="history-hello block"  data-heightCoef="1.7">
+            <article class="history-hello block" data-lightSwitch="false" data-heightCoef="0.3">
                 <section class="history-hello_wrapper">
                     <h2>НАША</h2>
                     <svg class="history-hello_wrapper_svg" xmlns="http://www.w3.org/2000/svg" width="987" height="23" viewBox="0 0 987 23" fill="none">
@@ -82,8 +82,67 @@
                     </svg>
                     <h2>ИСТОРИЯ</h2>
                 </section>
-                
             </article>
+            <article class="history-item block" data-lightSwitch="true" data-heightCoef="1">
+                <section class="history-item_slider">
+                    <div class="history-item_slider_wrapper">
+                        <img src="media/2006-2016/Champions2011-2012г..jpg" data-scroll="0" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2011-2012">
+                        <img src="media/2006-2016/Champions2010-2011г...jpg" data-scroll="1" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2011-2012">
+                        <img src="media/2006-2016/Champions2009-2010г..jpeg" data-scroll="2" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2009-2010">
+                        <img src="media/2006-2016/Champions2007-2008г..JPG" data-scroll="3" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2007-2008">
+                    </div>
+                    <div class="history-item_slider_switches">
+                        <div class="history-item_slider_switches_item history-item_slider_switches_item_active"></div>
+                        <div class="history-item_slider_switches_item"></div>
+                        <div class="history-item_slider_switches_item"></div>
+                        <div class="history-item_slider_switches_item"></div>
+                        
+                        <div class="history-item_slider_switches_btns">
+                            <a><span class="arrow arrow_left" data-way="left" data-slider="0"></span></a>
+                            <a><span class="arrow arrow_right" data-way="right" data-slider="0"></span></a>
+                        </div>
+                    </div>
+                </section> 
+                <section class="history-item_info">
+                    <h2>2006-2016</h2>
+                    <div class="history-item_info_line"></div>
+                    <p>
+                        -  7-кратные чемпионы ШБЛ в Петрозаводске <br>
+                        - 2 место в ШБЛ сезона 2015-2016 <br>
+                        - Выступали на соревнованиях в Швеции и Финляндии
+                    </p>
+                    <button class="big_orange_btn">УЗНАТЬ БОЛЬШЕ</button>
+                </section>             
+            </article>
+            <article class="history-itemMobile block"  data-lightSwitch="true" data-heightCoef="1">
+                <h2>2006-2016</h2>
+                <div class="history-item_info_line"></div>
+                <section class="history-item_slider">
+                    <div class="history-item_slider_wrapper">
+                        <img src="media/2006-2016/Champions2011-2012г..jpg" data-scroll="0" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2011-2012">
+                        <img src="media/2006-2016/Champions2010-2011г...jpg" data-scroll="1" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2011-2012">
+                        <img src="media/2006-2016/Champions2009-2010г..jpeg" data-scroll="2" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2009-2010">
+                        <img src="media/2006-2016/Champions2007-2008г..JPG" data-scroll="3" class="history-item_slider_wrapper_img" alt="Школа 46 чемпионы шбл 2007-2008">
+                    </div>
+                    <div class="history-item_slider_switches">
+                        <div class="history-item_slider_switches_item history-item_slider_switches_item_active"></div>
+                        <div class="history-item_slider_switches_item"></div>
+                        <div class="history-item_slider_switches_item"></div>
+                        <div class="history-item_slider_switches_item"></div>
+                        
+                        <div class="history-item_slider_switches_btns">
+                            <a><span class="arrow arrow_left" data-way="left" data-slider="1"></span></a>
+                            <a><span class="arrow arrow_right" data-way="right" data-slider="1"></span></a>
+                        </div>
+                    </div>
+                </section> 
+                <p>
+                    -  7-кратные чемпионы ШБЛ в Петрозаводске <br>
+                    - 2 место в ШБЛ сезона 2015-2016 <br>
+                    - Выступали на соревнованиях в Швеции и Финляндии
+                </p>
+                <button class="big_orange_btn">УЗНАТЬ БОЛЬШЕ</button>
+            </article>  
         </main>
         <footer>
             

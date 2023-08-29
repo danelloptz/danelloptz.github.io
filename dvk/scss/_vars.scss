@@ -11,11 +11,13 @@ $labels_tiny: 15px;
 $text_normal: 30px;
 $text_small: 20px;
 
+
 // colors
 $orange: #F3A61D;
 $yellow: #FBCC24;
 $dark: #2E2754;
 $gray: #C5C5C5;
+$gray_dark: #868686;
 
 // fonts
 $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,7 +38,7 @@ $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     cursor: pointer;
     transition: 1s  cubic-bezier(0.3, 0.4, 1);
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
         font-size: $labels_small;
         width: 280px;
         height: 50px;
@@ -73,3 +75,4 @@ $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         animation-delay: .3s;
     }
 }
+
