@@ -537,6 +537,9 @@ body::-webkit-scrollbar {
       align-items: center;
       justify-content: center;
       transition: .5s ease-in-out;
+      @media (max-width: 1200px) {
+        height: 40vh;
+      }
       .history-hello_wrapper {
         display: flex;
         flex-direction: column;
@@ -610,6 +613,7 @@ body::-webkit-scrollbar {
       justify-content: center;
       align-items: center;
       margin-top: 80px;
+      padding: 50px 0;
       @media (max-width: 900px) {
         display: flex;
       }
@@ -640,6 +644,8 @@ body::-webkit-scrollbar {
         border-radius: 2px;
         position: relative;
         overflow: hidden;
+        border-left: none !important;
+        border-right: none !important;
        
         .history-item_slider_wrapper {
           width: 100%;
@@ -762,15 +768,166 @@ body::-webkit-scrollbar {
         margin-top: 50px;
         opacity: 0;
         padding: 0 50px;
+        text-align: center;
         @media (max-width: 600px) {
           font-size: $text_small;
           padding: 0 15px;
         }
       }
-      button {margin-top: 50px; opacity: 0;}
+      button {
+        margin-top: 50px;
+        &:last-child {margin-top: 15px;}
+         opacity: 0;
+      }
     }
-
-
+    .history-item:nth-child(2n) {
+      background: white;
+      .history-item_info p {color: $dark;}
+      .history-item_info {
+        button {
+          margin-top: 50px;
+          &:last-child {margin-top: 15px;}
+           opacity: 0;
+        }
+      }
+      .history-item_slider {
+        border-left: 5px solid $gray;
+        @media (max-width: 1400px) {
+          border-left: 2px solid $gray;
+        }
+        .history-item_slider_switches {
+          .history-item_slider_switches_item {background: $gray;}
+          .history-item_slider_switches_item_active {background: $gray_dark;}
+          /*.history-item_slider_switches_btns .arrow {
+            &::after {border-top: calc( var(--arrow-size) / 5 ) solid $dark;}
+            &.arrow_left {
+              &::after {border-left: calc( var(--arrow-size) / 5 ) solid $dark;}
+              &:hover::after {box-shadow: calc( var(--arrow-size) / -8 ) calc( var(--arrow-size) / -8 ) 0 $dark;}
+            }
+            &.arrow_right {
+              &::after {border-left: calc( var(--arrow-size) / 5 ) solid $dark;}
+              &:hover::after {box-shadow: calc( var(--arrow-size) / 8 ) calc( var(--arrow-size) / -8 ) 0 $dark;}
+            }
+          }
+          .history-item_slider_switches_btns a {
+              &:hover .arrow {
+                &.arrow_left,
+                &.arrow_right {
+                  &::after {
+                    border-color: $orange;
+                  }
+                }
+            
+                &.arrow_left {
+                  &::after {
+                    box-shadow: calc( var(--arrow-size) / -8 ) calc( var(--arrow-size) / -8 ) 0 $dark;
+                  }
+                }
+            
+                &.arrow_right {
+                  &::after {
+                    box-shadow: calc( var(--arrow-size) / 8 ) calc( var(--arrow-size) / -8 ) 0 $dark;
+                  }
+                }
+              }
+          }*/
+        }
+      }
+    }
+    .history-itemMobile:nth-child(2n) p {color: white; text-align: center;}
+    .history-item:nth-child(2n+1), .history-itemMobile:nth-child(2n) {
+      background: $dark;
+      .history-item_info p {color: white;}
+      .history-item_info {
+        button {
+          margin-top: 50px;
+          &:last-child {margin-top: 15px;}
+           opacity: 0;
+        }
+      }
+      .history-item_slider {
+        border-right: 5px solid white;
+        @media (max-width: 1400px) {
+          border-right: 2px solid white;
+        }
+        .history-item_slider_switches {
+          .history-item_slider_switches_item {background: $gray_dark;}
+          .history-item_slider_switches_item_active {background: $gray;}
+          .history-item_slider_switches_btns {
+            .arrow {
+              --arrow-size: 30px;
+              position: relative;
+              display: inline-flex;
+              vertical-align: middle;
+              width: var(--arrow-size);
+              height: var(--arrow-size);
+              overflow: hidden;
+              
+              &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                box-sizing: border-box;
+                display: inline-block;
+                width: calc( var(--arrow-size) * .7071);
+                height: calc( var(--arrow-size) * .7071);
+                border-top: calc( var(--arrow-size) / 5 ) solid $orange;
+                transition: all 150ms ease-in-out;
+              }
+              
+              &.arrow_left {
+                &::after {
+                  left: calc( var(--arrow-size) / 5 );
+                  border-left: calc( var(--arrow-size) / 5 ) solid $orange;
+                  transform-origin: top left;
+                  rotate: -45deg;
+                }
+            
+                &:hover::after {
+                  box-shadow: calc( var(--arrow-size) / -8 ) calc( var(--arrow-size) / -8 ) 0 $orange;
+                }
+              }
+            
+              &.arrow_right {
+                &::after {
+                  right: calc( var(--arrow-size) / 5 );
+                  border-right: calc( var(--arrow-size) / 5 ) solid $orange;
+                  transform-origin: top right;
+                  rotate: 45deg;
+                }
+            
+                &:hover::after {
+                  box-shadow: calc( var(--arrow-size) / 8 ) calc( var(--arrow-size) / -8 ) 0 $orange;
+                }
+              }
+            }
+            
+            a {
+              &:hover .arrow {
+                &.arrow_left,
+                &.arrow_right {
+                  &::after {
+                    border-color: white;
+                  }
+                }
+            
+                &.arrow_left {
+                  &::after {
+                    box-shadow: calc( var(--arrow-size) / -8 ) calc( var(--arrow-size) / -8 ) 0 $orange;
+                  }
+                }
+            
+                &.arrow_right {
+                  &::after {
+                    box-shadow: calc( var(--arrow-size) / 8 ) calc( var(--arrow-size) / -8 ) 0 $orange;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .history-item {
       width: 100vw;
       height: 100vh;
@@ -786,12 +943,12 @@ body::-webkit-scrollbar {
         flex-direction: column;
         align-items: center;
         padding: 0 100px;
-        border-right: 5px solid $gray;
+        //border-right: 5px solid $gray;
         border-radius: 2px;
         position: relative;
         overflow: hidden;
         @media (max-width: 1400px) {
-          border-right: 2px solid $gray;
+          //border-right: 2px solid $gray;
           padding: 0 50px;
         }
         @media (max-width: 900px) {
@@ -820,13 +977,13 @@ body::-webkit-scrollbar {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: $gray;
+            //background: $gray;
             @media (max-width: 1400px) {
               width: 15px;
               height: 15px;
             }
           }
-          .history-item_slider_switches_item_active {background: $gray_dark;}
+          //.history-item_slider_switches_item_active {background: $gray_dark;}
           .history-item_slider_switches_btns {
             position: absolute;
             right: 50px;
@@ -915,8 +1072,8 @@ body::-webkit-scrollbar {
           padding-left: 25px;
         }
         h2 {
-          font-size: $labels_huge;
           color: $orange;
+          font-size: $labels_huge;
           font-weight: 700;
           line-height: normal;
           letter-spacing: 5px;
@@ -941,7 +1098,6 @@ body::-webkit-scrollbar {
         }
         p {
           width: min(549px, 40vw);
-          color: $dark;
           font-size: $text_normal;
           font-weight: 700;
           line-height: 1.5;

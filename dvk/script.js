@@ -23,6 +23,18 @@ $('.burger_link').click(function() {
     setTimeout(() => $('.burger').css('display', 'none'), 800);
 });
 
+/* lazy-load */
+$(window).on('scroll click', function() {
+    $('.lazy-load').each(function() {
+        if ($(window).scrollTop() + $(window).height() * 1.5 > $(this).offset().top)  {
+            if ($(this).attr('data-src')) {
+                $(this).attr('src', `${$(this).attr('data-src')}`);
+                $(this).removeAttr('data-src');
+            }
+        }
+    });
+});
+
 
 /*const smoothCoef = 0.05; // transition of scroll
 const smoothScroll = document.querySelector(".body");
@@ -94,11 +106,6 @@ function MenuVisibility() {
     
 }
 
-/*
-    Не работает анимцая появления у функции Blocks для мобилок. Если ставить класс block для
-    history-itemMobile, то не робит ни на пк, ни на мобилке, но появляется на мобилке этот блок. Если
-    убрать класс block, то работает всё на пк, кроме этого блока, но ничего не работает на мобиле.
-*/
 
 function Blocks() {
     MenuVisibility();
@@ -124,27 +131,31 @@ function Blocks() {
 
 // 1280x535
 
-let kSlider = 0, paddingSlider = 0;
+let kSlider = 0, paddingSlider = 0, sliders = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]];
 function SliderScroll(slider) {
-   const countSlider = slider.dataset.slider;
-   const waySlider = slider.dataset.way;
-   function MaxWidthImg() {
+   const countSlider = slider.dataset.slider; // номер слайдера
+   const waySlider = slider.dataset.way; // направление стрелки
+   kSlider = sliders[countSlider][0]; // счётчик (фотография), на котором остановились 
+   paddingSlider = sliders[countSlider][1]; // отступ родителя
+
+   function MaxWidthImg() { 
     let maxOffSetWidth = 0;
     document.querySelectorAll('.history-item_slider_wrapper_img').forEach(x => {
         maxOffSetWidth = x.offsetWidth > maxOffSetWidth ? x.offsetWidth : maxOffSetWidth;
     })
     return maxOffSetWidth;
    }
-   const widthImg = MaxWidthImg();
-   let wrapperSlider = document.querySelectorAll('.history-item_slider_wrapper')[countSlider];
-   let endSlider = -wrapperSlider.childElementCount + 1;
-   let switchesSlider = document.querySelectorAll('.history-item_slider_switches')[countSlider].children;
+   
+   const widthImg = MaxWidthImg(); // ширина картинки для скролла
+   let wrapperSlider = document.querySelectorAll('.history-item_slider_wrapper')[countSlider]; // нужный слайдер
+   let endSlider = -wrapperSlider.childElementCount + 1; // количетсво элементов в слайдере
+   let switchesSlider = document.querySelectorAll('.history-item_slider_switches')[countSlider].children; // кружки слайдера
    let flagSlider;
 
-   if (waySlider == 'right' && kSlider > endSlider) {
+   if (waySlider == 'right' && kSlider > endSlider) { // двигаемся только, если не последний элемент
     kSlider--; paddingSlider -= 100;
     flagSlider = false;
-    for (let i = 0; i < switchesSlider.length; i++) {
+    for (let i = 0; i < switchesSlider.length; i++) { // находим активный элемент, удаляем активный класс и ставим флаг, что активный удалён. И на следующем элементе ставим активность и выключаем цикл
         if (flagSlider) {
             switchesSlider[i].classList.toggle('history-item_slider_switches_item_active');
             break;
@@ -160,7 +171,7 @@ function SliderScroll(slider) {
     kSlider++; paddingSlider += 100;
 
     flagSlider = false;
-    for (let i = switchesSlider.length - 1; i >= 0; i--) {
+    for (let i = switchesSlider.length - 1; i >= 0; i--) { // здесь аналогично, только в обратную сторону
         if (flagSlider) {
             switchesSlider[i].classList.toggle('history-item_slider_switches_item_active');
             break;
@@ -172,6 +183,8 @@ function SliderScroll(slider) {
     }
    } 
 
-   wrapperSlider.style.transform = `translate3d(${widthImg*kSlider + paddingSlider}px, 0px, 0px)`;
+   wrapperSlider.style.transform = `translate3d(${widthImg*kSlider + paddingSlider}px, 0px, 0px)`; // paddingSlider это все внутренние отступы родителя, чтобы было ровно всё
+   sliders[countSlider][0] = kSlider; // сохраняем последние значения
+   sliders[countSlider][1] = paddingSlider; // same 
 }
 document.querySelectorAll('.arrow').forEach((item) => item.addEventListener('click', () =>  SliderScroll(item)));
