@@ -825,6 +825,7 @@ body {
     display: flex;
     gap: 20px;
     margin-top: 50px;
+    a {
     .hello_icon {
         width: 40px;
         height: auto;
@@ -844,6 +845,7 @@ body {
     @media (max-width: 500px) {
       margin-top: 25px;
     }
+  }
   }
 }
 
