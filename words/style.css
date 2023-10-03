@@ -27,3 +27,20 @@ button {
     letter-spacing: 5px;
     font-weight: 800;
 }
+.good {
+    animation: Good 1s ease-in;
+}
+.bad {
+    animation: Bad 1s ease-in;
+}
+
+@keyframes Good {
+    from {background: white;}
+    50% {background: #2ea664;}
+    to {background: white;}
+}
+@keyframes Bad {
+    from {background: white;}
+    50% {background: #B62045;}
+    to {background: white;}
+}

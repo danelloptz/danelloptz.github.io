@@ -9,15 +9,24 @@ let answers = ["bright", "clever", "hardworking", "busy", "polite", "quiet", "fr
 const index = randomInteger(0, words.length);
 let word = document.querySelector('.word');
 let reload = document.querySelector('.reload');
+let main = document.querySelector('.main');
 
 word.innerHTML = words[index];
 
 
-setTimeout(() => {
+setTimeout(function check() {
     const answer = prompt("Ответ");
 
-    if (answer.toLowerCase() == answers[index]) alert('Yes')
-    else alert('Правильный ответ: ' + answers[index]);
+    if (answer.toLowerCase() == answers[index]) {
+        main.classList.add('good');
+        main.classList.remove('bad');
+        setTimeout(() => location.reload(), 1000); 
+    }
+    else {
+        main.classList.add('bad');
+        main.classList.remove('good');
+        setTimeout(() => check(), 1000);
+    } 
 }, 300);
 
 
