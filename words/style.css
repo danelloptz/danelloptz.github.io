@@ -1,0 +1,29 @@
+body, main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e6643d;
+    letter-spacing: 5px;
+    font-weight: 800;
+    text-align: center;
+}
+button {
+    margin-top: 15vh;
+    padding: 10px 20px;
+    border: 2px solid #2ea664;
+    color: #2ea664;
+    font-size: 2rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
