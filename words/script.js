@@ -15,7 +15,7 @@ word.innerHTML = words[index];
 
 
 setTimeout(function check() {
-    const answer = prompt("Ответ");
+    const answer = prompt(words[index]);
 
     if (answer.toLowerCase() == answers[index]) {
         main.classList.add('good');
