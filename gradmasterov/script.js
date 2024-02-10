@@ -26,14 +26,14 @@ $('.nav_burger_wrapper').click(function() {
         setTimeout(() => $('.burger').css('display', 'none'), 800);
     }
 });
-$('.burger_link').click(function() {
-    const itemLink = '.' + $(this).attr('data-link');
-    document.querySelector(itemLink).scrollIntoView({behavior: "smooth"});
-    $('.nav_burger').removeClass('open').addClass('close').attr('data-check', '0');
-    $('.nav_burger_wrapper').css('animation', 'NavWrapperRotateClose .8s forwards');
-    $('.burger').css('animation', 'BurgerClose .7s forwards');
-    setTimeout(() => $('.burger').css('display', 'none'), 800);
-});
+// $('.burger_link').click(function() {
+//     const itemLink = '.' + $(this).attr('data-link');
+//     document.querySelector(itemLink).scrollIntoView({behavior: "smooth"});
+//     $('.nav_burger').removeClass('open').addClass('close').attr('data-check', '0');
+//     $('.nav_burger_wrapper').css('animation', 'NavWrapperRotateClose .8s forwards');
+//     $('.burger').css('animation', 'BurgerClose .7s forwards');
+//     setTimeout(() => $('.burger').css('display', 'none'), 800);
+// });
 
 // Подчёркивание активного элемента меню в хедере
 let header_items = document.querySelectorAll(".header_link");
