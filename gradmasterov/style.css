@@ -1,10 +1,26 @@
 @import 'animate.css';
-.button {
+@font-face {
+  font-family: "Roboto Mono Bold";
+  src: url("fonts/RobotoMono-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Roboto Mono Medium";
+  src: url("fonts/RobotoMono-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto Mono Light";
+  src: url("fonts/RobotoMono-Light.ttf");
+}
+@font-face {
+  font-family: "Roboto Mono Thin";
+  src: url("fonts/RobotoMono-Thin.ttf");
+}
+.button, .button_dark {
   width: 300px;
   height: 60px;
   background: #FBCC24;
   border-radius: 50px;
-  color: #262626;
+  color: rgb(37, 36, 34);
   font-size: 20px;
   letter-spacing: 1.5px;
   font-weight: 700;
@@ -14,21 +30,21 @@
   transition: 0.5s;
 }
 @media (max-width: 700px) {
-  .button {
+  .button, .button_dark {
     width: 220px;
     height: 50px;
     font-size: 15px;
   }
 }
 @media (max-width: 600px) {
-  .button {
+  .button, .button_dark {
     width: 180px;
     height: 40px;
     font-size: 12px;
   }
 }
 @media (max-width: 450px) {
-  .button {
+  .button, .button_dark {
     width: 130px;
     height: 40px;
     letter-spacing: 1px;
@@ -36,9 +52,22 @@
   }
 }
 
+.button_dark {
+  background: #f9cdcd;
+  border: 2px solid #f9cdcd;
+  color: rgb(37, 36, 34);
+}
+
 .button:hover {
-  background: #262626;
+  background: rgb(37, 36, 34);
   color: #FBCC24;
+}
+
+.button_dark:hover {
+  background: rgb(37, 36, 34);
+  border: 2px solid #f9cdcd;
+  color: #f9cdcd;
+  opacity: 0;
 }
 
 @-webkit-keyframes DropUpsideDown {
@@ -327,7 +356,7 @@
 }
 
 .burger {
-  background: #262626;
+  background: rgb(37, 36, 34);
   opacity: 0.9;
   -webkit-transition-timing-function: cubic-bezier(0.3, 0.4, 1);
           transition-timing-function: cubic-bezier(0.3, 0.4, 1);
@@ -394,6 +423,11 @@
   opacity: 1;
 }
 
+body {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
 .open::before {
   -webkit-animation: NavButnBefore 1s forwards;
           animation: NavButnBefore 1s forwards;
@@ -447,7 +481,6 @@
 }
 
 .main {
-  padding: 0 3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,7 +491,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
+  width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .main .start {
@@ -732,4 +765,117 @@
   .main .start .start_info h1 {
     font-size: 30px;
   }
+}
+.main .help {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5vw;
+}
+@media (max-width: 800px) {
+  .main .help {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.main .help .help-text {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (max-width: 800px) {
+  .main .help .help-text {
+    width: 90%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.main .help .help-text .help-text-label {
+  font-size: 80px;
+  color: #f9cdcd;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 600;
+  opacity: 0;
+}
+@media (max-width: 1200px) {
+  .main .help .help-text .help-text-label {
+    font-size: 60px;
+  }
+}
+@media (max-width: 900px) {
+  .main .help .help-text .help-text-label {
+    font-size: 45px;
+  }
+}
+@media (max-width: 800px) {
+  .main .help .help-text .help-text-label {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .main .help .help-text .help-text-label {
+    font-size: 30px;
+  }
+}
+.main .help .help-text p {
+  font-size: 20px;
+  color: #f9cdcd;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  opacity: 0;
+}
+@media (max-width: 800px) {
+  .main .help .help-text p {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .main .help .help-text p {
+    font-size: 15px;
+  }
+}
+.main .help .help-text .help-text-btn {
+  width: 10vw;
+  height: 2vw;
+  background: none;
+  border: 1px solid #f9cdcd;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f9cdcd;
+  border-radius: 15px;
+  margin-top: 5vw;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.main .help .help-video {
+  width: 50%;
+  height: auto;
+}
+@media (max-width: 800px) {
+  .main .help .help-video {
+    width: 90%;
+    margin-top: 5vw;
+  }
+}
+.main .help .help-video video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }

@@ -15,12 +15,36 @@ $text_small: 20px;
 // colors
 $orange: #FBCC24; 
 $white: white;
-$dark: #262626;
+$dark: rgb(37, 36, 34);
+$pink: #f9cdcd;
+
 
 // fonts
-$SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@font-face {
+    font-family: 'Roboto Mono Bold';
+    src: url("fonts/RobotoMono-SemiBold.ttf");
+}
+@font-face {
+    font-family: 'Roboto Mono Medium';
+    src: url("fonts/RobotoMono-Medium.ttf");
+}
+@font-face {
+    font-family: 'Roboto Mono Light';
+    src: url("fonts/RobotoMono-Light.ttf");
+}
+@font-face {
+    font-family: 'Roboto Mono Thin';
+    src: url("fonts/RobotoMono-Thin.ttf");
+}
 
-.button {
+$SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$RMB: 'Roboto Mono Bold';
+$RMM: 'Roboto Mono Medium';
+$RML: 'Roboto Mono Light';
+$RMT: 'Roboto Mono Thin';
+
+
+.button, .button_dark {
     width: 300px;
     height: 60px;
     background: $orange;
@@ -49,7 +73,18 @@ $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 10px;
     }
 }
+.button_dark {
+    background: $pink;
+    border: 2px solid $pink;
+    color: $dark;
+}
 .button:hover {
     background: $dark;
     color: $orange;
+}
+.button_dark:hover {
+    background: $dark;
+    border: 2px solid $pink;
+    color: $pink;
+    opacity: 0;
 }
