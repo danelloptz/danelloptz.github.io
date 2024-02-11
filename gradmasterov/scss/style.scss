@@ -391,6 +391,8 @@ body {transition: .8s;}
     .help-video {
         width: 50%;
         height: auto;
+        position: relative;
+        z-index: 10;
         @media (max-width: 800px) {
           width: 90%;
           margin-top: 5vw;
