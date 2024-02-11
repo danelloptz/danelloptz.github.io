@@ -584,9 +584,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 3vw;
-     -moz-column-gap: 3vw;
-          column-gap: 3vw;
 }
 @media (max-width: 600px) {
   .main .start .start_header_wrapper .start_header .start_header_content {
@@ -602,6 +599,7 @@ body {
   position: relative;
   padding-bottom: 5px;
   cursor: pointer;
+  margin-right: 3vw;
 }
 .main .start .start_header_wrapper .start_header .start_header_content a:hover {
   color: #FBCC24;

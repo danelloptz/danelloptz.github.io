@@ -152,7 +152,6 @@ body {transition: .8s;}
         }
         .start_header_content {
           display: flex;
-          column-gap: 3vw;
           @media (max-width: 600px) {
             display: none;
           }
@@ -164,6 +163,7 @@ body {transition: .8s;}
             position: relative;
             padding-bottom: 5px;
             cursor: pointer;
+            margin-right: 3vw;
           }
           a:hover { color: $orange; }
           .header_link_active { color: $orange; }
