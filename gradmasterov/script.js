@@ -49,9 +49,9 @@ $(window).on('scroll', () => {
       let blockPosition = $('.help').offset().top, windowScrollPosition = $(window).scrollTop();
       if( blockPosition < windowScrollPosition + window.innerWidth - 100 ) {
           $('body').css('background', 'rgb(37, 36, 34)');
-          $('.help-text-label').css('opacity', '1').addClass('animate__animated animate__fadeInLeft');
-          $('.help-text-p').css('opacity', '1').addClass('animate__animated animate__bounceInUp');
-          $('.button_dark').css('opacity', '1').addClass('animate__animated animate__bounceInRight');
+          $('.help-text-label').css('opacity', '1');
+          $('.help-text-p').css('opacity', '1');
+          $('.button_dark').css('opacity', '1');
       } else {
         $('body').css('background', 'white');
       }
