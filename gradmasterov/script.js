@@ -47,7 +47,8 @@ header_items.forEach(item => {
 // Изменение цвета фона на втором блоке с видео
 $(window).on('scroll', () => { 
       let blockPosition = $('.help').offset().top, windowScrollPosition = $(window).scrollTop();
-      if( blockPosition < windowScrollPosition + window.innerWidth - 100 ) {
+    //   console.log(windowScrollPosition + window.innerHeight > blockPosition + window.innerHeight)
+      if( (blockPosition < windowScrollPosition + window.innerWidth - 100) && (windowScrollPosition + window.innerHeight*0.5< blockPosition + window.innerHeight)) {
           $('body').css('background', 'rgb(37, 36, 34)');
           $('.help-text-label').css('opacity', '1');
           $('.help-text-p').css('opacity', '1');
@@ -56,3 +57,22 @@ $(window).on('scroll', () => {
         $('body').css('background', 'white');
       }
 });
+
+// Swiper.js 
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    mousewheel: false,
+    keyboard: true,
+  });
+
+// Появление окна с информацией при наведении на фотографию в слайдере "НАШИ ПРОЕКТЫ"
+// let mainImageWrapper = document.querySelector('.swiper-slide-mainImage-wrapper');
+// let mainImageInfo = document.querySelector('.swiper-slide-mainImage-info');
+// mainImageWrapper.onmouseover = mainImageWrapper.onmouseout = mainImageInfo.onmouseover = mainImageInfo.onmouseout = (event) => {
+//     if (event.type == 'mouseover') mainImageInfo.style.animation = 'SliderPhoto .5s';
+//     if (event.type == 'mouseout') mainImageInfo.style.animation = 'none';
+// }

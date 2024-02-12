@@ -80,3 +80,16 @@
     from {transform: translateX(0vw);}
     to {transform: translateX(100vw);}
 }
+
+
+// new keyframes
+@keyframes SliderPhoto {
+    0% {
+        opacity: 1;
+        height: 0%;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}

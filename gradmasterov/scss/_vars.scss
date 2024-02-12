@@ -36,12 +36,18 @@ $pink: #f9cdcd;
     font-family: 'Roboto Mono Thin';
     src: url("fonts/RobotoMono-Thin.ttf");
 }
+@font-face {
+    font-family: 'AcherusFeral-Light';
+    src: url("fonts/AcherusFeral-Light.otf");
+}
+
 
 $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $RMB: 'Roboto Mono Bold';
 $RMM: 'Roboto Mono Medium';
 $RML: 'Roboto Mono Light';
 $RMT: 'Roboto Mono Thin';
+$AFL: 'AcherusFeral-Light';
 
 
 .button, .button_dark {
