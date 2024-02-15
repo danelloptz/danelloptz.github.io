@@ -69,10 +69,8 @@ var swiper = new Swiper(".mySwiper", {
     keyboard: true,
   });
 
-// Появление окна с информацией при наведении на фотографию в слайдере "НАШИ ПРОЕКТЫ"
-// let mainImageWrapper = document.querySelector('.swiper-slide-mainImage-wrapper');
-// let mainImageInfo = document.querySelector('.swiper-slide-mainImage-info');
-// mainImageWrapper.onmouseover = mainImageWrapper.onmouseout = mainImageInfo.onmouseover = mainImageInfo.onmouseout = (event) => {
-//     if (event.type == 'mouseover') mainImageInfo.style.animation = 'SliderPhoto .5s';
-//     if (event.type == 'mouseout') mainImageInfo.style.animation = 'none';
-// }
+// let mainImages = document.querySelectorAll('.swiper-slide-mainImage');
+// let smImages = document.querySelectorAll('.swiper-slide-smImage');
+
+
+

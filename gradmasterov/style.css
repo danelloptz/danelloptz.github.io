@@ -946,21 +946,39 @@ body {
   height: 90vh;
   margin-top: 2vw;
 }
+@media (max-width: 500px) {
+  .main .projects .swiper {
+    height: 65vh;
+  }
+}
 .main .projects .swiper-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: grid;
+  grid-template-areas: "mainImage smImage1 smImage2" "mainImage smImage3 smImage4";
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1vw;
+}
+@media (max-width: 1100px) {
+  .main .projects .swiper-slide {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas: "mainImage mainImage smImage1 smImage1 smImage2 smImage2" "mainImage mainImage smImage1 smImage1 smImage2 smImage2" "smImage3 smImage3 smImage3 smImage4 smImage4 smImage4";
+  }
+}
+@media (max-width: 700px) {
+  .main .projects .swiper-slide {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "mainImage smImage1" "mainImage smImage1" "smImage2 smImage3" "smImage2 smImage3";
+  }
 }
 .main .projects .swiper-slide .swiper-slide-mainImage-wrapper {
-  width: 46%;
   height: 100%;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   background-color: black;
+  grid-area: mainImage;
 }
 .main .projects .swiper-slide .swiper-slide-mainImage-wrapper img {
   position: relative;
@@ -1002,15 +1020,7 @@ body {
 .main .projects .swiper-slide .swiper-slide-mainImage-wrapper:hover > .swiper-slide-mainImage-info {
   opacity: 1;
 }
-.main .projects .swiper-slide .swiper-slide-smImages {
-  width: 50%;
-  height: 100%;
-  display: grid;
-  gap: 2vw;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-.main .projects .swiper-slide .swiper-slide-smImages .swiper-slide-smImages-wrapper {
+.main .projects .swiper-slide .swiper-slide-smImages-wrapper {
   height: 100%;
   width: 100%;
   aspect-ratio: 1/1;
@@ -1019,10 +1029,27 @@ body {
   background-color: black;
   position: relative;
 }
-.main .projects .swiper-slide .swiper-slide-smImages .swiper-slide-smImages-wrapper:hover > .swiper-slide-smImages-info {
+.main .projects .swiper-slide .swiper-slide-smImages-wrapper:nth-child(5) {
+  grid-area: smImage1;
+}
+.main .projects .swiper-slide .swiper-slide-smImages-wrapper:nth-child(2) {
+  grid-area: smImage2;
+}
+.main .projects .swiper-slide .swiper-slide-smImages-wrapper:nth-child(3) {
+  grid-area: smImage3;
+}
+.main .projects .swiper-slide .swiper-slide-smImages-wrapper:nth-child(4) {
+  grid-area: smImage4;
+}
+@media (max-width: 700px) {
+  .main .projects .swiper-slide .swiper-slide-smImages-wrapper:nth-child(4) {
+    display: none;
+  }
+}
+.main .projects .swiper-slide .swiper-slide-smImages-wrapper:hover > .swiper-slide-smImages-info {
   opacity: 1;
 }
-.main .projects .swiper-slide .swiper-slide-smImages img {
+.main .projects .swiper-slide img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1031,13 +1058,15 @@ body {
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   z-index: 4;
+  -o-object-position: center center;
+     object-position: center center;
 }
-.main .projects .swiper-slide .swiper-slide-smImages img:hover {
+.main .projects .swiper-slide img:hover {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   opacity: 0.4;
 }
-.main .projects .swiper-slide .swiper-slide-smImages .swiper-slide-smImages-info {
+.main .projects .swiper-slide .swiper-slide-smImages-info {
   position: absolute;
   opacity: 0;
   bottom: 2vw;
@@ -1060,8 +1089,13 @@ body {
 .main .projects .swiper-button-next, .main .projects .swiper-rtl .swiper-button-prev {
   right: 1vw !important;
   left: auto;
+  top: 53% !important;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .main .projects .swiper-button-prev, .main .projects .swiper-rtl .swiper-button-next {
   left: 1vw !important;
   right: auto;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
