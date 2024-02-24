@@ -49,16 +49,16 @@ function IsVisible(classname) {
     return ($(classname).offset().top < $(window).scrollTop() + $(window).height() - 100) && ($(window).scrollTop() + $(window).height()*0.5 < $(classname).offset().top + $(window).height());
 }
 
-// Изменение цвета фона на втором блоке с видео
+// Все анимации, связанные с позицией скролла
 $(window).on('scroll', () => { 
-      let blockPosition = $('.help').offset().top, windowScrollPosition = $(window).scrollTop();
-    //   console.log(windowScrollPosition + window.innerHeight > blockPosition + window.innerHeight)
-    // console.log();
     if (IsVisible('.about_text_h2')) $('.about_text_h2').css('opacity', '1').addClass('animate__animated animate__fadeInLeft');
     if (IsVisible('.about_text_p')) $('.about_text_p').css('opacity', '1').addClass('animate__animated animate__fadeInUp');
     if (IsVisible('.about_img')) $('.about_img').css('opacity', '1').addClass('animate__animated animate__slideInRight');
     if (IsVisible('.projects_h2')) $('.projects_h2').css('opacity', '1').addClass('animate__animated animate__fadeInUp');
     if (IsVisible('.swiper')) $('.swiper').css('opacity', '1').addClass('animate__animated animate__fadeIn');
+    if (IsVisible('.why_block_h2')) $('.why_block_h2').each(function() {$(this).css('opacity', '1').addClass('animate__animated animate__jackInTheBox');})
+    if (IsVisible('.why_block_p')) $('.why_block_p').each(function() {$(this).css('opacity', '1').addClass('animate__animated animate__fadeInUp');})
+    if (IsVisible('.why_img')) $('.why_img').css('opacity', '1').addClass('animate__animated animate__fadeIn');
       if(IsVisible('.help')) {
           $('body').css('background', 'rgb(37, 36, 34)');
           $('.help-text-label').css('opacity', '1');
@@ -67,6 +67,7 @@ $(window).on('scroll', () => {
       } else {
         $('body').css('background', 'white');
       }
+      
 });
 
 // Swiper.js 
