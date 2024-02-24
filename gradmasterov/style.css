@@ -1287,6 +1287,21 @@ body {
   grid-area: h2;
   overflow-wrap: break-word;
 }
+@media (max-width: 1000px) {
+  .main .about h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 760px) {
+  .main .about h2 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 580px) {
+  .main .about h2 {
+    font-size: 30px;
+  }
+}
 .main .about p {
   grid-area: p;
   margin-top: 1vw;

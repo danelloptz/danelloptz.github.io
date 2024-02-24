@@ -17,6 +17,7 @@ $orange: #FBCC24;
 $white: white;
 $dark: rgb(37, 36, 34);
 $pink: #f9cdcd;
+$violet: #5b3d85;
 
 
 // fonts
@@ -40,7 +41,10 @@ $pink: #f9cdcd;
     font-family: 'AcherusFeral-Light';
     src: url("fonts/AcherusFeral-Light.otf");
 }
-
+@font-face {
+    font-family: 'Mueller';
+    src: url("fonts/Mueller.ttf");
+}
 
 $SegoeUI: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $RMB: 'Roboto Mono Bold';
@@ -48,6 +52,7 @@ $RMM: 'Roboto Mono Medium';
 $RML: 'Roboto Mono Light';
 $RMT: 'Roboto Mono Thin';
 $AFL: 'AcherusFeral-Light';
+$Mueller: 'Mueller';
 
 
 .button, .button_dark {

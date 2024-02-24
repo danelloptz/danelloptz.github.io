@@ -687,15 +687,15 @@ body {transition: .8s;}
         opacity: 0;
         grid-area: h2;
         overflow-wrap: break-word;
-        // @media (max-width: 1000px) {
-        //   font-size: $labels_big;
-        // }
-        // @media (max-width: 760px) {
-        //   font-size: $labels_medium;
-        // }
-        // @media (max-width: 580px) {
-        //   font-size: $labels_normal;
-        // }
+        @media (max-width: 1000px) {
+          font-size: $labels_big;
+        }
+        @media (max-width: 760px) {
+          font-size: $labels_medium;
+        }
+        @media (max-width: 580px) {
+          font-size: $labels_normal;
+        } 
       }
       p {
         grid-area: p;
