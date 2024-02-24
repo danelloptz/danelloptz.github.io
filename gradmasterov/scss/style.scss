@@ -59,6 +59,9 @@
   
 
 }
+p {
+  text-align: justify;
+}
 
 body {transition: .8s;}
 
@@ -112,7 +115,7 @@ body {transition: .8s;}
       width: 100%;
       object-fit: cover;
       z-index: 1;
-      filter: brightness(.5);
+      filter: brightness(.4);
     }
     .start_header_wrapper {
       position: absolute;
@@ -149,6 +152,21 @@ body {transition: .8s;}
             width: 50px;
             height: 50px;
             top: 15px;
+          }
+        }
+        .header_phone {
+          position: absolute;
+          right: 3vw;
+          top: 29%;
+          cursor: pointer;
+          color: white;
+          font-size: $text_small;
+          @media (max-width: 1000px) {
+            font-size: $labels_tiny;
+            top: 33%;
+          }
+          @media (max-width: 800px) {
+            display: none;
           }
         }
         .start_header_content {
@@ -415,7 +433,6 @@ body {transition: .8s;}
     // align-items: center;
     margin-top: 5vw;
     position: relative;
-    margin-bottom: 100vh;
     padding: 0 4vw;
     h2 {
       font-family: $AFL;
@@ -437,6 +454,7 @@ body {transition: .8s;}
       width: 100%;
       height: 90vh;
       margin-top: 2vw;
+      opacity: 0;
       @media (max-width: 500px) {
         height: 65vh;
       }
@@ -557,13 +575,59 @@ body {transition: .8s;}
       right: 1vw !important; 
       left: auto;
       top: 53% !important;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      // box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
     .swiper-button-prev, .swiper-rtl .swiper-button-next{
       left: 1vw !important; 
       right: auto;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      // box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
 
+  }
+
+  .about {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "h2 image"
+                         "p image";
+    column-gap: 4vw;
+    margin-top: 10vw;
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "h2"
+                           "image"
+                           "p";
+      row-gap: 2vw;
+    }
+      h2 {
+        font-size: $labels_huge;
+        color: $dark;
+        font-family: $AFL;
+        font-weight: 400;
+        line-height: 1.15;
+        opacity: 0;
+        grid-area: h2;
+        @media (max-width: 1000px) {
+          font-size: $labels_big;
+        }
+      }
+      p {
+        grid-area: p;
+        margin-top: 1vw;
+        font-size: $text_small;
+        color: $dark;
+        font-family: $AFL;
+        line-height: 1.4;
+        opacity: 0;
+      } 
+      img {
+        grid-area: image;
+        height: 100vh;
+        width: 100%;
+        opacity: 0;
+        object-fit: cover;
+        object-position: center;
+      }
   }
 }
